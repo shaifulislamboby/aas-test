@@ -1,0 +1,53 @@
+
+vpython:S116."ZRename this field "statusMessageQueue" to match the regular expression ^[_a-z][_a-z0-9]*$.(¡ëõÿÿÿÿÿ
+xpython:S1167"aRename this field "AASendPointHandlerObjects" to match the regular expression ^[_a-z][_a-z0-9]*$.(â™¬ı
+dpython:S116+"MRename this field "pyAAS" to match the regular expression ^[_a-z][_a-z0-9]*$.(òÈóó
+wpython:S1166"`Rename this field "skillInstanceDictbyAASId" to match the regular expression ^[_a-z][_a-z0-9]*$.(«­’Æ
+xpython:S116/"\Rename this field "assetDataValuesQueue" to match the regular expression ^[_a-z][_a-z0-9]*$.(ª‹é¯üÿÿÿÿ
+jpython:S116,"TRename this field "inBoundQueue" to match the regular expression ^[_a-z][_a-z0-9]*$.(· ŸA
+qpython:S116-"URename this field "outBoundQueue" to match the regular expression ^[_a-z][_a-z0-9]*$.(·Í¾Šÿÿÿÿÿ
+mpython:S1162"WRename this field "assetBatchCount" to match the regular expression ^[_a-z][_a-z0-9]*$.(™’í
+mpython:S117'"QRename this parameter "pyAAS" to match the regular expression ^[_a-z][a-z0-9_]*$.(˜êß´üÿÿÿÿ
+|python:S1175"eRename this parameter "AASendPointHandlerObjects" to match the regular expression ^[_a-z][a-z0-9_]*$.(ıÏäÏ
+}python:S117H"aRename this local variable "assetBatchThread" to match the regular expression ^[_a-z][a-z0-9_]*$.(îŸûªÿÿÿÿÿ
+mpython:S1178"WRename this local variable "bCount" to match the regular expression ^[_a-z][a-z0-9_]*$.(ì…
+upython:S117@"YRename this local variable "ibThread" to match the regular expression ^[_a-z][a-z0-9_]*$.(ĞÚù€ıÿÿÿÿ
+upython:S117="YRename this local variable "obThread" to match the regular expression ^[_a-z][a-z0-9_]*$.(”ò¹Ôûÿÿÿÿ
+{python:S1175"dRename this parameter "skillInstanceDictbyAASId" to match the regular expression ^[_a-z][a-z0-9_]*$.(ıÏäÏ
+upython:S117C"YRename this local variable "smThread" to match the regular expression ^[_a-z][a-z0-9_]*$.(İƒ­åûÿÿÿÿ
+Qpython:S1481H"4Remove the unused local variable "assetBatchThread".(îŸûªÿÿÿÿÿ
+gpython:S100O"PRename method "putIbMessage" to match the regular expression ^[a-z_][a-z0-9_]*$.(€ğÅ‘
+lpython:S100R"PRename method "getIbMessage" to match the regular expression ^[a-z_][a-z0-9_]*$.(±ıõåÿÿÿÿÿ
+gpython:S100U"PRename method "putObMessage" to match the regular expression ^[a-z_][a-z0-9_]*$.(¡±’°
+lpython:S100X"PRename method "getObMessage" to match the regular expression ^[a-z_][a-z0-9_]*$.(ÜÌÚÒüÿÿÿÿ
+ppython:S100["TRename method "getstatusMessage" to match the regular expression ^[a-z_][a-z0-9_]*$.(ÓØÖıüÿÿÿÿ
+ppython:S117^"TRename this parameter "sMessage" to match the regular expression ^[_a-z][a-z0-9_]*$.(†•œœıÿÿÿÿ
+ppython:S100^"TRename method "putStatusMessage" to match the regular expression ^[a-z_][a-z0-9_]*$.(†•œœıÿÿÿÿ
+ipython:S100a"RRename method "processMessage" to match the regular expression ^[a-z_][a-z0-9_]*$.(ˆ¤¨â
+rpython:S117d"VRename this parameter "_skillName" to match the regular expression ^[_a-z][a-z0-9_]*$.(âğ¢çûÿÿÿÿ
+mpython:S117d"QRename this parameter "aasId" to match the regular expression ^[_a-z][a-z0-9_]*$.(âğ¢çûÿÿÿÿ
+mpython:S100d"QRename method "assigntoSkill" to match the regular expression ^[a-z_][a-z0-9_]*$.(âğ¢çûÿÿÿÿ
+hpython:S100g"QRename method "createNewUUID" to match the regular expression ^[a-z_][a-z0-9_]*$.(ğëÜ³
+wpython:S117m"[Rename this local variable "_skillName" to match the regular expression ^[_a-z][a-z0-9_]*$.(å±ƒ¾ıÿÿÿÿ
+mpython:S117l"VRename this local variable "aasId" to match the regular expression ^[_a-z][a-z0-9_]*$.(¤‹œÄ
+ppython:S117q"YRename this local variable "aasIndex" to match the regular expression ^[_a-z][a-z0-9_]*$.(éöİ€
+kpython:S117j"TRename this parameter "jMessage" to match the regular expression ^[_a-z][a-z0-9_]*$.(²Íøû
+kpython:S100j"TRename method "_receiveMessage_" to match the regular expression ^[a-z_][a-z0-9_]*$.(²Íøû
+@python:S108o")Either remove or fill this block of code.(ã‘Û¾
+_python:S930x"HAdd 1 missing arguments; 'assigntoSkill' expects 2 positional arguments.(œĞ¯
+lpython:S117|"VRename this parameter "ob_Message" to match the regular expression ^[_a-z][a-z0-9_]*$.(Ú£¸9
+mpython:S100|"WRename method "sendOutBoundMessage" to match the regular expression ^[a-z_][a-z0-9_]*$.(Ú£¸9
+Ipython:S1862ƒ"+This branch duplicates the one on line 129.(²Ôãüùÿÿÿÿ
+lpython:S117ˆ"TRename this parameter "sMessage" to match the regular expression ^[_a-z][a-z0-9_]*$.(Ú»àÁ
+opython:S100ˆ"WRename method "sendObstatusMessage" to match the regular expression ^[a-z_][a-z0-9_]*$.(Ú»àÁ
+rpython:S1186ˆ"YAdd a nested comment explaining why this method is empty, or complete the implementation.(Ú»àÁ
+kpython:S100‹"SRename method "putAssetMessage" to match the regular expression ^[a-z_][a-z0-9_]*$.(Óä—
+ppython:S100"SRename method "getAssetMessage" to match the regular expression ^[a-z_][a-z0-9_]*$.(ãä³Éøÿÿÿÿ
+wpython:S117“"_Rename this local variable "assetQueueSize" to match the regular expression ^[_a-z][a-z0-9_]*$.(ù°®³
+€python:S117”"cRename this local variable "newAssetValueBatch" to match the regular expression ^[_a-z][a-z0-9_]*$.(óîøÿÿÿÿ
+vpython:S100‘"^Rename method "processAssetDataValueBatch" to match the regular expression ^[a-z_][a-z0-9_]*$.(èäÊ¿
+>python:S1481•"%Remove the unused local variable "i".(½ú¡•
+tpython:S117¡"\Rename this local variable "_hbtMessage" to match the regular expression ^[_a-z][a-z0-9_]*$.(‘¯ËÖ
+tpython:S117Ÿ"WRename this local variable "hAASId" to match the regular expression ^[_a-z][a-z0-9_]*$.(š¦àûÿÿÿÿ
+wpython:S117"_Rename this local variable "heartBeatCount" to match the regular expression ^[_a-z][a-z0-9_]*$.(ºòÉì
+rpython:S100›"URename method "trigggerHeartBeat" to match the regular expression ^[a-z_][a-z0-9_]*$.(ãâÊ½øÿÿÿÿ

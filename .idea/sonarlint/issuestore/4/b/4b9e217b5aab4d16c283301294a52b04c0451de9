@@ -1,0 +1,152 @@
+
+|python:S1192œ"^Define a constant instead of duplicating this literal " with the passed Id not found" 3 times.(ùô³íşÿÿÿÿ
+xpython:S1192"ZDefine a constant instead of duplicating this literal "Unexpected Internal Error" 7 times.(ğÓ‹öÿÿÿÿÿ
+python:S1192%"bDefine a constant instead of duplicating this literal "Unexpected Internal Server Error" 14 times.(ğşàõıÿÿÿÿ
+dpython:S116"MRename this field "pyAAS" to match the regular expression ^[_a-z][_a-z0-9]*$.(òÈóó
+kpython:S116"TRename this field "col_Messages" to match the regular expression ^[_a-z][_a-z0-9]*$.(ß„‡º
+lpython:S116"PRename this field "col_AASX" to match the regular expression ^[_a-z][_a-z0-9]*$.(Ó¯Şñûÿÿÿÿ
+wpython:S116"[Rename this field "AAS_Database_Server" to match the regular expression ^[_a-z][_a-z0-9]*$.(…­—İÿÿÿÿÿ
+€python:S101"dRename class "DB_ADAPTOR" to match the regular expression ^_?([A-Z_][a-zA-Z0-9]*|[a-z_][a-z0-9_]*)$.(“Í€‚ıÿÿÿÿ
+mpython:S117"QRename this parameter "pyAAS" to match the regular expression ^[_a-z][a-z0-9_]*$.(˜êß´üÿÿÿÿ
+tpython:S117"]Rename this local variable "insertResult" to match the regular expression ^[_a-z][a-z0-9_]*$.(øĞ„
+ypython:S117!"bRename this local variable "returnMessageDict" to match the regular expression ^[_a-z][a-z0-9_]*$.(µ®’
+npython:S100"WRename method "deleteAASDataColumn" to match the regular expression ^[a-z_][a-z0-9_]*$.(Œª½¶
+upython:S117>"YRename this local variable "aasAsset" to match the regular expression ^[_a-z][a-z0-9_]*$.(Ô„¨Ôşÿÿÿÿ
+{python:S117-"_Rename this local variable "aasContentData" to match the regular expression ^[_a-z][a-z0-9_]*$.(‹•øúúÿÿÿÿ
+tpython:S117,"XRename this local variable "aasData" to match the regular expression ^[_a-z][a-z0-9_]*$.(â›øÿÿÿÿ
+upython:S1171"YRename this local variable "aasEData" to match the regular expression ^[_a-z][a-z0-9_]*$.(…ÛóŒûÿÿÿÿ
+ppython:S1170"YRename this local variable "aasEntry" to match the regular expression ^[_a-z][a-z0-9_]*$.(§‹œò
+opython:S117/"YRename this local variable "aasIdSet" to match the regular expression ^[_a-z][a-z0-9_]*$.(ÏĞÒs
+xpython:S1178"\Rename this local variable "aasSubmodel" to match the regular expression ^[_a-z][a-z0-9_]*$.(…´Øîÿÿÿÿÿ
+upython:S117="YRename this local variable "assetRef" to match the regular expression ^[_a-z][a-z0-9_]*$.(Ì€”Öıÿÿÿÿ
+wpython:S117J"aRename this local variable "identificationId" to match the regular expression ^[_a-z][a-z0-9_]*$.(¢Ñt
+xpython:S1177"\Rename this local variable "submodelRef" to match the regular expression ^[_a-z][a-z0-9_]*$.(˜Àœìøÿÿÿÿ
+qpython:S100+"URename method "updateAASDataList" to match the regular expression ^[a-z_][a-z0-9_]*$.(Öûüÿÿÿÿ
+qpython:S3776+"TRefactor this function to reduce its Cognitive Complexity from 26 to the 15 allowed.(Öûüÿÿÿÿ
+Tpython:S57545"<Specify an exception class to catch or reraise the exception(–’Ê
+jpython:S117N"SRename this parameter "aasData" to match the regular expression ^[_a-z][a-z0-9_]*$.(šâãµ
+spython:S117P"]Rename this local variable "insertResult" to match the regular expression ^[_a-z][a-z0-9_]*$.(—Ùìq
+~python:S117R"bRename this local variable "returnMessageDict" to match the regular expression ^[_a-z][a-z0-9_]*$.(‹ı…êúÿÿÿÿ
+npython:S100N"WRename method "updateAASDataColumn" to match the regular expression ^[a-z_][a-z0-9_]*$.(šâãµ
+opython:S117d"SRename this parameter "aasData" to match the regular expression ^[_a-z][a-z0-9_]*$.(’í¬Àûÿÿÿÿ
+vpython:S117e"_Rename this local variable "deleteResponse" to match the regular expression ^[_a-z][a-z0-9_]*$.( Âış
+ypython:S117i"bRename this local variable "returnMessageDict" to match the regular expression ^[_a-z][a-z0-9_]*$.(™££†
+vpython:S117g"_Rename this local variable "updateResponse" to match the regular expression ^[_a-z][a-z0-9_]*$.(ø½†Â
+vpython:S100d"ZRename method "deleteUpdateAASXColumn" to match the regular expression ^[a-z_][a-z0-9_]*$.(’í¬Àûÿÿÿÿ
+tpython:S117w"XRename this local variable "aasData" to match the regular expression ^[_a-z][a-z0-9_]*$.(â›øÿÿÿÿ
+wpython:S117v"[Rename this local variable "entityData" to match the regular expression ^[_a-z][a-z0-9_]*$.(ÜâóÁøÿÿÿÿ
+vpython:S117y"_Rename this local variable "updateResponse" to match the regular expression ^[_a-z][a-z0-9_]*$.(çåè
+ipython:S100r"RRename method "postAASXEntity" to match the regular expression ^[a-z_][a-z0-9_]*$.(ëÈßÄ
+upython:S117ƒ"XRename this local variable "aasData" to match the regular expression ^[_a-z][a-z0-9_]*$.(â›øÿÿÿÿ
+xpython:S117‡"[Rename this local variable "entityData" to match the regular expression ^[_a-z][a-z0-9_]*$.(›Åì§ûÿÿÿÿ
+xpython:S117…"[Rename this local variable "entityList" to match the regular expression ^[_a-z][a-z0-9_]*$.(Ù£±šûÿÿÿÿ
+ypython:S117"bRename this local variable "returnMessageDict" to match the regular expression ^[_a-z][a-z0-9_]*$.(Äı¦
+mpython:S100"QRename method "getEntityList" to match the regular expression ^[a-z_][a-z0-9_]*$.(İ¶‘Şùÿÿÿÿ
+upython:S117˜"XRename this local variable "aasData" to match the regular expression ^[_a-z][a-z0-9_]*$.(â›øÿÿÿÿ
+npython:S117™"VRename this local variable "eIter" to match the regular expression ^[_a-z][a-z0-9_]*$.(•ö”Ä
+qpython:S117•"YRename this local variable "entityId" to match the regular expression ^[_a-z][a-z0-9_]*$.(•¢®Ş
+zpython:S117“"bRename this local variable "returnMessageDict" to match the regular expression ^[_a-z][a-z0-9_]*$.(üŞôˆ
+rpython:S100’"URename method "getAASXEntityById" to match the regular expression ^[a-z_][a-z0-9_]*$.(îÕÄÿÿÿÿÿ
+upython:S117§"XRename this local variable "aasData" to match the regular expression ^[_a-z][a-z0-9_]*$.(â›øÿÿÿÿ
+npython:S117©"VRename this local variable "eIter" to match the regular expression ^[_a-z][a-z0-9_]*$.(•ö”Ä
+qpython:S117¤"YRename this local variable "entityId" to match the regular expression ^[_a-z][a-z0-9_]*$.(•¢®Ş
+zpython:S117²"bRename this local variable "returnMessageDict" to match the regular expression ^[_a-z][a-z0-9_]*$.(•å¶©
+wpython:S117¬"_Rename this local variable "updateResponse" to match the regular expression ^[_a-z][a-z0-9_]*$.(çåè
+ppython:S100¢"XRename method "deleteAASXEntityByID" to match the regular expression ^[a-z_][a-z0-9_]*$.(ğÉÙŞ
+upython:S117Â"XRename this local variable "aasData" to match the regular expression ^[_a-z][a-z0-9_]*$.(â›øÿÿÿÿ
+|python:S117¾"_Rename this local variable "deleteResponse" to match the regular expression ^[_a-z][a-z0-9_]*$.(õ²ªüÿÿÿÿ
+spython:S117¼"[Rename this local variable "entityData" to match the regular expression ^[_a-z][a-z0-9_]*$.(Åê¬
+qpython:S117º"YRename this local variable "entityId" to match the regular expression ^[_a-z][a-z0-9_]*$.(•¢®Ş
+wpython:S117Ä"_Rename this local variable "updateResponse" to match the regular expression ^[_a-z][a-z0-9_]*$.(çåè
+lpython:S100¸"URename method "putAASXEntityByID" to match the regular expression ^[a-z_][a-z0-9_]*$.(¯Ûş^
+Epython:S1481º",Remove the unused local variable "entityId".(•¢®Ş
+upython:S117Ò"XRename this local variable "aasData" to match the regular expression ^[_a-z][a-z0-9_]*$.(â›øÿÿÿÿ
+npython:S117Ó"VRename this local variable "eIter" to match the regular expression ^[_a-z][a-z0-9_]*$.(•ö”Ä
+qpython:S117Ï"YRename this local variable "entityId" to match the regular expression ^[_a-z][a-z0-9_]*$.(•¢®Ş
+zpython:S117Ì"bRename this local variable "returnMessageDict" to match the regular expression ^[_a-z][a-z0-9_]*$.(üŞôˆ
+wpython:S117Ñ"ZRename this local variable "subEntity" to match the regular expression ^[_a-z][a-z0-9_]*$.(ı‹¨Ğÿÿÿÿÿ
+python:S100Ë"bRename method "getAASXEntityByIDSubEntityList" to match the regular expression ^[a-z_][a-z0-9_]*$.(”Œè—ÿÿÿÿÿ
+upython:S117ä"XRename this local variable "aasData" to match the regular expression ^[_a-z][a-z0-9_]*$.(â›øÿÿÿÿ
+npython:S117å"VRename this local variable "eIter" to match the regular expression ^[_a-z][a-z0-9_]*$.(•ö”Ä
+xpython:S117á"[Rename this local variable "entityData" to match the regular expression ^[_a-z][a-z0-9_]*$.(ÜâóÁøÿÿÿÿ
+qpython:S117Ş"YRename this local variable "entityId" to match the regular expression ^[_a-z][a-z0-9_]*$.(•¢®Ş
+zpython:S117â"bRename this local variable "returnMessageDict" to match the regular expression ^[_a-z][a-z0-9_]*$.(üŞôˆ
+wpython:S117à"ZRename this local variable "subEntity" to match the regular expression ^[_a-z][a-z0-9_]*$.(ı‹¨Ğÿÿÿÿÿ
+wpython:S117è"_Rename this local variable "updateResponse" to match the regular expression ^[_a-z][a-z0-9_]*$.(çåè
+€python:S100Ü"cRename method "postAASXEntityByIDSubEntityList" to match the regular expression ^[a-z_][a-z0-9_]*$.(¨„ˆıÿÿÿÿ
+upython:S117ô"XRename this local variable "aasData" to match the regular expression ^[_a-z][a-z0-9_]*$.(â›øÿÿÿÿ
+npython:S117ö"VRename this local variable "eIter" to match the regular expression ^[_a-z][a-z0-9_]*$.(·Àë»
+qpython:S117ò"YRename this local variable "entityId" to match the regular expression ^[_a-z][a-z0-9_]*$.(•¢®Ş
+tpython:S117ó"\Rename this local variable "idShortPath" to match the regular expression ^[_a-z][a-z0-9_]*$.(¾ó„§
+wpython:S117õ"ZRename this local variable "indexPath" to match the regular expression ^[_a-z][a-z0-9_]*$.(»¢Ø–ùÿÿÿÿ
+upython:S117ù"]Rename this local variable "submodelElem" to match the regular expression ^[_a-z][a-z0-9_]*$.(äãÅ–
+python:S100ğ"bRename method "opSubmodelElementByIdShortPath" to match the regular expression ^[a-z_][a-z0-9_]*$.(óò“•şÿÿÿÿ
+upython:S117„"XRename this local variable "_opType" to match the regular expression ^[_a-z][a-z0-9_]*$.(éÆ´ßúÿÿÿÿ
+mpython:S117ƒ"URename this parameter "indexPath" to match the regular expression ^[_a-z][a-z0-9_]*$.(¬è×ª
+kpython:S117ƒ"SRename this parameter "subElem" to match the regular expression ^[_a-z][a-z0-9_]*$.(¬è×ª
+opython:S100ƒ"WRename method "_updateSubmodelElem" to match the regular expression ^[a-z_][a-z0-9_]*$.(¬è×ª
+upython:S117“"XRename this local variable "_opType" to match the regular expression ^[_a-z][a-z0-9_]*$.(éÆ´ßúÿÿÿÿ
+mpython:S117‘"URename this parameter "indexPath" to match the regular expression ^[_a-z][a-z0-9_]*$.(Šû»Ù
+qpython:S117"YRename this local variable "postData" to match the regular expression ^[_a-z][a-z0-9_]*$.(Ë©“Á
+python:S100‘"gRename method "_opTypeSubmodelElementByIdShortPath" to match the regular expression ^[a-z_][a-z0-9_]*$.(Šû»Ù
+opython:S117¡"WRename this parameter "idShortPath" to match the regular expression ^[_a-z][a-z0-9_]*$.(±–¨
+mpython:S117¡"URename this parameter "indexPath" to match the regular expression ^[_a-z][a-z0-9_]*$.(±–¨
+spython:S117¡"[Rename this parameter "submodelElement" to match the regular expression ^[_a-z][a-z0-9_]*$.(±–¨
+{python:S100¡"cRename method "_opSubmodelElementByIdShortPath" to match the regular expression ^[a-z_][a-z0-9_]*$.(±–¨
+mpython:S3776¡"TRefactor this function to reduce its Cognitive Complexity from 23 to the 15 allowed.(±–¨
+python:S1871©"cEither merge this branch with the identical one on line "295" or change one of the implementations.(®ñ¬ùøÿÿÿÿ
+python:S1871«"cEither merge this branch with the identical one on line "295" or change one of the implementations.(®ñ¬ùøÿÿÿÿ
+qpython:S117¾"YRename this parameter "coversationId" to match the regular expression ^[_a-z][a-z0-9_]*$.(‰«˜Ù
+xpython:S117Á"`Rename this local variable "newConversation" to match the regular expression ^[_a-z][a-z0-9_]*$.(¼˜ÔÛ
+zpython:S117¿"bRename this local variable "returnMessageDict" to match the regular expression ^[_a-z][a-z0-9_]*$.(üŞôˆ
+qpython:S100¾"YRename method "createNewConversation" to match the regular expression ^[a-z_][a-z0-9_]*$.(‰«˜Ù
+>python:S1481È"%Remove the unused local variable "E".(×•Š
+Mpython:S1656À"/Remove or correct this useless self-assignment.(îÓÀşÿÿÿÿ
+qpython:S117Ì"YRename this parameter "coversationId" to match the regular expression ^[_a-z][a-z0-9_]*$.(Áø°
+mpython:S117Ì"URename this parameter "entryTime" to match the regular expression ^[_a-z][a-z0-9_]*$.(Áø°
+mpython:S117Ì"URename this parameter "messageId" to match the regular expression ^[_a-z][a-z0-9_]*$.(Áø°
+opython:S117Ì"WRename this parameter "messageType" to match the regular expression ^[_a-z][a-z0-9_]*$.(Áø°
+zpython:S117Õ"bRename this local variable "returnMessageDict" to match the regular expression ^[_a-z][a-z0-9_]*$.(üŞôˆ
+vpython:S100Ì"^Rename method "saveNewConversationMessage" to match the regular expression ^[a-z_][a-z0-9_]*$.(Áø°
+zpython:S117ã"bRename this local variable "returnMessageDict" to match the regular expression ^[_a-z][a-z0-9_]*$.(Øš®ö
+kpython:S100á"SRename method "getMessageCount" to match the regular expression ^[a-z_][a-z0-9_]*$.(ó©—Æ
+Upython:S5754ä"<Specify an exception class to catch or reraise the exception(ˆÊÉ·
+spython:S117è"VRename this parameter "resultList" to match the regular expression ^[_a-z][a-z0-9_]*$.(ãÀ‰ùÿÿÿÿ
+xpython:S117é"[Rename this local variable "returnData" to match the regular expression ^[_a-z][a-z0-9_]*$.(©§ğ«ûÿÿÿÿ
+zpython:S100è"]Rename method "createOutnInboundInternal" to match the regular expression ^[a-z_][a-z0-9_]*$.(ãÀ‰ùÿÿÿÿ
+vpython:S117ó"YRename this parameter "coversationId" to match the regular expression ^[_a-z][a-z0-9_]*$.(ú×˜íüÿÿÿÿ
+zpython:S117ô"bRename this local variable "returnMessageDict" to match the regular expression ^[_a-z][a-z0-9_]*$.(üŞôˆ
+upython:S100ó"XRename method "getConversationsById" to match the regular expression ^[a-z_][a-z0-9_]*$.(ú×˜íüÿÿÿÿ
+rpython:S117ı"ZRename this parameter "conversationId" to match the regular expression ^[_a-z][a-z0-9_]*$.(ÚÊ›ç
+kpython:S117†"SRename this local variable "iM" to match the regular expression ^[_a-z][a-z0-9_]*$.(ÑëÈº
+mpython:S117ı"URename this parameter "messageId" to match the regular expression ^[_a-z][a-z0-9_]*$.(ÚÊ›ç
+upython:S117€"]Rename this local variable "messagesList" to match the regular expression ^[_a-z][a-z0-9_]*$.(şèµ­
+zpython:S117ş"bRename this local variable "returnMessageDict" to match the regular expression ^[_a-z][a-z0-9_]*$.(üŞôˆ
+jpython:S100ı"RRename method "getMessagebyId" to match the regular expression ^[a-z_][a-z0-9_]*$.(ÚÊ›ç
+>python:S1481‘"%Remove the unused local variable "E".(×•Š
+mpython:S3776ı"TRefactor this function to reduce its Cognitive Complexity from 19 to the 15 allowed.(ÚÊ›ç
+|python:S117—"_Rename this local variable "elemCollection" to match the regular expression ^[_a-z][a-z0-9_]*$.(ÏŒéóÿÿÿÿÿ
+xpython:S117•"[Rename this parameter "submodelElement" to match the regular expression ^[_a-z][a-z0-9_]*$.(ËŠàÀıÿÿÿÿ
+{python:S100•"^Rename method "processEachSubmodelElement" to match the regular expression ^[a-z_][a-z0-9_]*$.(ËŠàÀıÿÿÿÿ
+upython:S117§"]Rename this local variable "eachProperty" to match the regular expression ^[_a-z][a-z0-9_]*$.(½º£è
+ƒpython:S117¦"fRename this local variable "submodelProperetyDict" to match the regular expression ^[_a-z][a-z0-9_]*$.(ÏÎî°ûÿÿÿÿ
+qpython:S100¥"ZRename method "getSubmodePropertyDict" to match the regular expression ^[a-z_][a-z0-9_]*$.(™ı“=
+zpython:S117½"]Rename this local variable "aasSubmodels" to match the regular expression ^[_a-z][a-z0-9_]*$.(Ÿä†ãşÿÿÿÿ
+xpython:S117º"[Rename this local variable "resultList" to match the regular expression ^[_a-z][a-z0-9_]*$.(”‚“æüÿÿÿÿ
+|python:S117»"_Rename this local variable "resultListTemp" to match the regular expression ^[_a-z][a-z0-9_]*$.(ş’†¨ÿÿÿÿÿ
+zpython:S117¹"bRename this local variable "returnMessageDict" to match the regular expression ^[_a-z][a-z0-9_]*$.(üŞôˆ
+upython:S117È"]Rename this local variable "submodelElem" to match the regular expression ^[_a-z][a-z0-9_]*$.(™ú‹æ
+spython:S117¸"[Rename this local variable "submodelId" to match the regular expression ^[_a-z][a-z0-9_]*$.(¨İƒ
+zpython:S100·"bRename method "getAAsSubmodelbyIdSubmodelElem" to match the regular expression ^[a-z_][a-z0-9_]*$.(ûòº´
+mpython:S3776·"TRefactor this function to reduce its Cognitive Complexity from 19 to the 15 allowed.(ûòº´
+spython:S117Ó"[Rename this parameter "submodelElement" to match the regular expression ^[_a-z][a-z0-9_]*$.(­…È
+jpython:S100Ó"RRename method "modifyRaddQual" to match the regular expression ^[a-z_][a-z0-9_]*$.(­…È
+opython:S117à"WRename this parameter "idShortPath" to match the regular expression ^[_a-z][a-z0-9_]*$.(”§ß”
+spython:S117à"[Rename this parameter "submodelElement" to match the regular expression ^[_a-z][a-z0-9_]*$.(”§ß”
+python:S100à"gRename method "_retrievenUpdateSubmodelElementQual" to match the regular expression ^[a-z_][a-z0-9_]*$.(”§ß”
+zpython:S117ü"]Rename this local variable "_idShortPath" to match the regular expression ^[_a-z][a-z0-9_]*$.(ñ†—”ùÿÿÿÿ
+spython:S117ğ"\Rename this local variable "idShortPath" to match the regular expression ^[_a-z][a-z0-9_]*$.(¼‘
+wpython:S117÷"_Rename this local variable "returnResponse" to match the regular expression ^[_a-z][a-z0-9_]*$.(æÎ „
+upython:S117û"]Rename this local variable "submodelElem" to match the regular expression ^[_a-z][a-z0-9_]*$.(™ú‹æ
+{python:S100ï"^Rename method "putSubmodelElementQualbyId" to match the regular expression ^[a-z_][a-z0-9_]*$.(ğ¡ñ¶şÿÿÿÿ
+Npython:S1481ü"0Remove the unused local variable "_idShortPath".(ñ†—”ùÿÿÿÿ
