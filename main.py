@@ -1,6 +1,6 @@
 import schemathesis
 
-schema = schemathesis.from_uri("https://example.schemathesis.io/openapi.json")
+schema = schemathesis.from_uri("http://127.0.0.1:8000/api/schema/")
 
 
 @schema.parametrize()
