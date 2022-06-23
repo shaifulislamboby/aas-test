@@ -1374,7 +1374,18 @@
                 }
               }
             }
-          }
+          },
+          "404": {"description": "Requested Asset Administration Shell Descriptors",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/AssetAdministrationShellDescriptor"
+                  }
+                }
+              }
+            }}
         },
         "x-semanticIds": [
           "https://admin-shell.io/aas/API/GetAllAssetAdministrationShellDescriptors/1/0/RC01"

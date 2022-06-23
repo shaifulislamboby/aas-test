@@ -13,8 +13,10 @@ certifi==2022.5.18.1
 charset-normalizer==2.0.12
 cleo==0.8.1
 click==8.1.3
+clickclick==20.10.2
 clikit==0.6.2
 colorama==0.4.4
+connexion==2.13.1
 crashtest==0.3.1
 curlify==2.2.1
 cytoolz==0.11.2
@@ -37,14 +39,14 @@ hexbytes==0.2.2
 html5lib==1.1
 hypothesis==6.46.10
 hypothesis-graphql==0.9.0
-hypothesis-jsonschema==0.22.0
+-e git+https://github.com/Stranger6667/hypothesis-jsonschema/tree/dd/recursive-poc@226e1b025931fb173ef874fbeff7264a527ac9be#egg=hypothesis_jsonschema
 idna==3.3
 importlib-metadata==4.11.4
+inflection==0.5.1
 iniconfig==1.1.1
 ipfshttpclient==0.8.0a2
 itsdangerous==2.1.2
 Jinja2==3.1.2
-jsonschema==4.5.1
 junit-xml==1.9
 keyring==23.5.1
 lockfile==0.12.2

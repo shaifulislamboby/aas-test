@@ -1,6 +1,4 @@
 
-9
-	README.md,8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
 €
 Ppythonliasampleserver/src/main/aasendpointhandlers/resources/messageStorage.json,a/0/a07919a8bc8ff2671c491fe35861793364a9a4e0
 x
@@ -83,8 +81,6 @@ p
 @pythonliasampleserver/.settings/org.eclipse.core.resources.prefs,1/5/15adca0981ca0cebfd8b0ad97a8a308f6493ae6f
 Z
 *pythonliasampleserver/src/main/__init__.py,2/2/2208a2b2952b67b4bf230a81eabc5bd81593e54f
-]
--pythonliasampleserver/src/main/pyaasServer.py,5/c/5c8d396136b3d27ed094c78276b0f8a72581ea62
 ]
 -pythonliasampleserver/config/aasx/aasx-origin,8/e/8e8fd98b6c3111f0f6cec0ba4c283da42faffa5f
 X
