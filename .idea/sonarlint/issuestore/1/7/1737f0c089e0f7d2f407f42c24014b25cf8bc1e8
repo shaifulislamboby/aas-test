@@ -1,10 +1,0 @@
-
-_python:S2208"GImport only needed names or import the module and then use its members.(ğˆìî
-dpython:S2208"GImport only needed names or import the module and then use its members.(µâÿùÿÿÿÿ
-dpython:S116"MRename this field "pyAAS" to match the regular expression ^[_a-z][_a-z0-9]*$.(òÈóó
-0python:S1700%"Rename field "scheduler"(ººÛ
-mpython:S117"QRename this parameter "pyAAS" to match the regular expression ^[_a-z][a-z0-9_]*$.(˜êß´üÿÿÿÿ
-tpython:S1173"]Rename this local variable "propertyData" to match the regular expression ^[_a-z][a-z0-9_]*$.(öœÈ–
-ypython:S1176"]Rename this local variable "propertyName" to match the regular expression ^[_a-z][a-z0-9_]*$.(­õ´ûÿÿÿÿ
-|python:S1177"`Rename this local variable "updateFrequency" to match the regular expression ^[_a-z][a-z0-9_]*$.(ıùÖ›ûÿÿÿÿ
-vpython:S1179"_Rename this local variable "updateFunction" to match the regular expression ^[_a-z][a-z0-9_]*$.(‚Öã

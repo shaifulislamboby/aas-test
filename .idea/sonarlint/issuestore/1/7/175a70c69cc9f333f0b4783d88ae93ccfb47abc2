@@ -1,16 +1,0 @@
-
-kpython:S117"TRename this parameter "newValue" to match the regular expression ^[_a-z][a-z0-9_]*$.(á€´Ï
-ppython:S1542"XRename function "createNewQualifier" to match the regular expression ^[a-z_][a-z0-9_]*$.(á€´Ï
-opython:S117"XRename this parameter "propertyName" to match the regular expression ^[_a-z][a-z0-9_]*$.(…ûóÛ
-npython:S1542"VRename function "createRandomData" to match the regular expression ^[a-z_][a-z0-9_]*$.(…ûóÛ
-lpython:S3776"TRefactor this function to reduce its Cognitive Complexity from 21 to the 15 allowed.(…ûóÛ
-mpython:S1169"QRename this field "valueList" to match the regular expression ^[_a-z][_a-z0-9]*$.(Øô¦´ÿÿÿÿÿ
-mpython:S116:"QRename this field "labelList" to match the regular expression ^[_a-z][_a-z0-9]*$.(Û°×‚ÿÿÿÿÿ
-dpython:S1165"MRename this field "pyAAS" to match the regular expression ^[_a-z][_a-z0-9]*$.(òÈóó
-hpython:S1174"QRename this parameter "pyAAS" to match the regular expression ^[_a-z][a-z0-9_]*$.(¡”ã´
-Ipython:S11728",Remove the unused function parameter "data".(³Ü•Èýÿÿÿÿ
-Ipython:S11728",Remove the unused function parameter "node".(³Ü•Èýÿÿÿÿ
-vpython:S117I"ZRename this local variable "accessURI" to match the regular expression ^[_a-z][a-z0-9_]*$.(Î÷ú×ýÿÿÿÿ
-python:S117K"cRename this local variable "endPointSUbHandler" to match the regular expression ^[_a-z][a-z0-9_]*$.(Îíê¢üÿÿÿÿ
-hpython:S117G"QRename this parameter "pyAAS" to match the regular expression ^[_a-z][a-z0-9_]*$.(ó¥·Ø
-5python:S125N"Remove this commented out code.(Î¬³.

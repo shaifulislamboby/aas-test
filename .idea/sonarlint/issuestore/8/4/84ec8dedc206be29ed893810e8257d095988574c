@@ -1,253 +1,0 @@
-
-±python:S1192°"’Define a constant instead of duplicating this literal "############################################################################# \n" 16 times.(ÎšÇ½şÿÿÿÿ
-kpython:S1192Ÿ"RDefine a constant instead of duplicating this literal "InputDocument : " 11 times.(¾é†
-upython:S1192¥"WDefine a constant instead of duplicating this literal "OutputDocumentType : " 11 times.(‹üëıÿÿÿÿ
-ipython:S1192¯"PDefine a constant instead of duplicating this literal "TargettState: " 16 times.(ÒïÑ
-¬python:S1192š"’Define a constant instead of duplicating this literal "\n #############################################################################" 11 times.(¼Ã
-kpython:S1192­"MDefine a constant instead of duplicating this literal "Condition :" 16 times.(”İóìûÿÿÿÿ
-hpython:S116Æ"QRename this field "baseClass" to match the regular expression ^[_a-z][_a-z0-9]*$.(±”ù`
-python:S116Ë"pRename this field "waitingforServiceRequesterAnswer_Enabled" to match the regular expression ^[_a-z][_a-z0-9]*$.(¸Şîşÿÿÿÿ
-ipython:S116æ"QRename this field "oMessages" to match the regular expression ^[_a-z][_a-z0-9]*$.(¢±¿ü
-kpython:S116Š"NRename this field "InElem" to match the regular expression ^[_a-z][_a-z0-9]*$.(´‡ò¼ûÿÿÿÿ
-opython:S116"RRename this field "instanceId" to match the regular expression ^[_a-z][_a-z0-9]*$.(óœÀÍÿÿÿÿÿ
-upython:S116¨"XRename this field "outboundMessages" to match the regular expression ^[_a-z][_a-z0-9]*$.(•«ê‡øÿÿÿÿ
-†python:S101Á"iRename class "sendingProposal" to match the regular expression ^_?([A-Z_][a-zA-Z0-9]*|[a-z_][a-z0-9_]*)$.(Ğºó–úÿÿÿÿ
-rpython:S117Ã"URename this parameter "baseClass" to match the regular expression ^[_a-z][a-z0-9_]*$.(ªÿÇ¢şÿÿÿÿ
-qpython:S100Î"YRename method "sendingProposal_Logic" to match the regular expression ^[a-z_][a-z0-9_]*$.(Ì‘£¿
-rpython:S117Ò"URename this parameter "iSubmodel" to match the regular expression ^[_a-z][a-z0-9_]*$.(à±²íøÿÿÿÿ
-upython:S117Ò"XRename this parameter "propertyName" to match the regular expression ^[_a-z][a-z0-9_]*$.(à±²íøÿÿÿÿ
-upython:S117Ó"]Rename this local variable "submodelELem" to match the regular expression ^[_a-z][a-z0-9_]*$.(÷œ
-ppython:S100Ò"SRename method "getPropertyElem" to match the regular expression ^[a-z_][a-z0-9_]*$.(à±²íøÿÿÿÿ
-mpython:S117Ú"URename this parameter "iSubmodel" to match the regular expression ^[_a-z][a-z0-9_]*$.(±ÒêÕ
-rpython:S117Ü"ZRename this local variable "listPrice" to match the regular expression ^[_a-z][a-z0-9_]*$.(ıÒ¡²
-mpython:S117Ú"URename this parameter "oSubmodel" to match the regular expression ^[_a-z][a-z0-9_]*$.(±ÒêÕ
-upython:S117Ş"]Rename this local variable "submodelELem" to match the regular expression ^[_a-z][a-z0-9_]*$.(î¦¹Ñ
-|python:S117İ"dRename this local variable "workStationLocation" to match the regular expression ^[_a-z][a-z0-9_]*$.(¯Éì
-lpython:S100Ú"TRename method "addPropertyElems" to match the regular expression ^[a-z_][a-z0-9_]*$.(±ÒêÕ
-zpython:S117ø"]Rename this local variable "I40FrameData" to match the regular expression ^[_a-z][a-z0-9_]*$.(µ¸½Ÿúÿÿÿÿ
-wpython:S117‹"_Rename this local variable "boringSubmodel" to match the regular expression ^[_a-z][a-z0-9_]*$.(¶Šğê
-vpython:S117è"YRename this local variable "oMessage" to match the regular expression ^[_a-z][a-z0-9_]*$.(ù÷ÿüÿÿÿÿÿ
-zpython:S117Œ"]Rename this local variable "oMessage_Out" to match the regular expression ^[_a-z][a-z0-9_]*$.(ò¬ğšıÿÿÿÿ
-ypython:S117ç"aRename this local variable "outboundMessages" to match the regular expression ^[_a-z][a-z0-9_]*$.(¸ÅÅ÷
-xpython:S117ò"[Rename this local variable "receiverId" to match the regular expression ^[_a-z][a-z0-9_]*$.(ÿÒÇ¨ûÿÿÿÿ
-upython:S117ó"]Rename this local variable "receiverRole" to match the regular expression ^[_a-z][a-z0-9_]*$.(»œáÜ
-spython:S100å"[Rename method "create_Outbound_Message" to match the regular expression ^[a-z_][a-z0-9_]*$.(ìü®‘
-<python:S125ë"Remove this commented out code.(“™Ö¢øÿÿÿÿ
-vpython:S117"^Rename this local variable "InputDocument" to match the regular expression ^[_a-z][a-z0-9_]*$.(§å
-wpython:S117¤"_Rename this local variable "OutputDocument" to match the regular expression ^[_a-z][a-z0-9_]*$.(É¶èú
-ypython:S117©"\Rename this local variable "outbMessage" to match the regular expression ^[_a-z][a-z0-9_]*$.(¶ÏÍéûÿÿÿÿ
-qpython:S116æ"TRename this field "messageExist" to match the regular expression ^[_a-z][_a-z0-9]*$.(ãëÃÅúÿÿÿÿ
-hpython:S116¸"QRename this field "baseClass" to match the regular expression ^[_a-z][_a-z0-9]*$.(±”ù`
-opython:S116É"RRename this field "instanceId" to match the regular expression ^[_a-z][_a-z0-9]*$.(óœÀÍÿÿÿÿÿ
-wpython:S116½"_Rename this field "capabilitycheck_Enabled" to match the regular expression ^[_a-z][_a-z0-9]*$.(–½´²
-rpython:S117µ"URename this parameter "baseClass" to match the regular expression ^[_a-z][a-z0-9_]*$.(ªÿÇ¢şÿÿÿÿ
-‚python:S100¿"kRename method "retrieve_WaitForCallForProposal_Message" to match the regular expression ^[a-z_][a-z0-9_]*$.(ñ½Øq
-~python:S117Å"aRename this local variable "inboundQueueList" to match the regular expression ^[_a-z][a-z0-9_]*$.(Ğ“şûÿÿÿÿ
-lpython:S100Ä"ORename method "saveMessage" to match the regular expression ^[a-z_][a-z0-9_]*$.(ä½Ôœùÿÿÿÿ
-xpython:S100Ò"`Rename method "WaitForCallForProposal_Logic" to match the regular expression ^[a-z_][a-z0-9_]*$.(•ÜÀÿ
-vpython:S117İ"^Rename this local variable "InputDocument" to match the regular expression ^[_a-z][a-z0-9_]*$.(Èè©Î
-Cpython:S1481ç"%Remove the unused local variable "i".(£ıú¼şÿÿÿÿ
-7python:S125ë"Remove this commented out code.(«ğ÷í
-wpython:S117ú"_Rename this local variable "OutputDocument" to match the regular expression ^[_a-z][a-z0-9_]*$.(œââø
-hpython:S116Š"QRename this field "baseClass" to match the regular expression ^[_a-z][_a-z0-9]*$.(±”ù`
-}python:S116"`Rename this field "feasibilityCheck_Enabled" to match the regular expression ^[_a-z][_a-z0-9]*$.(Å‘îµüÿÿÿÿ
-|python:S116"dRename this field "sendingNotUnderstood_Enabled" to match the regular expression ^[_a-z][_a-z0-9]*$.(ªŞàí
-jpython:S116³"RRename this field "iESubmodel" to match the regular expression ^[_a-z][_a-z0-9]*$.(ã¯£ª
-rpython:S117‡"URename this parameter "baseClass" to match the regular expression ^[_a-z][a-z0-9_]*$.(ªÿÇ¢şÿÿÿÿ
-upython:S117’"XRename this parameter "submodelElem" to match the regular expression ^[_a-z][a-z0-9_]*$.(°ÜÒüÿÿÿÿ
-lpython:S100’"ORename method "getProperty" to match the regular expression ^[a-z_][a-z0-9_]*$.(°ÜÒüÿÿÿÿ
-upython:S117š"]Rename this local variable "submodelElem" to match the regular expression ^[_a-z][a-z0-9_]*$.(™ú‹æ
-vpython:S117™"YRename this local variable "tempDict" to match the regular expression ^[_a-z][a-z0-9_]*$.(Õ“˜ëúÿÿÿÿ
-ppython:S100˜"SRename method "getPropertyList" to match the regular expression ^[a-z_][a-z0-9_]*$.(„¤Æÿÿÿÿÿ
-rpython:S3776˜"TRefactor this function to reduce its Cognitive Complexity from 40 to the 15 allowed.(„¤Æÿÿÿÿÿ
-~python:S117À"aRename this local variable "submodelTypeList" to match the regular expression ^[_a-z][a-z0-9_]*$.(àûÚÖşÿÿÿÿ
-qpython:S117´"YRename this local variable "tempDict" to match the regular expression ^[_a-z][a-z0-9_]*$.(†áïœ
-rpython:S117°"ZRename this local variable "tempDict1" to match the regular expression ^[_a-z][a-z0-9_]*$.(Ù ïé
-vpython:S100­"YRename method "capabilitycheck_Logic" to match the regular expression ^[a-z_][a-z0-9_]*$.(»Í„Úûÿÿÿÿ
->python:S1481Ê"%Remove the unused local variable "E".(×•Š
-rpython:S3776­"TRefactor this function to reduce its Cognitive Complexity from 17 to the 15 allowed.(»Í„Úûÿÿÿÿ
-Apython:S108Æ")Either remove or fill this block of code.(ã‘Û¾
-vpython:S117Ú"^Rename this local variable "InputDocument" to match the regular expression ^[_a-z][a-z0-9_]*$.(§å
-wpython:S117à"_Rename this local variable "OutputDocument" to match the regular expression ^[_a-z][a-z0-9_]*$.(œââø
-opython:S116ˆ"RRename this field "instanceId" to match the regular expression ^[_a-z][_a-z0-9]*$.(óœÀÍÿÿÿÿÿ
-qpython:S116¬"TRename this field "messageExist" to match the regular expression ^[_a-z][_a-z0-9]*$.(ãëÃÅúÿÿÿÿ
-jpython:S116ı"RRename this field "plcHandler" to match the regular expression ^[_a-z][_a-z0-9]*$.(İ—ºê
-ƒpython:S116û"fRename this field "WaitForCallForProposal_Enabled" to match the regular expression ^[_a-z][_a-z0-9]*$.(½Ü©Îÿÿÿÿÿ
-xpython:S116ü"`Rename this field "serviceProvision_Enabled" to match the regular expression ^[_a-z][_a-z0-9]*$.(·øò
-hpython:S116ö"QRename this field "baseClass" to match the regular expression ^[_a-z][_a-z0-9]*$.(±”ù`
-—python:S101ñ"zRename class "waitingforServiceRequesterAnswer" to match the regular expression ^_?([A-Z_][a-zA-Z0-9]*|[a-z_][a-z0-9_]*)$.(Ô±¼õÿÿÿÿÿ
-rpython:S117ó"URename this parameter "baseClass" to match the regular expression ^[_a-z][a-z0-9_]*$.(ªÿÇ¢şÿÿÿÿ
-’python:S100€"uRename method "retrieve_waitingforServiceRequesterAnswer_Message" to match the regular expression ^[a-z_][a-z0-9_]*$.(ÖÆñéøÿÿÿÿ
-ypython:S117„"aRename this local variable "inboundQueueList" to match the regular expression ^[_a-z][a-z0-9_]*$.(Ì‰­İ
-lpython:S100ƒ"ORename method "saveMessage" to match the regular expression ^[a-z_][a-z0-9_]*$.(ä½Ôœùÿÿÿÿ
-‚python:S100‘"jRename method "waitingforServiceRequesterAnswer_Logic" to match the regular expression ^[a-z_][a-z0-9_]*$.(·„îü
-vpython:S117¢"^Rename this local variable "InputDocument" to match the regular expression ^[_a-z][a-z0-9_]*$.(Ôé¾ü
-7python:S125®"Remove this commented out code.(÷Ä©ò
-wpython:S117½"_Rename this local variable "OutputDocument" to match the regular expression ^[_a-z][a-z0-9_]*$.(œââø
-upython:S116Ø"]Rename this field "sendingRefuse_Enabled" to match the regular expression ^[_a-z][_a-z0-9]*$.(›²»ô
-jpython:S116Ú"RRename this field "plcHandler" to match the regular expression ^[_a-z][_a-z0-9]*$.(İ—ºê
-xpython:S116Ù"`Rename this field "PriceCalculation_Enabled" to match the regular expression ^[_a-z][_a-z0-9]*$.(¶‘‘ã
-hpython:S116Ó"QRename this field "baseClass" to match the regular expression ^[_a-z][_a-z0-9]*$.(±”ù`
-‡python:S101Î"jRename class "checkingSchedule" to match the regular expression ^_?([A-Z_][a-zA-Z0-9]*|[a-z_][a-z0-9_]*)$.(êé°Ôüÿÿÿÿ
-rpython:S117Ğ"URename this parameter "baseClass" to match the regular expression ^[_a-z][a-z0-9_]*$.(ªÿÇ¢şÿÿÿÿ
-python:S117ß"dRename this local variable "sPermissionVariable" to match the regular expression ^[_a-z][a-z0-9_]*$.(¾ƒà…üÿÿÿÿ
-wpython:S100İ"ZRename method "checkingSchedule_Logic" to match the regular expression ^[a-z_][a-z0-9_]*$.(Ç¹Úÿùÿÿÿÿ
->python:S1481ä"%Remove the unused local variable "E".(×•Š
-vpython:S117î"^Rename this local variable "InputDocument" to match the regular expression ^[_a-z][a-z0-9_]*$.(§å
-wpython:S117ô"_Rename this local variable "OutputDocument" to match the regular expression ^[_a-z][a-z0-9_]*$.(œââø
-hpython:S116Š"QRename this field "baseClass" to match the regular expression ^[_a-z][_a-z0-9]*$.(±”ù`
-wpython:S116"_Rename this field "sendingProposal_Enabled" to match the regular expression ^[_a-z][_a-z0-9]*$.(ÖçÈ
-rpython:S117‡"URename this parameter "baseClass" to match the regular expression ^[_a-z][a-z0-9_]*$.(ªÿÇ¢şÿÿÿÿ
-rpython:S100’"ZRename method "PriceCalculation_Logic" to match the regular expression ^[a-z_][a-z0-9_]*$.(ö‘¹®
-vpython:S117"^Rename this local variable "InputDocument" to match the regular expression ^[_a-z][a-z0-9_]*$.(§å
-wpython:S117£"_Rename this local variable "OutputDocument" to match the regular expression ^[_a-z][a-z0-9_]*$.(œââø
-npython:S116À"QRename this field "oMessages" to match the regular expression ^[_a-z][_a-z0-9]*$.(¼†Îÿøÿÿÿÿ
-opython:S116ç"RRename this field "instanceId" to match the regular expression ^[_a-z][_a-z0-9]*$.(óœÀÍÿÿÿÿÿ
-upython:S116"XRename this field "outboundMessages" to match the regular expression ^[_a-z][_a-z0-9]*$.(•«ê‡øÿÿÿÿ
-hpython:S116³"QRename this field "baseClass" to match the regular expression ^[_a-z][_a-z0-9]*$.(±”ù`
-ƒpython:S116¸"fRename this field "WaitForCallForProposal_Enabled" to match the regular expression ^[_a-z][_a-z0-9]*$.(½Ü©Îÿÿÿÿÿ
-„python:S101®"gRename class "sendingRefuse" to match the regular expression ^_?([A-Z_][a-zA-Z0-9]*|[a-z_][a-z0-9_]*)$.(„“ÙÚşÿÿÿÿ
-rpython:S117°"URename this parameter "baseClass" to match the regular expression ^[_a-z][a-z0-9_]*$.(ªÿÇ¢şÿÿÿÿ
-tpython:S100»"WRename method "sendingRefuse_Logic" to match the regular expression ^[a-z_][a-z0-9_]*$.(´ê±Øÿÿÿÿÿ
-zpython:S117Ò"]Rename this local variable "I40FrameData" to match the regular expression ^[_a-z][a-z0-9_]*$.(µ¸½Ÿúÿÿÿÿ
-vpython:S117Â"YRename this local variable "oMessage" to match the regular expression ^[_a-z][a-z0-9_]*$.(ù÷ÿüÿÿÿÿÿ
-upython:S117ß"]Rename this local variable "oMessage_Out" to match the regular expression ^[_a-z][a-z0-9_]*$.(ş¼Öö
-ypython:S117Á"aRename this local variable "outboundMessages" to match the regular expression ^[_a-z][a-z0-9_]*$.(¸ÅÅ÷
-xpython:S117Ì"[Rename this local variable "receiverId" to match the regular expression ^[_a-z][a-z0-9_]*$.(ÿÒÇ¨ûÿÿÿÿ
-upython:S117Í"]Rename this local variable "receiverRole" to match the regular expression ^[_a-z][a-z0-9_]*$.(»œáÜ
-spython:S100¿"[Rename method "create_Outbound_Message" to match the regular expression ^[a-z_][a-z0-9_]*$.(ìü®‘
-<python:S125Å"Remove this commented out code.(“™Ö¢øÿÿÿÿ
-<python:S125ä"Remove this commented out code.(Š²Ï‡ÿÿÿÿÿ
-vpython:S117÷"^Rename this local variable "InputDocument" to match the regular expression ^[_a-z][a-z0-9_]*$.(§å
-wpython:S117ı"_Rename this local variable "OutputDocument" to match the regular expression ^[_a-z][a-z0-9_]*$.(­Á­
-ypython:S117‚"\Rename this local variable "outbMessage" to match the regular expression ^[_a-z][a-z0-9_]*$.(¶ÏÍéûÿÿÿÿ
-opython:S116Å"RRename this field "instanceId" to match the regular expression ^[_a-z][_a-z0-9]*$.(óœÀÍÿÿÿÿÿ
-hpython:S116‘"QRename this field "baseClass" to match the regular expression ^[_a-z][_a-z0-9]*$.(±”ù`
-ƒpython:S116–"fRename this field "WaitForCallForProposal_Enabled" to match the regular expression ^[_a-z][_a-z0-9]*$.(½Ü©Îÿÿÿÿÿ
-upython:S116ß"XRename this field "outboundMessages" to match the regular expression ^[_a-z][_a-z0-9]*$.(•«ê‡øÿÿÿÿ
-ipython:S116"QRename this field "oMessages" to match the regular expression ^[_a-z][_a-z0-9]*$.(±°ÕÚ
-—python:S101Œ"zRename class "sendinPropoposalporvisionConfirm" to match the regular expression ^_?([A-Z_][a-zA-Z0-9]*|[a-z_][a-z0-9_]*)$.(š¨°¯üÿÿÿÿ
-rpython:S117"URename this parameter "baseClass" to match the regular expression ^[_a-z][a-z0-9_]*$.(ªÿÇ¢şÿÿÿÿ
-‡python:S100™"jRename method "sendinPropoposalporvisionConfirm_Logic" to match the regular expression ^[a-z_][a-z0-9_]*$.(™ß™«şÿÿÿÿ
-zpython:S117°"]Rename this local variable "I40FrameData" to match the regular expression ^[_a-z][a-z0-9_]*$.(µ¸½Ÿúÿÿÿÿ
-vpython:S117 "YRename this local variable "oMessage" to match the regular expression ^[_a-z][a-z0-9_]*$.(ù÷ÿüÿÿÿÿÿ
-upython:S117½"]Rename this local variable "oMessage_Out" to match the regular expression ^[_a-z][a-z0-9_]*$.(ÑüıÌ
-ypython:S117Ÿ"aRename this local variable "outboundMessages" to match the regular expression ^[_a-z][a-z0-9_]*$.(¸ÅÅ÷
-xpython:S117ª"[Rename this local variable "receiverId" to match the regular expression ^[_a-z][a-z0-9_]*$.(ÿÒÇ¨ûÿÿÿÿ
-upython:S117«"]Rename this local variable "receiverRole" to match the regular expression ^[_a-z][a-z0-9_]*$.(»œáÜ
-spython:S100"[Rename method "create_Outbound_Message" to match the regular expression ^[a-z_][a-z0-9_]*$.(ìü®‘
-<python:S125£"Remove this commented out code.(“™Ö¢øÿÿÿÿ
-<python:S125Â"Remove this commented out code.(Š²Ï‡ÿÿÿÿÿ
-vpython:S117Õ"^Rename this local variable "InputDocument" to match the regular expression ^[_a-z][a-z0-9_]*$.(§å
-wpython:S117Û"_Rename this local variable "OutputDocument" to match the regular expression ^[_a-z][a-z0-9_]*$.(òŞ˜
-ypython:S117à"\Rename this local variable "outbMessage" to match the regular expression ^[_a-z][a-z0-9_]*$.(¶ÏÍéûÿÿÿÿ
-ƒpython:S116õ"fRename this field "WaitForCallForProposal_Enabled" to match the regular expression ^[_a-z][_a-z0-9]*$.(½Ü©Îÿÿÿÿÿ
-hpython:S116ï"QRename this field "baseClass" to match the regular expression ^[_a-z][_a-z0-9]*$.(±”ù`
-jpython:S116ö"RRename this field "plcHandler" to match the regular expression ^[_a-z][_a-z0-9]*$.(İ—ºê
-python:S116ô"pRename this field "sendinPropoposalporvisionConfirm_Enabled" to match the regular expression ^[_a-z][_a-z0-9]*$.(í¹œ©ùÿÿÿÿ
-‚python:S101ê"jRename class "serviceProvision" to match the regular expression ^_?([A-Z_][a-zA-Z0-9]*|[a-z_][a-z0-9_]*)$.(—‘Ü¶
-rpython:S117ì"URename this parameter "baseClass" to match the regular expression ^[_a-z][a-z0-9_]*$.(ªÿÇ¢şÿÿÿÿ
-vpython:S117ú"YRename this local variable "plcBoool" to match the regular expression ^[_a-z][a-z0-9_]*$.(°Î”ÿÿÿÿÿ
-python:S117ş"dRename this local variable "sPermissionVariable" to match the regular expression ^[_a-z][a-z0-9_]*$.(¾ƒà…üÿÿÿÿ
-wpython:S100ù"ZRename method "serviceProvision_Logic" to match the regular expression ^[a-z_][a-z0-9_]*$.(÷±´èÿÿÿÿÿ
-7python:S125ü"Remove this commented out code.(õó¼â
-vpython:S117‹"^Rename this local variable "InputDocument" to match the regular expression ^[_a-z][a-z0-9_]*$.(§å
-wpython:S117‘"_Rename this local variable "OutputDocument" to match the regular expression ^[_a-z][a-z0-9_]*$.(œââø
-upython:S116õ"XRename this field "outboundMessages" to match the regular expression ^[_a-z][_a-z0-9]*$.(•«ê‡øÿÿÿÿ
-opython:S116Û"RRename this field "instanceId" to match the regular expression ^[_a-z][_a-z0-9]*$.(óœÀÍÿÿÿÿÿ
-npython:S116´"QRename this field "oMessages" to match the regular expression ^[_a-z][_a-z0-9]*$.(¶ÅŞÉüÿÿÿÿ
-ƒpython:S116¬"fRename this field "WaitForCallForProposal_Enabled" to match the regular expression ^[_a-z][_a-z0-9]*$.(½Ü©Îÿÿÿÿÿ
-hpython:S116§"QRename this field "baseClass" to match the regular expression ^[_a-z][_a-z0-9]*$.(±”ù`
-†python:S101¢"nRename class "sendingNotUnderstood" to match the regular expression ^_?([A-Z_][a-zA-Z0-9]*|[a-z_][a-z0-9_]*)$.(…û—ÿ
-rpython:S117¤"URename this parameter "baseClass" to match the regular expression ^[_a-z][a-z0-9_]*$.(ªÿÇ¢şÿÿÿÿ
-{python:S100¯"^Rename method "sendingNotUnderstood_Logic" to match the regular expression ^[a-z_][a-z0-9_]*$.(×­’ùÿÿÿÿ
-zpython:S117Æ"]Rename this local variable "I40FrameData" to match the regular expression ^[_a-z][a-z0-9_]*$.(µ¸½Ÿúÿÿÿÿ
-vpython:S117¶"YRename this local variable "oMessage" to match the regular expression ^[_a-z][a-z0-9_]*$.(ù÷ÿüÿÿÿÿÿ
-upython:S117Ó"]Rename this local variable "oMessage_Out" to match the regular expression ^[_a-z][a-z0-9_]*$.(ş¼Öö
-ypython:S117µ"aRename this local variable "outboundMessages" to match the regular expression ^[_a-z][a-z0-9_]*$.(¸ÅÅ÷
-xpython:S117À"[Rename this local variable "receiverId" to match the regular expression ^[_a-z][a-z0-9_]*$.(ÿÒÇ¨ûÿÿÿÿ
-upython:S117Á"]Rename this local variable "receiverRole" to match the regular expression ^[_a-z][a-z0-9_]*$.(»œáÜ
-spython:S100³"[Rename method "create_Outbound_Message" to match the regular expression ^[a-z_][a-z0-9_]*$.(ìü®‘
-<python:S125¹"Remove this commented out code.(“™Ö¢øÿÿÿÿ
-<python:S125Ø"Remove this commented out code.(Š²Ï‡ÿÿÿÿÿ
-vpython:S117ë"^Rename this local variable "InputDocument" to match the regular expression ^[_a-z][a-z0-9_]*$.(§å
-wpython:S117ñ"_Rename this local variable "OutputDocument" to match the regular expression ^[_a-z][a-z0-9_]*$.(Ü€¶²
-ypython:S117ö"\Rename this local variable "outbMessage" to match the regular expression ^[_a-z][a-z0-9_]*$.(¶ÏÍéûÿÿÿÿ
-xpython:S116‹"`Rename this field "checkingSchedule_Enabled" to match the regular expression ^[_a-z][_a-z0-9]*$.(íµÆ”
-upython:S116Š"]Rename this field "sendingRefuse_Enabled" to match the regular expression ^[_a-z][_a-z0-9]*$.(›²»ô
-hpython:S116…"QRename this field "baseClass" to match the regular expression ^[_a-z][_a-z0-9]*$.(±”ù`
-opython:S116"RRename this field "itemsCheck" to match the regular expression ^[_a-z][_a-z0-9]*$.(¿Î¢µúÿÿÿÿ
-‚python:S101€"jRename class "feasibilityCheck" to match the regular expression ^_?([A-Z_][a-zA-Z0-9]*|[a-z_][a-z0-9_]*)$.(ˆÉ¸
-rpython:S117‚"URename this parameter "baseClass" to match the regular expression ^[_a-z][a-z0-9_]*$.(ªÿÇ¢şÿÿÿÿ
-wpython:S117•"_Rename this local variable "feasibilityLen" to match the regular expression ^[_a-z][a-z0-9_]*$.(ŸÚ†
-rpython:S117«"ZRename this local variable "tempValue" to match the regular expression ^[_a-z][a-z0-9_]*$.(¨½­§
-rpython:S100"ZRename method "feasibilityCheck_Logic" to match the regular expression ^[a-z_][a-z0-9_]*$.(¿ĞÛÍ
-mpython:S3776"TRefactor this function to reduce its Cognitive Complexity from 22 to the 15 allowed.(¿ĞÛÍ
-Dpython:S5806¡"+Rename this variable; it shadows a builtin.(Àéš
-Ipython:S5806¢"+Rename this variable; it shadows a builtin.(Ú¶ôóşÿÿÿÿ
-vpython:S117½"^Rename this local variable "InputDocument" to match the regular expression ^[_a-z][a-z0-9_]*$.(§å
-wpython:S117Ã"_Rename this local variable "OutputDocument" to match the regular expression ^[_a-z][a-z0-9_]*$.(œââø
-upython:S116›	"XRename this field "semanticProtocol" to match the regular expression ^[_a-z][_a-z0-9]*$.(ÿî¸ şÿÿÿÿ
-qpython:S116­	"TRename this field "skillDetails" to match the regular expression ^[_a-z][_a-z0-9]*$.(ˆÄìöûÿÿÿÿ
-xpython:S116ç"[Rename this field "sendingRefuse_Queue" to match the regular expression ^[_a-z][_a-z0-9]*$.(¥·ß—şÿÿÿÿ
-kpython:S116	"SRename this field "skillLogger" to match the regular expression ^[_a-z][_a-z0-9]*$.(Å„Ş¦
-npython:S116“	"QRename this field "skillName" to match the regular expression ^[_a-z][_a-z0-9]*$.(ğÂşÿÿÿÿ
-upython:S116á"]Rename this field "sendingProposal_Queue" to match the regular expression ^[_a-z][_a-z0-9]*$.(›¹”ø
-rpython:S116´	"ZRename this field "fileLogger_Handler" to match the regular expression ^[_a-z][_a-z0-9]*$.(ŠÃ¶Œ
-upython:S116å"^Rename this field "checkingSchedule_Queue" to match the regular expression ^[_a-z][_a-z0-9]*$.( ïÑb
-vpython:S116¡	"YRename this field "productionStepSeq" to match the regular expression ^[_a-z][_a-z0-9]*$.(á¼¯™úÿÿÿÿ
-†python:S116ä"nRename this field "waitingforServiceRequesterAnswer_Queue" to match the regular expression ^[_a-z][_a-z0-9]*$.(Æª¨‡
-spython:S116º	"VRename this field "Handler_format" to match the regular expression ^[_a-z][_a-z0-9]*$.(¹–ôÅıÿÿÿÿ
-python:S116â"dRename this field "WaitForCallForProposal_Queue" to match the regular expression ^[_a-z][_a-z0-9]*$.(“«äàùÿÿÿÿ
-npython:S116¢	"WRename this field "responseMessage" to match the regular expression ^[_a-z][_a-z0-9]*$.(Ä­ÿ 
-jpython:S116¬	"RRename this field "msgHandler" to match the regular expression ^[_a-z][_a-z0-9]*$.(ú®ÂÙ
-qpython:S116„	"TRename this field "statusInElem" to match the regular expression ^[_a-z][_a-z0-9]*$.(§¹¦¨ùÿÿÿÿ
-{python:S116ë"^Rename this field "feasibilityCheck_Queue" to match the regular expression ^[_a-z][_a-z0-9]*$.(§œøÓûÿÿÿÿ
-zpython:S116–	"]Rename this field "currentConversationId" to match the regular expression ^[_a-z][_a-z0-9]*$.(¶ÉÈ¬üÿÿÿÿ
-upython:S116¤	"]Rename this field "proposalSubmodelTypes" to match the regular expression ^[_a-z][_a-z0-9]*$.(³ò‹İ
-ˆpython:S116ö"kRename this field "waitingforServiceRequesterAnswer_In" to match the regular expression ^[_a-z][_a-z0-9]*$.(´Æ·ûÿÿÿÿ
-~python:S116õ"aRename this field "WaitForCallForProposal_In" to match the regular expression ^[_a-z][_a-z0-9]*$.(ÿ¢Ì¹üÿÿÿÿ
-kpython:S116·	"SRename this field "listHandler" to match the regular expression ^[_a-z][_a-z0-9]*$.(¼½âš
-{python:S116æ"^Rename this field "PriceCalculation_Queue" to match the regular expression ^[_a-z][_a-z0-9]*$.(ÏÌìÔúÿÿÿÿ
-upython:S116±	"]Rename this field "commandLogger_handler" to match the regular expression ^[_a-z][_a-z0-9]*$.(ÄÅ™ô
-hpython:S116ß"QRename this field "QueueDict" to match the regular expression ^[_a-z][_a-z0-9]*$.(˜Ïè
-epython:S116’	"MRename this field "pyAAS" to match the regular expression ^[_a-z][_a-z0-9]*$.(òÈóó
-lpython:S116™	"TRename this field "enabledState" to match the regular expression ^[_a-z][_a-z0-9]*$.(ş÷í
-mpython:S116˜	"URename this field "enabledStatus" to match the regular expression ^[_a-z][_a-z0-9]*$.(¾ÈÑµ
-mpython:S116®	"PRename this field "aasIndex" to match the regular expression ^[_a-z][_a-z0-9]*$.(¢¯––ÿÿÿÿÿ
-opython:S116ù"WRename this field "StatusDataFrame" to match the regular expression ^[_a-z][_a-z0-9]*$.(ÅÇş
-upython:S116ã"]Rename this field "capabilitycheck_Queue" to match the regular expression ^[_a-z][_a-z0-9]*$.(Í‘ü
-vpython:S116é"^Rename this field "serviceProvision_Queue" to match the regular expression ^[_a-z][_a-z0-9]*$.(¬ÛÍĞ
-rpython:S116…	"URename this field "statusMessage" to match the regular expression ^[_a-z][_a-z0-9]*$.(±¯ğ™ûÿÿÿÿ
-zpython:S116ê"bRename this field "sendingNotUnderstood_Queue" to match the regular expression ^[_a-z][_a-z0-9]*$.(‡Å˜Ä
-‹python:S116è"nRename this field "sendinPropoposalporvisionConfirm_Queue" to match the regular expression ^[_a-z][_a-z0-9]*$.(¥’Æ¦ùÿÿÿÿ
-mpython:S116£	"URename this field "subModelTypes" to match the regular expression ^[_a-z][_a-z0-9]*$.(°©ªñ
-python:S100İ"bRename method "initstateSpecificQueueInternal" to match the regular expression ^[a-z_][a-z0-9_]*$.(¬™Ôşÿÿÿÿ
-tpython:S100ô"WRename method "initInBoundMessages" to match the regular expression ^[a-z_][a-z0-9_]*$.(À¡—îûÿÿÿÿ
-opython:S100ø"WRename method "createStatusMessage" to match the regular expression ^[a-z_][a-z0-9_]*$.(œ¸á
-npython:S117‰	"QRename this parameter "pyAAS" to match the regular expression ^[_a-z][a-z0-9_]*$.(˜êß´üÿÿÿÿ
-’python:S117§	"uRename this local variable "waitingforServiceRequesterAnswerList" to match the regular expression ^[_a-z][a-z0-9_]*$.(Ş×»Üøÿÿÿÿ
-opython:S100¦	"RRename method "emptyAllQueues" to match the regular expression ^[a-z_][a-z0-9_]*$.(øÉØıÿÿÿÿ
-Apython:S1481¨	"(Remove the unused local variable "elem".(õïÈÊ
-†python:S117Ä	"iRename this local variable "WaitForCallForProposal_1" to match the regular expression ^[_a-z][a-z0-9_]*$.(Â¸¸áúÿÿÿÿ
-lpython:S117«	"TRename this parameter "aasIndex" to match the regular expression ^[_a-z][a-z0-9_]*$.(‹Ó½„
-upython:S117Æ	"]Rename this local variable "currentState" to match the regular expression ^[_a-z][a-z0-9_]*$.(¹›Š¾
-npython:S117«	"VRename this parameter "msgHandler" to match the regular expression ^[_a-z][a-z0-9_]*$.(‹Ó½„
-ppython:S117«	"XRename this parameter "skillDetails" to match the regular expression ^[_a-z][a-z0-9_]*$.(‹Ó½„
-apython:S100«	"IRename method "Start" to match the regular expression ^[a-z_][a-z0-9_]*$.(‹Ó½„
-opython:S100İ	"WRename method "geCurrentSKILLState" to match the regular expression ^[a-z_][a-z0-9_]*$.(ŞŒÙá
-ppython:S100à	"XRename method "getListofSKILLStates" to match the regular expression ^[a-z_][a-z0-9_]*$.(Ÿ”®ş
-npython:S117ä	"QRename this parameter "STATE" to match the regular expression ^[_a-z][a-z0-9_]*$.(ûâÀûÿÿÿÿ
-lpython:S100ä	"ORename method "stateChange" to match the regular expression ^[a-z_][a-z0-9_]*$.(ûâÀûÿÿÿÿ
-<python:S125å	"Remove this commented out code.(¹íæıÿÿÿÿ
-7python:S125æ	"Remove this commented out code.(ºù’¦
-tpython:S117ê	"WRename this parameter "sendMessage" to match the regular expression ^[_a-z][a-z0-9_]*$.(î¤“‡ùÿÿÿÿ
-lpython:S100ê	"ORename method "sendMessage" to match the regular expression ^[a-z_][a-z0-9_]*$.(î¤“‡ùÿÿÿÿ
-}python:S117ï	"`Rename this local variable "_conversationId" to match the regular expression ^[_a-z][a-z0-9_]*$.(§™Ùšıÿÿÿÿ
-zpython:S117ñ	"]Rename this local variable "_messageType" to match the regular expression ^[_a-z][a-z0-9_]*$.(¾´Ôïıÿÿÿÿ
-rpython:S117í	"URename this parameter "inMessage" to match the regular expression ^[_a-z][a-z0-9_]*$.(€°İûÿÿÿÿ
-spython:S117ğ	"[Rename this local variable "senderRole" to match the regular expression ^[_a-z][a-z0-9_]*$.(Ø³ï²
-opython:S100í	"RRename method "receiveMessage" to match the regular expression ^[a-z_][a-z0-9_]*$.(€°İûÿÿÿÿ
-Qpython:S1481ï	"3Remove the unused local variable "_conversationId".(§™Ùšıÿÿÿÿ
-Gpython:S1481ğ	".Remove the unused local variable "senderRole".(Ø³ï²
->python:S1481ó	"%Remove the unused local variable "E".(×•Š

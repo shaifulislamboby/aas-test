@@ -1,117 +1,0 @@
-
-_python:S11922"HDefine a constant instead of duplicating this literal "http://" 3 times.(·Êõ
-`python:S11922"IDefine a constant instead of duplicating this literal "/static/" 3 times.(·Êõ
-lpython:S116"URename this field "nameplateData" to match the regular expression ^[_a-z][_a-z0-9]*$.(Ó–ˆ€
-upython:S116"YRename this field "namePlateSubmodel" to match the regular expression ^[_a-z][_a-z0-9]*$.(ÈÒ‰›ùÿÿÿÿ
-dpython:S116"MRename this field "pyAAS" to match the regular expression ^[_a-z][_a-z0-9]*$.(òÈóó
-kpython:S116i"TRename this field "templateInfo" to match the regular expression ^[_a-z][_a-z0-9]*$.(åÃÖ
-tpython:S117"]Rename this parameter "namePlateSubmodel" to match the regular expression ^[_a-z][a-z0-9_]*$.(âÖ
-hpython:S117"QRename this parameter "pyAAS" to match the regular expression ^[_a-z][a-z0-9_]*$.(âÖ
-jpython:S117"SRename this parameter "idShort" to match the regular expression ^[_a-z][a-z0-9_]*$.(Á©Ó•
-opython:S117"XRename this parameter "propertyElem" to match the regular expression ^[_a-z][a-z0-9_]*$.(Á©Ó•
-tpython:S100"]Rename method "createPropertyInformation" to match the regular expression ^[a-z_][a-z0-9_]*$.(Á©Ó•
-jpython:S117"SRename this parameter "idShort" to match the regular expression ^[_a-z][a-z0-9_]*$.(•ß×ß
-wpython:S117"[Rename this local variable "langString" to match the regular expression ^[_a-z][a-z0-9_]*$.(ÜÉ­ªüÿÿÿÿ
-vpython:S117"_Rename this parameter "multiLanguagePEleme" to match the regular expression ^[_a-z][a-z0-9_]*$.(•ß×ß
-python:S100"jRename method "createMultiLanguagePropertyInformation" to match the regular expression ^[a-z_][a-z0-9_]*$.(•ß×ß
-ppython:S117"TRename this parameter "fileElem" to match the regular expression ^[_a-z][a-z0-9_]*$.(ùú¿Âıÿÿÿÿ
-opython:S117"SRename this parameter "idShort" to match the regular expression ^[_a-z][a-z0-9_]*$.(ùú¿Âıÿÿÿÿ
-|python:S100"`Rename method "createFileElementInformation" to match the regular expression ^[a-z_][a-z0-9_]*$.(ùú¿Âıÿÿÿÿ
-tpython:S117!"]Rename this local variable "categoryName" to match the regular expression ^[_a-z][a-z0-9_]*$.(Ö£é˜
-opython:S117 "SRename this parameter "idShort" to match the regular expression ^[_a-z][a-z0-9_]*$.(¹õ‚ùøÿÿÿÿ
-upython:S117 "YRename this parameter "nameplateElem" to match the regular expression ^[_a-z][a-z0-9_]*$.(¹õ‚ùøÿÿÿÿ
-tpython:S100 "XRename method "captureNamePlateElem" to match the regular expression ^[a-z_][a-z0-9_]*$.(¹õ‚ùøÿÿÿÿ
-tpython:S117+"XRename this local variable "extHost" to match the regular expression ^[_a-z][a-z0-9_]*$.(ÁÃı©ûÿÿÿÿ
-spython:S117*"\Rename this local variable "markingData" to match the regular expression ^[_a-z][a-z0-9_]*$.(ƒÄ²ä
-xpython:S117-"\Rename this local variable "markingELem" to match the regular expression ^[_a-z][a-z0-9_]*$.(ñİö±ÿÿÿÿÿ
-opython:S100)"SRename method "captureMarkings" to match the regular expression ^[a-z_][a-z0-9_]*$.(Î€òÑıÿÿÿÿ
-python:S117D"hRename this local variable "AssetSpecificProperties" to match the regular expression ^[_a-z][a-z0-9_]*$.(Ü÷š¾
-spython:S117="\Rename this local variable "addressElem" to match the regular expression ^[_a-z][a-z0-9_]*$.( Éƒ
-{python:S117?"_Rename this local variable "addressSubElem" to match the regular expression ^[_a-z][a-z0-9_]*$.(¥¨ç‹şÿÿÿÿ
-tpython:S117E"XRename this local variable "aspELem" to match the regular expression ^[_a-z][a-z0-9_]*$.(¨ÿ¢÷ÿÿÿÿÿ
-spython:S117L"\Rename this local variable "markigsList" to match the regular expression ^[_a-z][a-z0-9_]*$.(ƒáíÙ
-upython:S117:"^Rename this local variable "nameplateElem" to match the regular expression ^[_a-z][a-z0-9_]*$.(‰„»
-rpython:S1009"[Rename method "captureCategoryELements" to match the regular expression ^[a-z_][a-z0-9_]*$.(ì»ÿ±
-lpython:S37769"TRefactor this function to reduce its Cognitive Complexity from 33 to the 15 allowed.(ì»ÿ±
-ypython:S117X"]Rename this local variable "_deNamePlate" to match the regular expression ^[_a-z][a-z0-9_]*$.(¿„¸üÿÿÿÿ
-tpython:S117W"]Rename this local variable "_enNamePlate" to match the regular expression ^[_a-z][a-z0-9_]*$.(™ƒçÕ
-zpython:S117V"cRename this local variable "reOrderedNamePlate" to match the regular expression ^[_a-z][a-z0-9_]*$.(Ô‚ó
-ppython:S100U"TRename method "reOrderNamePlate" to match the regular expression ^[a-z_][a-z0-9_]*$.(ÒßÜ¯ıÿÿÿÿ
-qpython:S100h"ZRename method "getTemplateInformation" to match the regular expression ^[a-z_][a-z0-9_]*$.(úÅş˜
-vpython:S116s"ZRename this field "identificationData" to match the regular expression ^[_a-z][_a-z0-9]*$.(ÚÌÉ’úÿÿÿÿ
-zpython:S116q"^Rename this field "identificationSubmodel" to match the regular expression ^[_a-z][_a-z0-9]*$.(ó‘¶Óøÿÿÿÿ
-dpython:S116r"MRename this field "pyAAS" to match the regular expression ^[_a-z][_a-z0-9]*$.(òÈóó
-~python:S117p"bRename this parameter "identificationSubmodel" to match the regular expression ^[_a-z][a-z0-9_]*$.(‰éªÙüÿÿÿÿ
-mpython:S117p"QRename this parameter "pyAAS" to match the regular expression ^[_a-z][a-z0-9_]*$.(‰éªÙüÿÿÿÿ
-jpython:S117v"SRename this parameter "idShort" to match the regular expression ^[_a-z][a-z0-9_]*$.(Á©Ó•
-opython:S117v"XRename this parameter "propertyElem" to match the regular expression ^[_a-z][a-z0-9_]*$.(Á©Ó•
-tpython:S100v"]Rename method "createPropertyInformation" to match the regular expression ^[a-z_][a-z0-9_]*$.(Á©Ó•
-tpython:S117z"XRename this local variable "extHost" to match the regular expression ^[_a-z][a-z0-9_]*$.(ÁÃı©ûÿÿÿÿ
-ppython:S117y"TRename this parameter "fileElem" to match the regular expression ^[_a-z][a-z0-9_]*$.(ùú¿Âıÿÿÿÿ
-opython:S117y"SRename this parameter "idShort" to match the regular expression ^[_a-z][a-z0-9_]*$.(ùú¿Âıÿÿÿÿ
-|python:S100y"`Rename method "createFileElementInformation" to match the regular expression ^[a-z_][a-z0-9_]*$.(ùú¿Âıÿÿÿÿ
-upython:S117‚"]Rename this local variable "categoryName" to match the regular expression ^[_a-z][a-z0-9_]*$.(Ö£é˜
-jpython:S117"SRename this parameter "idShort" to match the regular expression ^[_a-z][a-z0-9_]*$.(´Ò€
-ppython:S117"YRename this parameter "nameplateElem" to match the regular expression ^[_a-z][a-z0-9_]*$.(´Ò€
-hpython:S100"QRename method "captureIDElem" to match the regular expression ^[a-z_][a-z0-9_]*$.(´Ò€
-|python:S117"_Rename this local variable "contactElement" to match the regular expression ^[_a-z][a-z0-9_]*$.(òıóÏüÿÿÿÿ
-tpython:S117‰"]Rename this local variable "contactInfos" to match the regular expression ^[_a-z][a-z0-9_]*$.(ÁŠ±S
-opython:S117Š"WRename this local variable "idELem" to match the regular expression ^[_a-z][a-z0-9_]*$.(šŒÀ—
-python:S117"dRename this local variable "physicalAddressElem" to match the regular expression ^[_a-z][a-z0-9_]*$.(ÑûğÔÿÿÿÿÿ
-spython:S100ˆ"[Rename method "captureCategoryELements" to match the regular expression ^[a-z_][a-z0-9_]*$.(ì»ÿ±
-mpython:S3776ˆ"TRefactor this function to reduce its Cognitive Complexity from 17 to the 15 allowed.(ì»ÿ±
-7python:S125"Remove this commented out code.( ˜©µ
-<python:S125’"Remove this commented out code.(ø¬Â§şÿÿÿÿ
-rpython:S100š"ZRename method "getTemplateInformation" to match the regular expression ^[a-z_][a-z0-9_]*$.(úÅş˜
-ppython:S116¢"XRename this field "documentSubmodel" to match the regular expression ^[_a-z][_a-z0-9]*$.(ªúŠ
-lpython:S116£"TRename this field "templateName" to match the regular expression ^[_a-z][_a-z0-9]*$.(ÓäøŞ
-epython:S116¤"MRename this field "pyAAS" to match the regular expression ^[_a-z][_a-z0-9]*$.(òÈóó
-opython:S116¥"XRename this field "documentInstance" to match the regular expression ^[_a-z][_a-z0-9]*$.(¡º
-qpython:S116Ò"TRename this field "templateInfo" to match the regular expression ^[_a-z][_a-z0-9]*$.(Á±ô‰øÿÿÿÿ
-tpython:S117¡"\Rename this parameter "documentSubmodel" to match the regular expression ^[_a-z][a-z0-9_]*$.(×ê‚ı
-ipython:S117¡"QRename this parameter "pyAAS" to match the regular expression ^[_a-z][a-z0-9_]*$.(×ê‚ı
-ppython:S117¡"XRename this parameter "templateName" to match the regular expression ^[_a-z][a-z0-9_]*$.(×ê‚ı
-„python:S117¬"gRename this local variable "DocumentClassification" to match the regular expression ^[_a-z][a-z0-9_]*$.(î¯§ßüÿÿÿÿ
-~python:S117ª"aRename this local variable "DocumentIdDomain" to match the regular expression ^[_a-z][a-z0-9_]*$.(¬ÄØ—şÿÿÿÿ
-…python:S117Ã"hRename this local variable "_documentClassification" to match the regular expression ^[_a-z][a-z0-9_]*$.(„õéşÿÿÿÿ
-ypython:S117½"aRename this local variable "_documentIDomain" to match the regular expression ^[_a-z][a-z0-9_]*$.(’œñª
-tpython:S117¶"\Rename this local variable "_langString" to match the regular expression ^[_a-z][a-z0-9_]*$.(ç¿Í­
-upython:S117­"XRename this local variable "docElem" to match the regular expression ^[_a-z][a-z0-9_]*$.(ğ‰‚ÿÿÿÿÿ
-ypython:S117¯"\Rename this local variable "docSubmElem" to match the regular expression ^[_a-z][a-z0-9_]*$.(×ƒ•Ñúÿÿÿÿ
-zpython:S117©"]Rename this local variable "documentData" to match the regular expression ^[_a-z][a-z0-9_]*$.(†»§‘şÿÿÿÿ
-xpython:S117«"`Rename this local variable "documentVersion" to match the regular expression ^[_a-z][a-z0-9_]*$.(“´ı
-spython:S117µ"[Rename this local variable "langString" to match the regular expression ^[_a-z][a-z0-9_]*$.(ëµ¨
-tpython:S117¨"\Rename this local variable "languageSet" to match the regular expression ^[_a-z][a-z0-9_]*$.(‹Êœ‡
-upython:S117¾"XRename this local variable "subElem" to match the regular expression ^[_a-z][a-z0-9_]*$.(½±•úÿÿÿÿ
-spython:S100§"[Rename method "captureCategoryELements" to match the regular expression ^[a-z_][a-z0-9_]*$.(ì»ÿ±
-mpython:S3776§"TRefactor this function to reduce its Cognitive Complexity from 33 to the 15 allowed.(ì»ÿ±
-rpython:S100Ñ"ZRename method "getTemplateInformation" to match the regular expression ^[a-z_][a-z0-9_]*$.(úÅş˜
-mpython:S116Ü"URename this field "technicalData" to match the regular expression ^[_a-z][_a-z0-9]*$.(Ü¶ã
-epython:S116Û"MRename this field "pyAAS" to match the regular expression ^[_a-z][_a-z0-9]*$.(òÈóó
-zpython:S116Ú"]Rename this field "technicalDataSubmodel" to match the regular expression ^[_a-z][_a-z0-9]*$.(¼Íìàÿÿÿÿÿ
-hpython:S117Ù"QRename this parameter "pyAAS" to match the regular expression ^[_a-z][a-z0-9_]*$.(Ûßø 
-xpython:S117Ù"aRename this parameter "technicalDataSubmodel" to match the regular expression ^[_a-z][a-z0-9_]*$.(Ûßø 
-ppython:S117Ş"XRename this parameter "propertyElem" to match the regular expression ^[_a-z][a-z0-9_]*$.(üÃñ
-upython:S100Ş"]Rename method "createPropertyInformation" to match the regular expression ^[a-z_][a-z0-9_]*$.(üÃñ
-upython:S117â"XRename this local variable "extHost" to match the regular expression ^[_a-z][a-z0-9_]*$.(ÁÃı©ûÿÿÿÿ
-qpython:S117á"TRename this parameter "fileElem" to match the regular expression ^[_a-z][a-z0-9_]*$.(¤îÚ¾üÿÿÿÿ
-}python:S100á"`Rename method "createFileElementInformation" to match the regular expression ^[a-z_][a-z0-9_]*$.(¤îÚ¾üÿÿÿÿ
-zpython:S117ê"]Rename this local variable "categoryName" to match the regular expression ^[_a-z][a-z0-9_]*$.(ûœ­ûÿÿÿÿ
-ipython:S100é"QRename method "captureTDElem" to match the regular expression ^[a-z_][a-z0-9_]*$.(Ú”İÌ
-python:S117ş"gRename this local variable "ProductClassifications" to match the regular expression ^[_a-z][a-z0-9_]*$.(†¢ª©
-opython:S117”"WRename this local variable "fiElem" to match the regular expression ^[_a-z][a-z0-9_]*$.(èï°
-€python:S117“"cRename this local variable "furtherInformation" to match the regular expression ^[_a-z][a-z0-9_]*$.(™ò‚³úÿÿÿÿ
-{python:S117ó"cRename this local variable "generalInformation" to match the regular expression ^[_a-z][a-z0-9_]*$.(õ¤­”
-tpython:S117õ"WRename this local variable "giElem" to match the regular expression ^[_a-z][a-z0-9_]*$.(îúôµıÿÿÿÿ
-}python:S117€"`Rename this local variable "pClassification" to match the regular expression ^[_a-z][a-z0-9_]*$.(ÃÂ»Øùÿÿÿÿ
-opython:S117"WRename this local variable "pcElem" to match the regular expression ^[_a-z][a-z0-9_]*$.(ñœîö
-ppython:S117ÿ"XRename this local variable "pcsElem" to match the regular expression ^[_a-z][a-z0-9_]*$.(…ÿ¬ò
-{python:S117ô"^Rename this local variable "productImages" to match the regular expression ^[_a-z][a-z0-9_]*$.(»íúøÿÿÿÿ
-spython:S117Š"[Rename this local variable "tcProperty" to match the regular expression ^[_a-z][a-z0-9_]*$.(´¨å“
-|python:S117ˆ"_Rename this local variable "tcpropertyElem" to match the regular expression ^[_a-z][a-z0-9_]*$.(¢Ù—Ìøÿÿÿÿ
-tpython:S117ñ"WRename this local variable "tdElem" to match the regular expression ^[_a-z][a-z0-9_]*$.(¿õç¹şÿÿÿÿ
-python:S117‡"dRename this local variable "technicalProperties" to match the regular expression ^[_a-z][a-z0-9_]*$.(“øçêşÿÿÿÿ
-opython:S117‹"WRename this local variable "tpElem" to match the regular expression ^[_a-z][a-z0-9_]*$.(Ã™”Ğ
-spython:S100ğ"[Rename method "captureCategoryELements" to match the regular expression ^[a-z_][a-z0-9_]*$.(ì»ÿ±
-mpython:S3776ğ"TRefactor this function to reduce its Cognitive Complexity from 37 to the 15 allowed.(ì»ÿ±
-rpython:S100˜"ZRename method "getTemplateInformation" to match the regular expression ^[a-z_][a-z0-9_]*$.(úÅş˜

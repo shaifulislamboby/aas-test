@@ -1,35 +1,0 @@
-
-vpython:S1186	"YAdd a nested comment explaining why this method is empty, or complete the implementation.(Áû¹Çûÿÿÿÿ
-hpython:S100"LRename method "toString" to match the regular expression ^[a-z_][a-z0-9_]*$.(ˆ¥£åúÿÿÿÿ
-upython:S117"YRename this local variable "I40Frame" to match the regular expression ^[_a-z][a-z0-9_]*$.(Ôä¦ùÿÿÿÿ
-hpython:S117"QRename this parameter "aasId" to match the regular expression ^[_a-z][a-z0-9_]*$.(Ø¼Àá
-jpython:S100"SRename method "getRestAPIFrame" to match the regular expression ^[a-z_][a-z0-9_]*$.(Ø¼Àá
-ppython:S117!"TRename this parameter "I40Frame" to match the regular expression ^[_a-z][a-z0-9_]*$.(ï¸µ¶ÿÿÿÿÿ
-kpython:S100!"ORename method "createFrame" to match the regular expression ^[a-z_][a-z0-9_]*$.(ï¸µ¶ÿÿÿÿÿ
-Hpython:S1172H"0Remove the unused function parameter "I40IElem".(ëó‰ö
-kpython:S117H"TRename this parameter "I40IElem" to match the regular expression ^[_a-z][a-z0-9_]*$.(ëó‰ö
-wpython:S117I"`Rename this local variable "InteractionElem" to match the regular expression ^[_a-z][a-z0-9_]*$.(úöÆÁ
-tpython:S100H"]Rename method "createInteractionElements" to match the regular expression ^[a-z_][a-z0-9_]*$.(ëó‰ö
-Kpython:S1481I"3Remove the unused local variable "InteractionElem".(úöÆÁ
-xpython:S117L"\Rename this local variable "jsonMessage" to match the regular expression ^[_a-z][a-z0-9_]*$.(üÃıØşÿÿÿÿ
-vpython:S117¤"^Rename this local variable "listPriceDict" to match the regular expression ^[_a-z][a-z0-9_]*$.(§÷ì
-rpython:S100K"[Rename method "createEthereumInMessage" to match the regular expression ^[a-z_][a-z0-9_]*$.(¼ı»
-wpython:S117·"_Rename this local variable "conversationId" to match the regular expression ^[_a-z][a-z0-9_]*$.(¾Àäº
-qpython:S117Ê"ZRename this local variable "listPrice" to match the regular expression ^[_a-z][a-z0-9_]*$.(ñƒñF
-rpython:S117»"ZRename this local variable "messageId" to match the regular expression ^[_a-z][a-z0-9_]*$.(İ”œí
-upython:S117¶"XRename this local variable "msgType" to match the regular expression ^[_a-z][a-z0-9_]*$.(¿–æÂøÿÿÿÿ
-npython:S117³"VRename this parameter "outMessage" to match the regular expression ^[_a-z][a-z0-9_]*$.(»šî×
-rpython:S117Ã"ZRename this local variable "propertyX" to match the regular expression ^[_a-z][a-z0-9_]*$.(ÅÜ¸Â
-rpython:S117Ä"ZRename this local variable "propertyY" to match the regular expression ^[_a-z][a-z0-9_]*$.(Û Èè
-spython:S117½"[Rename this local variable "receiverId" to match the regular expression ^[_a-z][a-z0-9_]*$.(ãı€½
-zpython:S117¾"]Rename this local variable "receiverRole" to match the regular expression ^[_a-z][a-z0-9_]*$.(š‹Ñ’úÿÿÿÿ
-upython:S117¸"XRename this local variable "replyBy" to match the regular expression ^[_a-z][a-z0-9_]*$.(¿ñœ÷øÿÿÿÿ
-upython:S117¹"XRename this local variable "replyTo" to match the regular expression ^[_a-z][a-z0-9_]*$.(ìÏÕÂúÿÿÿÿ
-vpython:S117´"YRename this local variable "senderId" to match the regular expression ^[_a-z][a-z0-9_]*$.(©á¸Êúÿÿÿÿ
-spython:S117µ"[Rename this local variable "senderRole" to match the regular expression ^[_a-z][a-z0-9_]*$.(—şù
-tpython:S100³"\Rename method "createEthereumOutMessage" to match the regular expression ^[a-z_][a-z0-9_]*$.(»šî×
-Cpython:S1481¿"%Remove the unused local variable "e".(¼–¯¸ÿÿÿÿÿ
-Cpython:S1481Å"%Remove the unused local variable "e".(¼–¯¸ÿÿÿÿÿ
-Cpython:S1481Ë"%Remove the unused local variable "e".(¼–¯¸ÿÿÿÿÿ
-npython:S117Ô"QRename this parameter "assId" to match the regular expression ^[_a-z][a-z0-9_]*$.(¶ÚŒ×úÿÿÿÿ
-wpython:S100Ô"ZRename method "createHeartBeatMessage" to match the regular expression ^[a-z_][a-z0-9_]*$.(¶ÚŒ×úÿÿÿÿ

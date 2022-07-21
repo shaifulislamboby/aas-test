@@ -1,8 +1,0 @@
-
-opython:S117"SRename this parameter "maxSize" to match the regular expression ^[_a-z][a-z0-9_]*$.(Ü÷Ùùÿÿÿÿ
-ypython:S117"]Rename this local variable "returnCotent" to match the regular expression ^[_a-z][a-z0-9_]*$.(ÍÃşÌıÿÿÿÿ
-rpython:S117"VRename this parameter "numRecords" to match the regular expression ^[_a-z][a-z0-9_]*$.(ùÚ‘ìøÿÿÿÿ
-spython:S117"]Rename this local variable "returnCotent" to match the regular expression ^[_a-z][a-z0-9_]*$.(ÃÄ”P
-mpython:S117"VRename this parameter "numRecords" to match the regular expression ^[_a-z][a-z0-9_]*$.(ë¸°¿
-tpython:S117"]Rename this local variable "returnCotent" to match the regular expression ^[_a-z][a-z0-9_]*$.(åµ»º
-‚python:S101%"kRename class "serviceLogHandler" to match the regular expression ^_?([A-Z_][a-zA-Z0-9]*|[a-z_][a-z0-9_]*)$.(şÀ¤Š

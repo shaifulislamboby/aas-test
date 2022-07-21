@@ -1,10 +1,0 @@
-
-ipython:S116"RRename this field "portComdrv" to match the regular expression ^[_a-z][_a-z0-9]*$.(—ÃĞ‰
-spython:S116"WRename this field "ipaddressComdrv" to match the regular expression ^[_a-z][_a-z0-9]*$.(†ÿ–¯şÿÿÿÿ
-ipython:S116"RRename this field "msgHandler" to match the regular expression ^[_a-z][_a-z0-9]*$.(ú®ÂÙ
-rpython:S117"VRename this parameter "msgHandler" to match the regular expression ^[_a-z][a-z0-9_]*$.(¡«‘ÿÿÿÿÿ
-mpython:S117"QRename this parameter "pyAAS" to match the regular expression ^[_a-z][a-z0-9_]*$.(¡«‘ÿÿÿÿÿ
-jpython:S117%"TRename this parameter "tMessage" to match the regular expression ^[_a-z][a-z0-9_]*$.(¤ÍëP
-ipython:S100%"SRename method "dispatchMessage" to match the regular expression ^[a-z_][a-z0-9_]*$.(¤ÍëP
-rpython:S117)"VRename this parameter "testMesage" to match the regular expression ^[_a-z][a-z0-9_]*$.(„ÛÅışÿÿÿÿ
-opython:S100)"SRename method "retrieveMessage" to match the regular expression ^[a-z_][a-z0-9_]*$.(„ÛÅışÿÿÿÿ

@@ -1,14 +1,0 @@
-
-rpython:S117"VRename this parameter "msgHandler" to match the regular expression ^[_a-z][a-z0-9_]*$.(¡«‘ÿÿÿÿÿ
-mpython:S117"QRename this parameter "pyAAS" to match the regular expression ^[_a-z][a-z0-9_]*$.(¡«‘ÿÿÿÿÿ
-}python:S117?"aRename this local variable "ethClientThread1" to match the regular expression ^[_a-z][a-z0-9_]*$.(‰úãâüÿÿÿÿ
-hpython:S117;"QRename this parameter "pyAAS" to match the regular expression ^[_a-z][a-z0-9_]*$.(ê‘¯
-ypython:S117L"]Rename this local variable "publishTopic" to match the regular expression ^[_a-z][a-z0-9_]*$.(šşÓ¢úÿÿÿÿ
-tpython:S117K"XRename this parameter "send_Message" to match the regular expression ^[_a-z][a-z0-9_]*$.(ÎšÁ˜úÿÿÿÿ
-Dpython:S1481S",Remove the unused local variable "trx_hash".(¼˜‡˜
-rpython:S117Z"VRename this parameter "outMessage" to match the regular expression ^[_a-z][a-z0-9_]*$.(«àæüÿÿÿÿ
-lpython:S117]"URename this parameter "newMesage" to match the regular expression ^[_a-z][a-z0-9_]*$.(‡í‹ù
-ypython:S117b"]Rename this local variable "eventMessage" to match the regular expression ^[_a-z][a-z0-9_]*$.(€µØøÿÿÿÿ
-rpython:S117i"[Rename this local variable "newMessage" to match the regular expression ^[_a-z][a-z0-9_]*$.(¼áñÓ
-ppython:S117d"YRename this local variable "senderId" to match the regular expression ^[_a-z][a-z0-9_]*$.(¡®§Î
-@python:S108g")Either remove or fill this block of code.(ã‘Û¾

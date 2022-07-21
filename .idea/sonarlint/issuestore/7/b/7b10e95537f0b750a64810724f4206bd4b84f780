@@ -1,13 +1,0 @@
-
-kpython:S117"TRename this parameter "newValue" to match the regular expression ^[_a-z][a-z0-9_]*$.(á€´Ï
-ppython:S1542"XRename function "createNewQualifier" to match the regular expression ^[a-z_][a-z0-9_]*$.(á€´Ï
-opython:S117"XRename this parameter "propertyName" to match the regular expression ^[_a-z][a-z0-9_]*$.(…ûóÛ
-npython:S1542"VRename function "createRandomData" to match the regular expression ^[a-z_][a-z0-9_]*$.(…ûóÛ
-lpython:S3776"TRefactor this function to reduce its Cognitive Complexity from 21 to the 15 allowed.(…ûóÛ
-vpython:S1175"ZRename this local variable "accessURI" to match the regular expression ^[_a-z][a-z0-9_]*$.(Î÷ú×ıÿÿÿÿ
-qpython:S1174"ZRename this local variable "labelList" to match the regular expression ^[_a-z][a-z0-9_]*$.(Àİı
-upython:S1177"YRename this local variable "newValue" to match the regular expression ^[_a-z][a-z0-9_]*$.(Â±©»şÿÿÿÿ
-hpython:S1171"QRename this parameter "pyAAS" to match the regular expression ^[_a-z][a-z0-9_]*$.(ó¥·Ø
-vpython:S1173"ZRename this local variable "valueList" to match the regular expression ^[_a-z][a-z0-9_]*$.(¡ø×ÿÿÿÿÿ
-@python:S108:")Either remove or fill this block of code.(ã‘Û¾
-5python:S125C"Remove this commented out code.(Î¬³.
