@@ -21,3 +21,14 @@ f
 6.hypothesis/examples/5b68887d2acbc076/7210af19145ec2a8,a/3/a3d7e4a39a53454a4149d832d493050212bb9cfe
 f
 6.hypothesis/examples/5b68887d2acbc076/38b060a751ac9638,d/f/df94e1ae58a3c5999628d0322686950f6470dad8
+:
+
+.gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
+9
+	README.md,8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+@
+requirements.txt,1/9/19359a61ae2446b51b549167b014da2fcf265768
+N
+failing tests/aasServer/shells,7/c/7ca56ccbd029d317fe6a9e2480f2371553dd24ac
+D
+openapi_example.json,8/8/8829ab88e98ff4915ba9d4bbc342cbbfc5ef61c7
