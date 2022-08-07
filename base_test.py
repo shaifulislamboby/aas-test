@@ -4,7 +4,7 @@ from schemathesis.checks import not_a_server_error, content_type_conformance, \
     response_schema_conformance
 
 # load openapi specification from local file.
-schema = schemathesis.from_path('open_api_specification_aas_v2.json')
+schema = schemathesis.from_path('aasTest/open_api_specification_aas_v2.json')
 # print(schema)
 # schema.base_url = 'http://127.0.0.1:5080/'
 
@@ -31,7 +31,7 @@ from hypothesis_jsonschema import from_schema
 import json
 import jsonref
 
-json_obj = json.load(open('open_api_specification_aas_v2.json'))
+json_obj = json.load(open('aasTest/open_api_specification_aas_v2.json'))
 schema = jsonref.loads(str(json.dumps(json_obj)))
 data = schema.get('paths').get('/concept-descriptions/{cdIdentifier}').get('put').get('requestBody').get('content').get('application/json').get('schema')
 

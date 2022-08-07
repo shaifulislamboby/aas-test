@@ -79,7 +79,7 @@ class RefResolver:
         return None
 
 
-json_obj = json.load(open('open_api_specification_aas_v2.json'))
+json_obj = json.load(open('aasTest/open_api_specification_aas_v2.json'))
 # call to API resolve method
 
 import jsonref

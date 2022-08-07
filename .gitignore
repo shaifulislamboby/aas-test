@@ -1,5 +1,5 @@
 .hypothesis/
 .pytest_cache/
-/.idea
+.idea
 .hypothesis
 gen

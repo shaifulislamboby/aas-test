@@ -3,7 +3,7 @@ import requests
 from jsonschema import validate
 
 # load openapi specification from local file.
-json_obj = json.load(open('open_api_specification_aas_v2.json'))
+json_obj = json.load(open('aasTest/open_api_specification_aas_v2.json'))
 
 # schema = schemathesis.from_dict(json_obj)
 # schema = jsonref.loads(str(json.dumps(json_obj)))
