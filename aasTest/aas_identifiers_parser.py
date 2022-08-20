@@ -7,7 +7,7 @@ import aasTest.helpers as helpers
 
 
 @dataclass
-class Base:
+class BaseParser:
 
     @property
     def raw_value(self):
@@ -35,7 +35,7 @@ class Base:
 
 
 @dataclass
-class SubModel(Base):
+class SubModel(BaseParser):
     raw_sub_model: dict
 
     @property
@@ -48,7 +48,7 @@ class SubModel(Base):
 
 
 @dataclass
-class AssetAdministrationShell(Base):
+class AssetAdministrationShell(BaseParser):
     raw_asset_administration_shell: dict
     sub_model_collection_uri: str
     sub_models: [SubModel] = field(default_factory=list)
@@ -89,7 +89,7 @@ class AssetAdministrationShell(Base):
 
 
 @dataclass
-class ConceptDescription(Base):
+class ConceptDescription(BaseParser):
     raw_concept_description: dict
 
     @property
