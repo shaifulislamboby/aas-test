@@ -8,7 +8,11 @@ class AasGETPOSTPUTEndPoint(AasBaseEndPoint):
     def set_all_required_attributes(self):
         if self.is_implemented and 'get' in self.operations:
             self.substitute_path_parameters()
-            self.get_response = requests.get(url=f'{self.base_url}{self.substituted_url}')
+            if self.session:
+                res = self.session.get(url=f'{self.base_url}{self.substituted_url}')
+            else:
+                res = requests.get(url=f'{self.base_url}{self.substituted_url}')
+            self.get_response = res
             self.get_response_json = self.get_response.json()
             self.single_get_response = self.get_single_object_from_response(self.get_response_json)
         self.create_post_and_put_data()
@@ -25,11 +29,17 @@ class AasGETPOSTPUTEndPoint(AasBaseEndPoint):
         url = f'{self.base_url}{self.substituted_url}'
         if self.is_implemented:
             if self.post_data is not None:
-                self.post_response = requests.post(url, json=self.post_data)
+                if self.session:
+                    self.post_response = self.session.post(url, json=self.post_data)
+                else:
+                    self.post_response = requests.post(url, json=self.post_data)
                 self.post_response_json = self.post_response.json()
             if self.put_data:
                 print(url), print(self.put_data)
-                self.put_response = requests.put(url, json=self.put_data)
+                if self.session:
+                    self.post_response = self.session.put(url, json=self.put_data)
+                else:
+                    self.put_response = requests.put(url, json=self.put_data)
                 try:
                     self.put_response_json = self.put_response.json()
                 except Exception:

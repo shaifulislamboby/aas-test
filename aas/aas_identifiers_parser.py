@@ -1,5 +1,6 @@
 import re
 from dataclasses import dataclass
+from typing import Union
 
 import requests
 
@@ -8,6 +9,16 @@ import helpers as helpers
 
 @dataclass
 class BaseParser:
+    password: Union[str, None]
+    _id: Union[str, None]
+
+    @property
+    def session(self):
+        if self.password and self._id:
+            session = requests.Session()
+            session.auth = (self._id, self.password)
+            return session
+        return False
 
     @property
     def raw_value(self):
@@ -94,8 +105,11 @@ class AssetAdministrationShell(BaseParser):
 
         for _ids in self.sub_model_ids:
             url = re.sub('{.*?}', _ids, self.sub_model_collection_uri)
-            response = requests.get(url=url).json()
-            sub_model = SubModel(raw_sub_model=response)
+            if self.session:
+                response = self.session.get(url=url).json()
+            else:
+                response = requests.get(url=url).json()
+            sub_model = SubModel(raw_sub_model=response, _id=None, password=None)
             sub_models.append(sub_model)
 
         return sub_models

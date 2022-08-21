@@ -2,6 +2,7 @@ from copy import copy
 from dataclasses import dataclass
 from typing import Optional, Any, Union
 
+import requests
 from requests import Response
 
 from aas_identifiers_parser import AssetAdministrationShell, ConceptDescription, Packages
@@ -14,6 +15,8 @@ BASE_URL = None
 @dataclass
 class AasBaseEndPoint:
     raw_endpoint: dict
+    password: Union[str, None]
+    _id: Union[str, None]
     asset_administration_shells: [AssetAdministrationShell]
     concept_description: ConceptDescription
     packages: Union[Packages, None]
@@ -41,6 +44,14 @@ class AasBaseEndPoint:
     is_implemented: bool = True
     current_aas = None
     current_sub_model = None
+
+    @property
+    def session(self):
+        if self.password and self._id:
+            session = requests.Session()
+            session.auth = (self._id, self.password)
+            return session
+        return False
 
     def parse_endpoint_operations(self) -> None:
         operations = self.raw_endpoint.get(self.full_url_path)
