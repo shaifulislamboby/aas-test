@@ -1,8 +1,8 @@
 {
-  "openapi": "3.0.2",
+  "openapi": "3.0.3",
   "info": {
-    "title": "DotAAS Part 2 | HTTP/REST | Entire Interface Collection",
-    "description": "The entire interface collection as part of Details of the Asset Administration Shell Part 2",
+    "title": "DotAAS Part 2 | HTTP/REST | Asset Administration Shell Environment API",
+    "description": "An exemplary interface combination for the use case of an Asset Administration Shell Environment",
     "termsOfService": "https://github.com/admin-shell-io/aas-specs",
     "contact": {
       "name": "Michael Hoffmeister, Torben Miny, Andreas Orzelski, Manuel Sauer, Constantin Ziesche"
@@ -18,7 +18,7 @@
     "/shells": {
       "get": {
         "tags": [
-          "Asset Administration Shell Repository Interface"
+          "Asset Administration Shell Environment"
         ],
         "summary": "Returns all Asset Administration Shells",
         "operationId": "GetAllAssetAdministrationShells",
@@ -66,14 +66,14 @@
           }
         },
         "x-semanticIds": [
-          "https://admin-shell.io/aas/API/GetAllAssetAdministrationShells/1/0/RC01",
-          "https://admin-shell.io/aas/API/GetAllAssetAdministrationShellsByAssetId/1/0/RC01",
-          "https://admin-shell.io/aas/API/GetAllAssetAdministrationShellsByIdShort/1/0/RC01"
+          "https://admin-shell.io/aas/API/GetAllAssetAdministrationShells/1/0/RC02",
+          "https://admin-shell.io/aas/API/GetAllAssetAdministrationShellsByAssetId/1/0/RC02",
+          "https://admin-shell.io/aas/API/GetAllAssetAdministrationShellsByIdShort/1/0/RC02"
         ]
       },
       "post": {
         "tags": [
-          "Asset Administration Shell Repository Interface"
+          "Asset Administration Shell Environment"
         ],
         "summary": "Creates a new Asset Administration Shell",
         "operationId": "PostAssetAdministrationShell",
@@ -101,14 +101,14 @@
           }
         },
         "x-semanticIds": [
-          "https://admin-shell.io/aas/API/PostAssetAdministrationShell/1/0/RC01"
+          "https://admin-shell.io/aas/API/PostAssetAdministrationShell/1/0/RC02"
         ]
       }
     },
     "/shells/{aasIdentifier}": {
       "get": {
         "tags": [
-          "Asset Administration Shell Repository Interface"
+          "Asset Administration Shell Environment"
         ],
         "summary": "Returns a specific Asset Administration Shell",
         "operationId": "GetAssetAdministrationShellById",
@@ -138,12 +138,12 @@
           }
         },
         "x-semanticIds": [
-          "https://admin-shell.io/aas/API/GetAssetAdministrationShellById/1/0/RC01"
+          "https://admin-shell.io/aas/API/GetAssetAdministrationShellById/1/0/RC02"
         ]
       },
       "put": {
         "tags": [
-          "Asset Administration Shell Repository Interface"
+          "Asset Administration Shell Environment"
         ],
         "summary": "Updates an existing Asset Administration Shell",
         "operationId": "PutAssetAdministrationShellById",
@@ -177,12 +177,12 @@
           }
         },
         "x-semanticIds": [
-          "https://admin-shell.io/aas/API/PutAssetAdministrationShellById/1/0/RC01"
+          "https://admin-shell.io/aas/API/PutAssetAdministrationShellById/1/0/RC02"
         ]
       },
       "delete": {
         "tags": [
-          "Asset Administration Shell Repository Interface"
+          "Asset Administration Shell Environment"
         ],
         "summary": "Deletes an Asset Administration Shell",
         "operationId": "DeleteAssetAdministrationShellById",
@@ -205,18 +205,29 @@
           }
         },
         "x-semanticIds": [
-          "https://admin-shell.io/aas/API/DeleteAssetAdministrationShellById/1/0/RC01"
+          "https://admin-shell.io/aas/API/DeleteAssetAdministrationShellById/1/0/RC02"
         ]
       }
     },
-    "/aas": {
+    "/shells/{aasIdentifier}/aas": {
       "get": {
         "tags": [
-          "Asset Administration Shell Interface"
+          "Asset Administration Shell Environment"
         ],
         "summary": "Returns the Asset Administration Shell",
         "operationId": "GetAssetAdministrationShell",
         "parameters": [
+          {
+            "name": "aasIdentifier",
+            "in": "path",
+            "description": "The Asset Administration Shell’s unique id (BASE64-URL-encoded)",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
           {
             "name": "content",
             "in": "query",
@@ -248,16 +259,27 @@
           }
         },
         "x-semanticIds": [
-          "https://admin-shell.io/aas/API/GetAssetAdministrationShell/1/0/RC01"
+          "https://admin-shell.io/aas/API/GetAssetAdministrationShell/1/0/RC02"
         ]
       },
       "put": {
         "tags": [
-          "Asset Administration Shell Interface"
+          "Asset Administration Shell Environment"
         ],
         "summary": "Updates the Asset Administration Shell",
         "operationId": "PutAssetAdministrationShell",
         "parameters": [
+          {
+            "name": "aasIdentifier",
+            "in": "path",
+            "description": "The Asset Administration Shell’s unique id (BASE64-URL-encoded)",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
           {
             "name": "content",
             "in": "query",
@@ -293,17 +315,30 @@
           }
         },
         "x-semanticIds": [
-          "https://admin-shell.io/aas/API/PutAssetAdministrationShell/1/0/RC01"
+          "https://admin-shell.io/aas/API/PutAssetAdministrationShell/1/0/RC02"
         ]
       }
     },
-    "/aas/asset-information": {
+    "/shells/{aasIdentifier}/aas/asset-information": {
       "get": {
         "tags": [
-          "Asset Administration Shell Interface"
+          "Asset Administration Shell Environment"
         ],
         "summary": "Returns the Asset Information",
         "operationId": "GetAssetInformation",
+        "parameters": [
+          {
+            "name": "aasIdentifier",
+            "in": "path",
+            "description": "The Asset Administration Shell’s unique id (BASE64-URL-encoded)",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "Requested Asset Information",
@@ -317,15 +352,28 @@
           }
         },
         "x-semanticIds": [
-          "https://admin-shell.io/aas/API/GetAssetInformation/1/0/RC01"
+          "https://admin-shell.io/aas/API/GetAssetInformation/1/0/RC02"
         ]
       },
       "put": {
         "tags": [
-          "Asset Administration Shell Interface"
+          "Asset Administration Shell Environment"
         ],
         "summary": "Updates the Asset Information",
         "operationId": "PutAssetInformation",
+        "parameters": [
+          {
+            "name": "aasIdentifier",
+            "in": "path",
+            "description": "The Asset Administration Shell’s unique id (BASE64-URL-encoded)",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "requestBody": {
           "description": "Asset Information object",
           "content": {
@@ -343,17 +391,30 @@
           }
         },
         "x-semanticIds": [
-          "https://admin-shell.io/aas/API/PutAssetInformation/1/0/RC01"
+          "https://admin-shell.io/aas/API/PutAssetInformation/1/0/RC02"
         ]
       }
     },
-    "/aas/submodels": {
+    "/shells/{aasIdentifier}/aas/submodels": {
       "get": {
         "tags": [
-          "Asset Administration Shell Interface"
+          "Asset Administration Shell Environment"
         ],
         "summary": "Returns all submodel references",
         "operationId": "GetAllSubmodelReferences",
+        "parameters": [
+          {
+            "name": "aasIdentifier",
+            "in": "path",
+            "description": "The Asset Administration Shell’s unique id (BASE64-URL-encoded)",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "Requested submodel references",
@@ -370,15 +431,28 @@
           }
         },
         "x-semanticIds": [
-          "https://admin-shell.io/aas/API/GetAllSubmodelReferences/1/0/RC01"
+          "https://admin-shell.io/aas/API/GetAllSubmodelReferences/1/0/RC02"
         ]
       },
       "post": {
         "tags": [
-          "Asset Administration Shell Interface"
+          "Asset Administration Shell Environment"
         ],
         "summary": "Creates a submodel reference at the Asset Administration Shell",
         "operationId": "PostSubmodelReference",
+        "parameters": [
+          {
+            "name": "aasIdentifier",
+            "in": "path",
+            "description": "The Asset Administration Shell’s unique id (BASE64-URL-encoded)",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "requestBody": {
           "description": "Reference to the Submodel",
           "content": {
@@ -403,18 +477,29 @@
           }
         },
         "x-semanticIds": [
-          "https://admin-shell.io/aas/API/PostSubmodelReference/1/0/RC01"
+          "https://admin-shell.io/aas/API/PostSubmodelReference/1/0/RC02"
         ]
       }
     },
-    "/aas/submodels/{submodelIdentifier}": {
+    "/shells/{aasIdentifier}/aas/submodels/{submodelIdentifier}": {
       "delete": {
         "tags": [
-          "Asset Administration Shell Interface"
+          "Asset Administration Shell Environment"
         ],
         "summary": "Deletes the submodel reference from the Asset Administration Shell",
         "operationId": "DeleteSubmodelReferenceById",
         "parameters": [
+          {
+            "name": "aasIdentifier",
+            "in": "path",
+            "description": "The Asset Administration Shell’s unique id (BASE64-URL-encoded)",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
           {
             "name": "submodelIdentifier",
             "in": "path",
@@ -433,216 +518,41 @@
           }
         },
         "x-semanticIds": [
-          "https://admin-shell.io/aas/API/DeleteSubmodelReference/1/0/RC01"
+          "https://admin-shell.io/aas/API/DeleteSubmodelReference/1/0/RC02"
         ]
       }
     },
-    "/submodels": {
+    "/shells/{aasIdentifier}/aas/submodels/{submodelIdentifier}/submodel": {
       "get": {
         "tags": [
-          "Submodel Repository Interface"
-        ],
-        "summary": "Returns all Submodels",
-        "operationId": "GetAllSubmodels",
-        "parameters": [
-          {
-            "name": "semanticId",
-            "in": "query",
-            "description": "The value of the semantic id reference (BASE64-URL-encoded)",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "idShort",
-            "in": "query",
-            "description": "The Submodel’s idShort",
-            "required": false,
-            "style": "form",
-            "explode": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Requested Submodels",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Submodel"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "x-semanticIds": [
-          "https://admin-shell.io/aas/API/GetAllSubmodels/1/0/RC01",
-          "https://admin-shell.io/aas/API/GetAllSubmodelsBySemanticId/1/0/RC01",
-          "https://admin-shell.io/aas/API/GetAllSubmodelsByIdShort/1/0/RC01"
-        ]
-      },
-      "post": {
-        "tags": [
-          "Submodel Repository Interface"
-        ],
-        "summary": "Creates a new Submodel",
-        "operationId": "PostSubmodel",
-        "requestBody": {
-          "description": "Submodel object",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Submodel"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "201": {
-            "description": "Submodel created successfully",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Submodel"
-                }
-              }
-            }
-          }
-        },
-        "x-semanticIds": [
-          "https://admin-shell.io/aas/API/PostSubmodel/1/0/RC01"
-        ]
-      }
-    },
-    "/submodels/{submodelIdentifier}": {
-      "get": {
-        "tags": [
-          "Submodel Repository Interface"
-        ],
-        "summary": "Returns a specific Submodel",
-        "operationId": "GetSubmodelById",
-        "parameters": [
-          {
-            "name": "submodelIdentifier",
-            "in": "path",
-            "description": "The Submodel’s unique id (BASE64-URL-encoded)",
-            "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Requested Submodel",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Submodel"
-                }
-              }
-            }
-          }
-        },
-        "x-semanticIds": [
-          "https://admin-shell.io/aas/API/GetSubmodelById/1/0/RC01"
-        ]
-      },
-      "put": {
-        "tags": [
-          "Submodel Repository Interface"
-        ],
-        "summary": "Creates a new or updates an existing Submodel",
-        "operationId": "PutSubmodelById",
-        "parameters": [
-          {
-            "name": "submodelIdentifier",
-            "in": "path",
-            "description": "The Submodel’s unique id (BASE64-URL-encoded)",
-            "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "description": "Submodel object",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Submodel"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "201": {
-            "description": "Submodel created successfully",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Submodel"
-                }
-              }
-            }
-          },
-          "204": {
-            "description": "Submodel updated successfully"
-          }
-        },
-        "x-semanticIds": [
-          "https://admin-shell.io/aas/API/PutSubmodelById/1/0/RC01"
-        ]
-      },
-      "delete": {
-        "tags": [
-          "Submodel Repository Interface"
-        ],
-        "summary": "Deletes a Submodel",
-        "operationId": "DeleteSubmodelById",
-        "parameters": [
-          {
-            "name": "submodelIdentifier",
-            "in": "path",
-            "description": "The Submodel’s unique id (BASE64-URL-encoded)",
-            "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "Submodel deleted successfully"
-          }
-        },
-        "x-semanticIds": [
-          "https://admin-shell.io/aas/API/DeleteSubmodelById/1/0/RC01"
-        ]
-      }
-    },
-    "/submodel": {
-      "get": {
-        "tags": [
-          "Submodel Interface"
+          "Asset Administration Shell Environment"
         ],
         "summary": "Returns the Submodel",
         "operationId": "GetSubmodel",
         "parameters": [
           {
+            "name": "aasIdentifier",
+            "in": "path",
+            "description": "The Asset Administration Shell’s unique id (BASE64-URL-encoded)",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "submodelIdentifier",
+            "in": "path",
+            "description": "The Submodel’s unique id (BASE64-URL-encoded)",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "level",
             "in": "query",
             "description": "Determines the structural depth of the respective resource content",
@@ -700,16 +610,38 @@
           }
         },
         "x-semanticIds": [
-          "https://admin-shell.io/aas/API/GetSubmodel/1/0/RC01"
+          "https://admin-shell.io/aas/API/GetSubmodel/1/0/RC02"
         ]
       },
       "put": {
         "tags": [
-          "Submodel Interface"
+          "Asset Administration Shell Environment"
         ],
         "summary": "Updates the Submodel",
         "operationId": "PutSubmodel",
         "parameters": [
+          {
+            "name": "aasIdentifier",
+            "in": "path",
+            "description": "The Asset Administration Shell’s unique id (BASE64-URL-encoded)",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "submodelIdentifier",
+            "in": "path",
+            "description": "The Submodel’s unique id (BASE64-URL-encoded)",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
           {
             "name": "level",
             "in": "query",
@@ -772,18 +704,40 @@
           }
         },
         "x-semanticIds": [
-          "https://admin-shell.io/aas/API/PutSubmodel/1/0/RC01"
+          "https://admin-shell.io/aas/API/PutSubmodel/1/0/RC02"
         ]
       }
     },
-    "/submodel/submodel-elements": {
+    "/shells/{aasIdentifier}/aas/submodels/{submodelIdentifier}/submodel/submodel-elements": {
       "get": {
         "tags": [
-          "Submodel Interface"
+          "Asset Administration Shell Environment"
         ],
         "summary": "Returns all submodel elements including their hierarchy",
         "operationId": "GetAllSubmodelElements",
         "parameters": [
+          {
+            "name": "aasIdentifier",
+            "in": "path",
+            "description": "The Asset Administration Shell’s unique id (BASE64-URL-encoded)",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "submodelIdentifier",
+            "in": "path",
+            "description": "The Submodel’s unique id (BASE64-URL-encoded)",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
           {
             "name": "level",
             "in": "query",
@@ -845,18 +799,40 @@
           }
         },
         "x-semanticIds": [
-          "https://admin-shell.io/aas/API/GetAllSubmodelElements/1/0/RC01",
-          "https://admin-shell.io/aas/API/GetAllSubmodelElementsBySemanticId/1/0/RC01",
-          "https://admin-shell.io/aas/API/GetAllSubmodelElementsByParentPathAndSemanticId/1/0/RC01"
+          "https://admin-shell.io/aas/API/GetAllSubmodelElements/1/0/RC02",
+          "https://admin-shell.io/aas/API/GetAllSubmodelElementsBySemanticId/1/0/RC02",
+          "https://admin-shell.io/aas/API/GetAllSubmodelElementsByParentPathAndSemanticId/1/0/RC02"
         ]
       },
       "post": {
         "tags": [
-          "Submodel Interface"
+          "Asset Administration Shell Environment"
         ],
         "summary": "Creates a new submodel element",
         "operationId": "PostSubmodelElement",
         "parameters": [
+          {
+            "name": "aasIdentifier",
+            "in": "path",
+            "description": "The Asset Administration Shell’s unique id (BASE64-URL-encoded)",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "submodelIdentifier",
+            "in": "path",
+            "description": "The Submodel’s unique id (BASE64-URL-encoded)",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
           {
             "name": "level",
             "in": "query",
@@ -926,18 +902,40 @@
           }
         },
         "x-semanticIds": [
-          "https://admin-shell.io/aas/API/PostSubmodelElement/1/0/RC01c"
+          "https://admin-shell.io/aas/API/PostSubmodelElement/1/0/RC02c"
         ]
       }
     },
-    "/submodel/submodel-elements/{idShortPath}": {
+    "/shells/{aasIdentifier}/aas/submodels/{submodelIdentifier}/submodel/submodel-elements/{idShortPath}": {
       "get": {
         "tags": [
-          "Submodel Interface"
+          "Asset Administration Shell Environment"
         ],
         "summary": "Returns a specific submodel element from the Submodel at a specified path",
         "operationId": "GetSubmodelElementByPath",
         "parameters": [
+          {
+            "name": "aasIdentifier",
+            "in": "path",
+            "description": "The Asset Administration Shell’s unique id (BASE64-URL-encoded)",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "submodelIdentifier",
+            "in": "path",
+            "description": "The Submodel’s unique id (BASE64-URL-encoded)",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
           {
             "name": "level",
             "in": "query",
@@ -1007,16 +1005,38 @@
           }
         },
         "x-semanticIds": [
-          "https://admin-shell.io/aas/API/GetSubmodelElementByPath/1/0/RC01"
+          "https://admin-shell.io/aas/API/GetSubmodelElementByPath/1/0/RC02"
         ]
       },
       "put": {
         "tags": [
-          "Submodel Interface"
+          "Asset Administration Shell Environment"
         ],
         "summary": "Updates an existing submodel element at a specified path within submodel elements hierarchy",
         "operationId": "PutSubmodelElementByPath",
         "parameters": [
+          {
+            "name": "aasIdentifier",
+            "in": "path",
+            "description": "The Asset Administration Shell’s unique id (BASE64-URL-encoded)",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "submodelIdentifier",
+            "in": "path",
+            "description": "The Submodel’s unique id (BASE64-URL-encoded)",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
           {
             "name": "level",
             "in": "query",
@@ -1090,17 +1110,39 @@
           }
         },
         "x-semanticIds": [
-          "https://admin-shell.io/aas/API/PutSubmodelElementByPath/1/0/RC01c",
-          "https://admin-shell.io/aas/API/SetSubmodelElementValueByPath/1/0/RC01"
+          "https://admin-shell.io/aas/API/PutSubmodelElementByPath/1/0/RC02c",
+          "https://admin-shell.io/aas/API/SetSubmodelElementValueByPath/1/0/RC02"
         ]
       },
       "post": {
         "tags": [
-          "Submodel Interface"
+          "Asset Administration Shell Environment"
         ],
         "summary": "Creates a new submodel element at a specified path within submodel elements hierarchy",
         "operationId": "PostSubmodelElementByPath",
         "parameters": [
+          {
+            "name": "aasIdentifier",
+            "in": "path",
+            "description": "The Asset Administration Shell’s unique id (BASE64-URL-encoded)",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "submodelIdentifier",
+            "in": "path",
+            "description": "The Submodel’s unique id (BASE64-URL-encoded)",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
           {
             "name": "level",
             "in": "query",
@@ -1181,16 +1223,38 @@
           }
         },
         "x-semanticIds": [
-          "https://admin-shell.io/aas/API/PostSubmodelElementByPath/1/0/RC01c"
+          "https://admin-shell.io/aas/API/PostSubmodelElementByPath/1/0/RC02c"
         ]
       },
       "delete": {
         "tags": [
-          "Submodel Interface"
+          "Asset Administration Shell Environment"
         ],
         "summary": "Deletes a submodel element at a specified path within the submodel elements hierarchy",
         "operationId": "DeleteSubmodelElementByPath",
         "parameters": [
+          {
+            "name": "aasIdentifier",
+            "in": "path",
+            "description": "The Asset Administration Shell’s unique id (BASE64-URL-encoded)",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "submodelIdentifier",
+            "in": "path",
+            "description": "The Submodel’s unique id (BASE64-URL-encoded)",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
           {
             "name": "idShortPath",
             "in": "path",
@@ -1209,18 +1273,40 @@
           }
         },
         "x-semanticIds": [
-          "https://admin-shell.io/aas/API/DeleteSubmodelElementByPath/1/0/RC01"
+          "https://admin-shell.io/aas/API/DeleteSubmodelElementByPath/1/0/RC02"
         ]
       }
     },
-    "/submodel/submodel-elements/{idShortPath}/invoke": {
+    "/shells/{aasIdentifier}/aas/submodels/{submodelIdentifier}/submodel/submodel-elements/{idShortPath}/invoke": {
       "post": {
         "tags": [
-          "Submodel Interface"
+          "Asset Administration Shell Environment"
         ],
         "summary": "Synchronously or asynchronously invokes an Operation at a specified path",
         "operationId": "InvokeOperation",
         "parameters": [
+          {
+            "name": "aasIdentifier",
+            "in": "path",
+            "description": "The Asset Administration Shell’s unique id (BASE64-URL-encoded)",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "submodelIdentifier",
+            "in": "path",
+            "description": "The Submodel’s unique id (BASE64-URL-encoded)",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
           {
             "name": "async",
             "in": "query",
@@ -1286,19 +1372,41 @@
           }
         },
         "x-semanticIds": [
-          "https://admin-shell.io/aas/API/InvokeOperationSync/1/0/RC01",
-          "https://admin-shell.io/aas/API/InvokeOperationAsync/1/0/RC01"
+          "https://admin-shell.io/aas/API/InvokeOperationSync/1/0/RC02",
+          "https://admin-shell.io/aas/API/InvokeOperationAsync/1/0/RC02"
         ]
       }
     },
-    "/submodel/submodel-elements/{idShortPath}/operation-results/{handleId}": {
+    "/shells/{aasIdentifier}/aas/submodels/{submodelIdentifier}/submodel/submodel-elements/{idShortPath}/operation-results/{handleId}": {
       "get": {
         "tags": [
-          "Submodel Interface"
+          "Asset Administration Shell Environment"
         ],
         "summary": "Returns the Operation result of an asynchronous invoked Operation",
         "operationId": "GetOperationAsyncResult",
         "parameters": [
+          {
+            "name": "aasIdentifier",
+            "in": "path",
+            "description": "The Asset Administration Shell’s unique id (BASE64-URL-encoded)",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "submodelIdentifier",
+            "in": "path",
+            "description": "The Submodel’s unique id (BASE64-URL-encoded)",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
           {
             "name": "content",
             "in": "query",
@@ -1350,59 +1458,71 @@
           }
         },
         "x-semanticIds": [
-          "https://admin-shell.io/aas/API/GetOperationAsyncResult/1/0/RC01"
+          "https://admin-shell.io/aas/API/GetOperationAsyncResult/1/0/RC02"
         ]
       }
     },
-    "/registry/shell-descriptors": {
+    "/submodels": {
       "get": {
         "tags": [
-          "Asset Administration Shell Registry Interface"
+          "Asset Administration Shell Environment"
         ],
-        "summary": "Returns all Asset Administration Shell Descriptors",
-        "operationId": "GetAllAssetAdministrationShellDescriptors",
+        "summary": "Returns all Submodels",
+        "operationId": "GetAllSubmodels",
+        "parameters": [
+          {
+            "name": "semanticId",
+            "in": "query",
+            "description": "The value of the semantic id reference (BASE64-URL-encoded)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "idShort",
+            "in": "query",
+            "description": "The Submodel’s idShort",
+            "required": false,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "responses": {
           "200": {
-            "description": "Requested Asset Administration Shell Descriptors",
+            "description": "Requested Submodels",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/AssetAdministrationShellDescriptor"
+                    "$ref": "#/components/schemas/Submodel"
                   }
                 }
               }
             }
-          },
-          "404": {"description": "Requested Asset Administration Shell Descriptors",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/AssetAdministrationShellDescriptor"
-                  }
-                }
-              }
-            }}
+          }
         },
         "x-semanticIds": [
-          "https://admin-shell.io/aas/API/GetAllAssetAdministrationShellDescriptors/1/0/RC01"
+          "https://admin-shell.io/aas/API/GetAllSubmodels/1/0/RC02",
+          "https://admin-shell.io/aas/API/GetAllSubmodelsBySemanticId/1/0/RC02",
+          "https://admin-shell.io/aas/API/GetAllSubmodelsByIdShort/1/0/RC02"
         ]
       },
       "post": {
         "tags": [
-          "Asset Administration Shell Registry Interface"
+          "Asset Administration Shell Environment"
         ],
-        "summary": "Creates a new Asset Administration Shell Descriptor, i.e. registers an AAS",
-        "operationId": "PostAssetAdministrationShellDescriptor",
+        "summary": "Creates a new Submodel",
+        "operationId": "PostSubmodel",
         "requestBody": {
-          "description": "Asset Administration Shell Descriptor object",
+          "description": "Submodel object",
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/AssetAdministrationShellDescriptor"
+                "$ref": "#/components/schemas/Submodel"
               }
             }
           },
@@ -1410,82 +1530,170 @@
         },
         "responses": {
           "201": {
-            "description": "Asset Administration Shell Descriptor created successfully",
+            "description": "Submodel created successfully",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AssetAdministrationShellDescriptor"
+                  "$ref": "#/components/schemas/Submodel"
                 }
               }
             }
           }
         },
         "x-semanticIds": [
-          "https://admin-shell.io/aas/API/PostAssetAdministrationShellDescriptor/1/0/RC01"
+          "https://admin-shell.io/aas/API/PostSubmodel/1/0/RC02"
         ]
       }
     },
-    "/registry/shell-descriptors/{aasIdentifier}": {
+    "/submodels/{submodelIdentifier}/submodel": {
       "get": {
         "tags": [
-          "Asset Administration Shell Registry Interface"
+          "Asset Administration Shell Environment"
         ],
-        "summary": "Returns a specific Asset Administration Shell Descriptor",
-        "operationId": "GetAssetAdministrationShellDescriptorById",
+        "summary": "Returns the Submodel",
+        "operationId": "GetSubmodel_SubmodelRepo",
         "parameters": [
           {
-            "name": "aasIdentifier",
+            "name": "submodelIdentifier",
             "in": "path",
-            "description": "The Asset Administration Shell’s unique id (BASE64-URL-encoded)",
+            "description": "The Submodel’s unique id (BASE64-URL-encoded)",
             "required": true,
             "style": "simple",
             "explode": false,
             "schema": {
               "type": "string"
+            }
+          },
+          {
+            "name": "level",
+            "in": "query",
+            "description": "Determines the structural depth of the respective resource content",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "deep",
+              "enum": [
+                "deep",
+                "core"
+              ]
+            }
+          },
+          {
+            "name": "content",
+            "in": "query",
+            "description": "Determines the request or response kind of the resource",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "normal",
+              "enum": [
+                "normal",
+                "trimmed",
+                "value",
+                "reference",
+                "path"
+              ]
+            }
+          },
+          {
+            "name": "extent",
+            "in": "query",
+            "description": "Determines to which extent the resource is being serialized",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "withBlobValue",
+                "withoutBlobValue"
+              ]
             }
           }
         ],
         "responses": {
           "200": {
-            "description": "Requested Asset Administration Shell Descriptor",
+            "description": "Requested Submodel",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AssetAdministrationShellDescriptor"
+                  "$ref": "#/components/schemas/Submodel"
                 }
               }
             }
           }
         },
         "x-semanticIds": [
-          "https://admin-shell.io/aas/API/GetAssetAdministrationShellDescriptorById/1/0/RC01"
+          "https://admin-shell.io/aas/API/GetSubmodel/1/0/RC02"
         ]
       },
       "put": {
         "tags": [
-          "Asset Administration Shell Registry Interface"
+          "Asset Administration Shell Environment"
         ],
-        "summary": "Updates an existing Asset Administration Shell Descriptor",
-        "operationId": "PutAssetAdministrationShellDescriptorById",
+        "summary": "Updates the Submodel",
+        "operationId": "PutSubmodel_SubmodelRepo",
         "parameters": [
           {
-            "name": "aasIdentifier",
+            "name": "submodelIdentifier",
             "in": "path",
-            "description": "The Asset Administration Shell’s unique id (BASE64-URL-encoded)",
+            "description": "The Submodel’s unique id (BASE64-URL-encoded)",
             "required": true,
             "style": "simple",
             "explode": false,
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "level",
+            "in": "query",
+            "description": "Determines the structural depth of the respective resource content",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "deep",
+              "enum": [
+                "deep",
+                "core"
+              ]
+            }
+          },
+          {
+            "name": "content",
+            "in": "query",
+            "description": "Determines the request or response kind of the resource",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "normal",
+              "enum": [
+                "normal",
+                "trimmed",
+                "value",
+                "reference",
+                "path"
+              ]
+            }
+          },
+          {
+            "name": "extent",
+            "in": "query",
+            "description": "Determines to which extent the resource is being serialized",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "withBlobValue",
+                "withoutBlobValue"
+              ]
+            }
           }
         ],
         "requestBody": {
-          "description": "Asset Administration Shell Descriptor object",
+          "description": "Submodel object",
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/AssetAdministrationShellDescriptor"
+                "$ref": "#/components/schemas/Submodel"
               }
             }
           },
@@ -1493,71 +1701,87 @@
         },
         "responses": {
           "204": {
-            "description": "Asset Administration Shell Descriptor updated successfully"
+            "description": "Submodel updated successfully"
           }
         },
         "x-semanticIds": [
-          "https://admin-shell.io/aas/API/PutAssetAdministrationShellDescriptorById/1/0/RC01"
+          "https://admin-shell.io/aas/API/PutSubmodel/1/0/RC02"
         ]
-      },
-      "delete": {
+      }
+    },
+    "/submodels/{submodelIdentifier}/submodel/submodel-elements": {
+      "get": {
         "tags": [
-          "Asset Administration Shell Registry Interface"
+          "Asset Administration Shell Environment"
         ],
-        "summary": "Deletes an Asset Administration Shell Descriptor, i.e. de-registers an AAS",
-        "operationId": "DeleteAssetAdministrationShellDescriptorById",
+        "summary": "Returns all submodel elements including their hierarchy",
+        "operationId": "GetAllSubmodelElements_SubmodelRepo",
         "parameters": [
           {
-            "name": "aasIdentifier",
+            "name": "submodelIdentifier",
             "in": "path",
-            "description": "The Asset Administration Shell’s unique id (BASE64-URL-encoded)",
+            "description": "The Submodel’s unique id (BASE64-URL-encoded)",
             "required": true,
             "style": "simple",
             "explode": false,
             "schema": {
               "type": "string"
             }
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "Asset Administration Shell Descriptor deleted successfully"
-          }
-        },
-        "x-semanticIds": [
-          "https://admin-shell.io/aas/API/DeleteAssetAdministrationShellDescriptorById/1/0/RC01"
-        ]
-      }
-    },
-    "/registry/shell-descriptors/{aasIdentifier}/submodel-descriptors": {
-      "get": {
-        "tags": [
-          "Asset Administration Shell Registry Interface"
-        ],
-        "summary": "Returns all Submodel Descriptors",
-        "operationId": "GetAllSubmodelDescriptors_AASRegistry",
-        "parameters": [
+          },
           {
-            "name": "aasIdentifier",
-            "in": "path",
-            "description": "The Asset Administration Shell’s unique id (BASE64-URL-encoded)",
-            "required": true,
-            "style": "simple",
-            "explode": false,
+            "name": "level",
+            "in": "query",
+            "description": "Determines the structural depth of the respective resource content",
+            "required": false,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "default": "deep",
+              "enum": [
+                "deep",
+                "core"
+              ]
+            }
+          },
+          {
+            "name": "content",
+            "in": "query",
+            "description": "Determines the request or response kind of the resource",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "normal",
+              "enum": [
+                "normal",
+                "trimmed",
+                "value",
+                "reference",
+                "path"
+              ]
+            }
+          },
+          {
+            "name": "extent",
+            "in": "query",
+            "description": "Determines to which extent the resource is being serialized",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "withBlobValue",
+                "withoutBlobValue"
+              ]
             }
           }
         ],
         "responses": {
           "200": {
-            "description": "Requested Submodel Descriptors",
+            "description": "List of found submodel elements",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/SubmodelDescriptor"
+                    "$ref": "#/components/schemas/SubmodelElement"
                   }
                 }
               }
@@ -1565,34 +1789,80 @@
           }
         },
         "x-semanticIds": [
-          "https://admin-shell.io/aas/API/GetAllSubmodelDescriptors/1/0/RC01"
+          "https://admin-shell.io/aas/API/GetAllSubmodelElements/1/0/RC02",
+          "https://admin-shell.io/aas/API/GetAllSubmodelElementsBySemanticId/1/0/RC02",
+          "https://admin-shell.io/aas/API/GetAllSubmodelElementsByParentPathAndSemanticId/1/0/RC02"
         ]
       },
       "post": {
         "tags": [
-          "Asset Administration Shell Registry Interface"
+          "Asset Administration Shell Environment"
         ],
-        "summary": "Creates a new Submodel Descriptor, i.e. registers a submodel",
-        "operationId": "PostSubmodelDescriptor_AASRegistry",
+        "summary": "Creates a new submodel element",
+        "operationId": "PostSubmodelElement_SubmodelRepo",
         "parameters": [
           {
-            "name": "aasIdentifier",
+            "name": "submodelIdentifier",
             "in": "path",
-            "description": "The Asset Administration Shell’s unique id (BASE64-URL-encoded)",
+            "description": "The Submodel’s unique id (BASE64-URL-encoded)",
             "required": true,
             "style": "simple",
             "explode": false,
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "level",
+            "in": "query",
+            "description": "Determines the structural depth of the respective resource content",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "deep",
+              "enum": [
+                "deep",
+                "core"
+              ]
+            }
+          },
+          {
+            "name": "content",
+            "in": "query",
+            "description": "Determines the request or response kind of the resource",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "normal",
+              "enum": [
+                "normal",
+                "trimmed",
+                "value",
+                "reference",
+                "path"
+              ]
+            }
+          },
+          {
+            "name": "extent",
+            "in": "query",
+            "description": "Determines to which extent the resource is being serialized",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "withBlobValue",
+                "withoutBlobValue"
+              ]
+            }
           }
         ],
         "requestBody": {
-          "description": "Submodel Descriptor object",
+          "description": "Requested submodel element",
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/SubmodelDescriptor"
+                "$ref": "#/components/schemas/SubmodelElement"
               }
             }
           },
@@ -1600,33 +1870,33 @@
         },
         "responses": {
           "201": {
-            "description": "Submodel Descriptor created successfully",
+            "description": "Submodel element created successfully",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/SubmodelDescriptor"
+                  "$ref": "#/components/schemas/SubmodelElement"
                 }
               }
             }
           }
         },
         "x-semanticIds": [
-          "https://admin-shell.io/aas/API/PostSubmodelDescriptor/1/0/RC01"
+          "https://admin-shell.io/aas/API/PostSubmodelElement/1/0/RC02c"
         ]
       }
     },
-    "/registry/shell-descriptors/{aasIdentifier}/submodel-descriptors/{submodelIdentifier}": {
+    "/submodels/{submodelIdentifier}/submodel/submodel-elements/{idShortPath}": {
       "get": {
         "tags": [
-          "Asset Administration Shell Registry Interface"
+          "Asset Administration Shell Environment"
         ],
-        "summary": "Returns a specific Submodel Descriptor",
-        "operationId": "GetSubmodelDescriptorById_AASRegistry",
+        "summary": "Returns a specific submodel element from the Submodel at a specified path",
+        "operationId": "GetSubmodelElementByPath_SubmodelRepo",
         "parameters": [
           {
-            "name": "aasIdentifier",
+            "name": "submodelIdentifier",
             "in": "path",
-            "description": "The Asset Administration Shell’s unique id (BASE64-URL-encoded)",
+            "description": "The Submodel’s unique id (BASE64-URL-encoded)",
             "required": true,
             "style": "simple",
             "explode": false,
@@ -1635,9 +1905,53 @@
             }
           },
           {
-            "name": "submodelIdentifier",
+            "name": "level",
+            "in": "query",
+            "description": "Determines the structural depth of the respective resource content",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "deep",
+              "enum": [
+                "deep",
+                "core"
+              ]
+            }
+          },
+          {
+            "name": "content",
+            "in": "query",
+            "description": "Determines the request or response kind of the resource",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "normal",
+              "enum": [
+                "normal",
+                "trimmed",
+                "value",
+                "reference",
+                "path"
+              ]
+            }
+          },
+          {
+            "name": "extent",
+            "in": "query",
+            "description": "Determines to which extent the resource is being serialized",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "withBlobValue",
+                "withoutBlobValue"
+              ]
+            }
+          },
+          {
+            "name": "idShortPath",
             "in": "path",
-            "description": "The Submodel’s unique id (BASE64-URL-encoded)",
+            "description": "IdShort path to the submodel element (dot-separated)",
             "required": true,
             "style": "simple",
             "explode": false,
@@ -1648,38 +1962,27 @@
         ],
         "responses": {
           "200": {
-            "description": "Requested Submodel Descriptor",
+            "description": "Requested submodel element",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/SubmodelDescriptor"
+                  "$ref": "#/components/schemas/SubmodelElement"
                 }
               }
             }
           }
         },
         "x-semanticIds": [
-          "https://admin-shell.io/aas/API/GetSubmodelDescriptorById/1/0/RC01"
+          "https://admin-shell.io/aas/API/GetSubmodelElementByPath/1/0/RC02"
         ]
       },
       "put": {
         "tags": [
-          "Asset Administration Shell Registry Interface"
+          "Asset Administration Shell Environment"
         ],
-        "summary": "Updates an existing Submodel Descriptor",
-        "operationId": "PutSubmodelDescriptorById_AASRegistry",
+        "summary": "Updates an existing submodel element at a specified path within submodel elements hierarchy",
+        "operationId": "PutSubmodelElementByPath_SubmodelRepo",
         "parameters": [
-          {
-            "name": "aasIdentifier",
-            "in": "path",
-            "description": "The Asset Administration Shell’s unique id (BASE64-URL-encoded)",
-            "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
-          },
           {
             "name": "submodelIdentifier",
             "in": "path",
@@ -1690,14 +1993,69 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "level",
+            "in": "query",
+            "description": "Determines the structural depth of the respective resource content",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "deep",
+              "enum": [
+                "deep",
+                "core"
+              ]
+            }
+          },
+          {
+            "name": "content",
+            "in": "query",
+            "description": "Determines the request or response kind of the resource",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "normal",
+              "enum": [
+                "normal",
+                "trimmed",
+                "value",
+                "reference",
+                "path"
+              ]
+            }
+          },
+          {
+            "name": "extent",
+            "in": "query",
+            "description": "Determines to which extent the resource is being serialized",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "withBlobValue",
+                "withoutBlobValue"
+              ]
+            }
+          },
+          {
+            "name": "idShortPath",
+            "in": "path",
+            "description": "IdShort path to the submodel element (dot-separated)",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
-          "description": "Submodel Descriptor object",
+          "description": "Requested submodel element",
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/SubmodelDescriptor"
+                "$ref": "#/components/schemas/SubmodelElement"
               }
             }
           },
@@ -1705,31 +2063,21 @@
         },
         "responses": {
           "204": {
-            "description": "Submodel Descriptor updated successfully"
+            "description": "Submodel element updated successfully"
           }
         },
         "x-semanticIds": [
-          "https://admin-shell.io/aas/API/PutSubmodelDescriptorById/1/0/RC01"
+          "https://admin-shell.io/aas/API/PutSubmodelElementByPath/1/0/RC02c",
+          "https://admin-shell.io/aas/API/SetSubmodelElementValueByPath/1/0/RC02"
         ]
       },
-      "delete": {
+      "post": {
         "tags": [
-          "Asset Administration Shell Registry Interface"
+          "Asset Administration Shell Environment"
         ],
-        "summary": "Deletes a Submodel Descriptor, i.e. de-registers a submodel",
-        "operationId": "DeleteSubmodelDescriptorById_AASRegistry",
+        "summary": "Creates a new submodel element at a specified path within submodel elements hierarchy",
+        "operationId": "PostSubmodelElementByPath_SubmodelRepo",
         "parameters": [
-          {
-            "name": "aasIdentifier",
-            "in": "path",
-            "description": "The Asset Administration Shell’s unique id (BASE64-URL-encoded)",
-            "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
-          },
           {
             "name": "submodelIdentifier",
             "in": "path",
@@ -1740,56 +2088,69 @@
             "schema": {
               "type": "string"
             }
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "Submodel Descriptor deleted successfully"
-          }
-        },
-        "x-semanticIds": [
-          "https://admin-shell.io/aas/API/DeleteSubmodelDescriptorById/1/0/RC01"
-        ]
-      }
-    },
-    "/registry/submodel-descriptors": {
-      "get": {
-        "tags": [
-          "Submodel Registry Interface"
-        ],
-        "summary": "Returns all Submodel Descriptors",
-        "operationId": "GetAllSubmodelDescriptors",
-        "responses": {
-          "200": {
-            "description": "Requested Submodel Descriptors",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/SubmodelDescriptor"
-                  }
-                }
-              }
+          },
+          {
+            "name": "level",
+            "in": "query",
+            "description": "Determines the structural depth of the respective resource content",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "deep",
+              "enum": [
+                "deep",
+                "core"
+              ]
+            }
+          },
+          {
+            "name": "content",
+            "in": "query",
+            "description": "Determines the request or response kind of the resource",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "normal",
+              "enum": [
+                "normal",
+                "trimmed",
+                "value",
+                "reference",
+                "path"
+              ]
+            }
+          },
+          {
+            "name": "extent",
+            "in": "query",
+            "description": "Determines to which extent the resource is being serialized",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "withBlobValue",
+                "withoutBlobValue"
+              ]
+            }
+          },
+          {
+            "name": "idShortPath",
+            "in": "path",
+            "description": "IdShort path to the submodel element (dot-separated)",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
             }
           }
-        },
-        "x-semanticIds": [
-          "https://admin-shell.io/aas/API/GetAllSubmodelDescriptors/1/0/RC01"
-        ]
-      },
-      "post": {
-        "tags": [
-          "Submodel Registry Interface"
         ],
-        "summary": "Creates a new Submodel Descriptor, i.e. registers a submodel",
-        "operationId": "PostSubmodelDescriptor",
         "requestBody": {
-          "description": "Submodel Descriptor object",
+          "description": "Requested submodel element",
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/SubmodelDescriptor"
+                "$ref": "#/components/schemas/SubmodelElement"
               }
             }
           },
@@ -1797,33 +2158,198 @@
         },
         "responses": {
           "201": {
-            "description": "Submodel Descriptor created successfully",
+            "description": "Submodel element created successfully",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/SubmodelDescriptor"
+                  "$ref": "#/components/schemas/SubmodelElement"
                 }
               }
             }
           }
         },
         "x-semanticIds": [
-          "https://admin-shell.io/aas/API/PostSubmodelDescriptor/1/0/RC01"
+          "https://admin-shell.io/aas/API/PostSubmodelElementByPath/1/0/RC02c"
         ]
-      }
-    },
-    "/registry/submodel-descriptors/{submodelIdentifier}": {
-      "get": {
+      },
+      "delete": {
         "tags": [
-          "Submodel Registry Interface"
+          "Asset Administration Shell Environment"
         ],
-        "summary": "Returns a specific Submodel Descriptor",
-        "operationId": "GetSubmodelDescriptorById",
+        "summary": "Deletes a submodel element at a specified path within the submodel elements hierarchy",
+        "operationId": "DeleteSubmodelElementByPath_SubmodelRepo",
         "parameters": [
           {
             "name": "submodelIdentifier",
             "in": "path",
             "description": "The Submodel’s unique id (BASE64-URL-encoded)",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "idShortPath",
+            "in": "path",
+            "description": "IdShort path to the submodel element (dot-separated)",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Submodel element deleted successfully"
+          }
+        },
+        "x-semanticIds": [
+          "https://admin-shell.io/aas/API/DeleteSubmodelElementByPath/1/0/RC02"
+        ]
+      }
+    },
+    "/submodels/{submodelIdentifier}/submodel/submodel-elements/{idShortPath}/invoke": {
+      "post": {
+        "tags": [
+          "Asset Administration Shell Environment"
+        ],
+        "summary": "Synchronously or asynchronously invokes an Operation at a specified path",
+        "operationId": "InvokeOperation_SubmodelRepo",
+        "parameters": [
+          {
+            "name": "submodelIdentifier",
+            "in": "path",
+            "description": "The Submodel’s unique id (BASE64-URL-encoded)",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "async",
+            "in": "query",
+            "description": "Determines whether an operation invocation is performed asynchronously or synchronously",
+            "required": false,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          {
+            "name": "content",
+            "in": "query",
+            "description": "Determines the request or response kind of the resource",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "normal",
+              "enum": [
+                "normal",
+                "trimmed",
+                "value",
+                "reference",
+                "path"
+              ]
+            }
+          },
+          {
+            "name": "idShortPath",
+            "in": "path",
+            "description": "IdShort path to the submodel element (dot-separated), in this case an operation",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Operation request object",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OperationRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Operation result object",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationResult"
+                }
+              }
+            }
+          }
+        },
+        "x-semanticIds": [
+          "https://admin-shell.io/aas/API/InvokeOperationSync/1/0/RC02",
+          "https://admin-shell.io/aas/API/InvokeOperationAsync/1/0/RC02"
+        ]
+      }
+    },
+    "/submodels/{submodelIdentifier}/submodel/submodel-elements/{idShortPath}/operation-results/{handleId}": {
+      "get": {
+        "tags": [
+          "Asset Administration Shell Environment"
+        ],
+        "summary": "Returns the Operation result of an asynchronous invoked Operation",
+        "operationId": "GetOperationAsyncResult_SubmodelRepo",
+        "parameters": [
+          {
+            "name": "submodelIdentifier",
+            "in": "path",
+            "description": "The Submodel’s unique id (BASE64-URL-encoded)",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "content",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "default": "normal",
+              "enum": [
+                "normal",
+                "value"
+              ]
+            }
+          },
+          {
+            "name": "idShortPath",
+            "in": "path",
+            "description": "IdShort path to the submodel element (dot-separated), in this case an operation",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "handleId",
+            "in": "path",
+            "description": "The returned handle id of an operation’s asynchronous invocation used to request the current state of the operation’s execution (BASE64-URL-encoded)",
             "required": true,
             "style": "simple",
             "explode": false,
@@ -1834,92 +2360,25 @@
         ],
         "responses": {
           "200": {
-            "description": "Requested Submodel Descriptor",
+            "description": "Operation result object",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/SubmodelDescriptor"
+                  "$ref": "#/components/schemas/OperationResult"
                 }
               }
             }
           }
         },
         "x-semanticIds": [
-          "https://admin-shell.io/aas/API/GetSubmodelDescriptorById/1/0/RC01"
-        ]
-      },
-      "put": {
-        "tags": [
-          "Submodel Registry Interface"
-        ],
-        "summary": "Updates an existing Submodel Descriptor",
-        "operationId": "PutSubmodelDescriptorById",
-        "parameters": [
-          {
-            "name": "submodelIdentifier",
-            "in": "path",
-            "description": "The Submodel’s unique id (BASE64-URL-encoded)",
-            "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "description": "Submodel Descriptor object",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/SubmodelDescriptor"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "204": {
-            "description": "Submodel Descriptor updated successfully"
-          }
-        },
-        "x-semanticIds": [
-          "https://admin-shell.io/aas/API/PutSubmodelDescriptorById/1/0/RC01"
-        ]
-      },
-      "delete": {
-        "tags": [
-          "Submodel Registry Interface"
-        ],
-        "summary": "Deletes a Submodel Descriptor, i.e. de-registers a submodel",
-        "operationId": "DeleteSubmodelDescriptorById",
-        "parameters": [
-          {
-            "name": "submodelIdentifier",
-            "in": "path",
-            "description": "The Submodel’s unique id (BASE64-URL-encoded)",
-            "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "Submodel Descriptor deleted successfully"
-          }
-        },
-        "x-semanticIds": [
-          "https://admin-shell.io/aas/API/DeleteSubmodelDescriptorById/1/0/RC01"
+          "https://admin-shell.io/aas/API/GetOperationAsyncResult/1/0/RC02"
         ]
       }
     },
     "/concept-descriptions": {
       "get": {
         "tags": [
-          "Concept Description Repository Interface"
+          "Asset Administration Shell Environment"
         ],
         "summary": "Returns all Concept Descriptions",
         "operationId": "GetAllConceptDescriptions",
@@ -1974,15 +2433,15 @@
           }
         },
         "x-semanticIds": [
-          "https://admin-shell.io/aas/API/GetAllConceptDescriptions/1/0/RC01",
-          "https://admin-shell.io/aas/API/GetAllConceptDescriptionsByIdShort/1/0/RC01",
-          "https://admin-shell.io/aas/API/GetAllConceptDescriptionsByIsCaseOf/1/0/RC01",
-          "https://admin-shell.io/aas/API/GetAllConceptDescriptionsByDataSpecificationReference/1/0/RC01"
+          "https://admin-shell.io/aas/API/GetAllConceptDescriptions/1/0/RC02",
+          "https://admin-shell.io/aas/API/GetAllConceptDescriptionsByIdShort/1/0/RC02",
+          "https://admin-shell.io/aas/API/GetAllConceptDescriptionsByIsCaseOf/1/0/RC02",
+          "https://admin-shell.io/aas/API/GetAllConceptDescriptionsByDataSpecificationReference/1/0/RC02"
         ]
       },
       "post": {
         "tags": [
-          "Concept Description Repository Interface"
+          "Asset Administration Shell Environment"
         ],
         "summary": "Creates a new Concept Description",
         "operationId": "PostConceptDescription",
@@ -2010,14 +2469,14 @@
           }
         },
         "x-semanticIds": [
-          "https://admin-shell.io/aas/API/PostConceptDescription/1/0/RC01"
+          "https://admin-shell.io/aas/API/PostConceptDescription/1/0/RC02"
         ]
       }
     },
     "/concept-descriptions/{cdIdentifier}": {
       "get": {
         "tags": [
-          "Concept Description Repository Interface"
+          "Asset Administration Shell Environment"
         ],
         "summary": "Returns a specific Concept Description",
         "operationId": "GetConceptDescriptionById",
@@ -2047,12 +2506,12 @@
           }
         },
         "x-semanticIds": [
-          "https://admin-shell.io/aas/API/GetConceptDescriptionById/1/0/RC01"
+          "https://admin-shell.io/aas/API/GetConceptDescriptionById/1/0/RC02"
         ]
       },
       "put": {
         "tags": [
-          "Concept Description Repository Interface"
+          "Asset Administration Shell Environment"
         ],
         "summary": "Updates an existing Concept Description",
         "operationId": "PutConceptDescriptionById",
@@ -2086,12 +2545,12 @@
           }
         },
         "x-semanticIds": [
-          "https://admin-shell.io/aas/API/PutConceptDescriptionById/1/0/RC01"
+          "https://admin-shell.io/aas/API/PutConceptDescriptionById/1/0/RC02"
         ]
       },
       "delete": {
         "tags": [
-          "Concept Description Repository Interface"
+          "Asset Administration Shell Environment"
         ],
         "summary": "Deletes a Concept Description",
         "operationId": "DeleteConceptDescriptionById",
@@ -2114,214 +2573,14 @@
           }
         },
         "x-semanticIds": [
-          "https://admin-shell.io/aas/API/DeleteConceptDescriptionById/1/0/RC01"
-        ]
-      }
-    },
-    "/packages": {
-      "get": {
-        "tags": [
-          "AASX File Server Interface"
-        ],
-        "summary": "Returns a list of available AASX packages at the server",
-        "operationId": "GetAllAASXPackageIds",
-        "parameters": [
-          {
-            "name": "aasId",
-            "in": "query",
-            "description": "The Asset Administration Shell’s unique id (BASE64-URL-encoded)",
-            "required": false,
-            "style": "form",
-            "explode": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Requested package list",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/PackageDescription"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "x-semanticIds": [
-          "https://admin-shell.io/aas/API/GetAllAASXPackageIds/1/0/RC01"
-        ]
-      },
-      "post": {
-        "tags": [
-          "AASX File Server Interface"
-        ],
-        "summary": "Stores the AASX package at the server",
-        "operationId": "PostAASXPackage",
-        "requestBody": {
-          "description": "AASX package",
-          "content": {
-            "multipart/form-data": {
-              "schema": {
-                "$ref": "#/components/schemas/packages_body"
-              },
-              "encoding": {
-                "file": {
-                  "contentType": "application/asset-administration-shell-package",
-                  "style": "form"
-                }
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "201": {
-            "description": "AASX package stored successfully",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PackageDescription"
-                }
-              }
-            }
-          }
-        },
-        "x-semanticIds": [
-          "https://admin-shell.io/aas/API/PostAASXPackage/1/0/RC01"
-        ]
-      }
-    },
-    "/packages/{packageId}": {
-      "get": {
-        "tags": [
-          "AASX File Server Interface"
-        ],
-        "summary": "Returns a specific AASX package from the server",
-        "operationId": "GetAASXByPackageId",
-        "parameters": [
-          {
-            "name": "packageId",
-            "in": "path",
-            "description": "The package Id (BASE64-URL-encoded)",
-            "required": true,
-            "style": "simple",
-            "explode": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Requested AASX package",
-            "headers": {
-              "X-FileName": {
-                "description": "Filename of the package",
-                "style": "simple",
-                "explode": false,
-                "schema": {
-                  "type": "string"
-                }
-              }
-            },
-            "content": {
-              "application/asset-administration-shell-package": {
-                "schema": {
-                  "type": "string",
-                  "format": "binary"
-                }
-              }
-            }
-          }
-        },
-        "x-semanticIds": [
-          "https://admin-shell.io/aas/API/GetAASXByPackageId/1/0/RC01"
-        ]
-      },
-      "put": {
-        "tags": [
-          "AASX File Server Interface"
-        ],
-        "summary": "Updates the AASX package at the server",
-        "operationId": "PutAASXByPackageId",
-        "parameters": [
-          {
-            "name": "packageId",
-            "in": "path",
-            "description": "The Package Id (BASE64-URL-encoded)",
-            "required": true,
-            "style": "simple",
-            "explode": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "description": "AASX package",
-          "content": {
-            "multipart/form-data": {
-              "schema": {
-                "$ref": "#/components/schemas/packages_packageId_body"
-              },
-              "encoding": {
-                "file": {
-                  "contentType": "application/asset-administration-shell-package",
-                  "style": "form"
-                }
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "204": {
-            "description": "AASX package updated successfully"
-          }
-        },
-        "x-semanticIds": [
-          "https://admin-shell.io/aas/API/PutAASXByPackageId/1/0/RC01"
-        ]
-      },
-      "delete": {
-        "tags": [
-          "AASX File Server Interface"
-        ],
-        "summary": "Deletes a specific AASX package from the server",
-        "operationId": "DeleteAASXByPackageId",
-        "parameters": [
-          {
-            "name": "packageId",
-            "in": "path",
-            "description": "The Package Id (BASE64-URL-encoded)",
-            "required": true,
-            "style": "simple",
-            "explode": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "Deleted successfully"
-          }
-        },
-        "x-semanticIds": [
-          "https://admin-shell.io/aas/API/DeleteAASXByPackageId/1/0/RC01"
+          "https://admin-shell.io/aas/API/DeleteConceptDescriptionById/1/0/RC02"
         ]
       }
     },
     "/serialization": {
       "get": {
         "tags": [
-          "Asset Administration Shell Serialization Interface"
+          "Asset Administration Shell Environment Serialization"
         ],
         "summary": "Returns an appropriate serialization based on the specified format (see SerializationFormat)",
         "operationId": "GenerateSerializationByIds",
@@ -2392,198 +2651,7 @@
           }
         },
         "x-semanticIds": [
-          "https://admin-shell.io/aas/API/GenerateSerializationByIds/1/0/RC01"
-        ]
-      }
-    },
-    "/lookup/shells": {
-      "get": {
-        "tags": [
-          "Asset Administration Shell Basic Discovery"
-        ],
-        "summary": "Returns a list of Asset Administration Shell ids based on Asset identifier key-value-pairs",
-        "operationId": "GetAllAssetAdministrationShellIdsByAssetLink",
-        "parameters": [
-          {
-            "name": "assetIds",
-            "in": "query",
-            "description": "The key-value-pair of an Asset identifier",
-            "required": false,
-            "style": "form",
-            "explode": true,
-            "schema": {
-              "type": "array",
-              "example": "[{\"key\": \"globalAssetId\",\"value\": \"http://example.company/myAsset\"},{\"key\": \"myOwnInternalAssetId\",\"value\": \"12345ABC\"}]",
-              "items": {
-                "$ref": "#/components/schemas/IdentifierKeyValuePair"
-              }
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Requested Asset Administration Shell ids",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Identifier"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "x-semanticIds": [
-          "https://admin-shell.io/aas/API/GetAllAssetAdministrationShellIdsByAssetLink/1/0/RC01"
-        ]
-      }
-    },
-    "/lookup/shells/{aasIdentifier}": {
-      "get": {
-        "tags": [
-          "Asset Administration Shell Basic Discovery"
-        ],
-        "summary": "Returns a list of Asset identifier key-value-pairs based on an Asset Administration Shell id to edit discoverable content",
-        "operationId": "GetAllAssetLinksById",
-        "parameters": [
-          {
-            "name": "aasIdentifier",
-            "in": "path",
-            "description": "The Asset Administration Shell’s unique id (BASE64-URL-encoded)",
-            "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Requested Asset identifier key-value-pairs",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/IdentifierKeyValuePair"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "x-semanticIds": [
-          "https://admin-shell.io/aas/API/GetAllAssetLinksById/1/0/RC01"
-        ]
-      },
-      "post": {
-        "tags": [
-          "Asset Administration Shell Basic Discovery"
-        ],
-        "summary": "Creates all Asset identifier key-value-pair linked to an Asset Administration Shell to edit discoverable content",
-        "operationId": "PostAllAssetLinksById",
-        "parameters": [
-          {
-            "name": "aasIdentifier",
-            "in": "path",
-            "description": "The Asset Administration Shell’s unique id (BASE64-URL-encoded)",
-            "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "description": "Asset identifier key-value-pairs",
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/IdentifierKeyValuePair"
-                }
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "201": {
-            "description": "Asset identifier key-value-pairs created successfully",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/IdentifierKeyValuePair"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "x-semanticIds": [
-          "https://admin-shell.io/aas/API/PostAllAssetLinksById/1/0/RC01"
-        ]
-      },
-      "delete": {
-        "tags": [
-          "Asset Administration Shell Basic Discovery"
-        ],
-        "summary": "Deletes all Asset identifier key-value-pair linked to an Asset Administration Shell to edit discoverable content",
-        "operationId": "DeleteAllAssetLinksById",
-        "parameters": [
-          {
-            "name": "aasIdentifier",
-            "in": "path",
-            "description": "The Asset Administration Shell’s unique id (BASE64-URL-encoded)",
-            "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "Asset identifier key-value-pairs deleted successfully"
-          }
-        },
-        "x-semanticIds": [
-          "https://admin-shell.io/aas/API/DeleteAllAssetLinksById/1/0/RC01"
-        ]
-      }
-    },
-    "/descriptor": {
-      "get": {
-        "tags": [
-          "Descriptor Interface"
-        ],
-        "summary": "Returns the self-describing information of a network resource (Descriptor)",
-        "operationId": "GetDescriptor",
-        "responses": {
-          "200": {
-            "description": "Requested Descriptor",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Descriptor"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "x-semanticIds": [
-          "https://admin-shell.io/aas/API/Descriptor/GetDescriptor/1/0/RC01"
+          "https://admin-shell.io/aas/API/GenerateSerializationByIds/1/0/RC02"
         ]
       }
     }
@@ -4105,137 +4173,6 @@
           }
         }
       },
-      "AssetAdministrationShellDescriptor": {
-        "required": [
-          "endpoints",
-          "identification"
-        ],
-        "type": "object",
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/Descriptor"
-          },
-          {
-            "properties": {
-              "administration": {
-                "$ref": "#/components/schemas/AdministrativeInformation"
-              },
-              "description": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/LangString"
-                }
-              },
-              "globalAssetId": {
-                "$ref": "#/components/schemas/Reference"
-              },
-              "idShort": {
-                "type": "string"
-              },
-              "identification": {
-                "$ref": "#/components/schemas/Identifier"
-              },
-              "specificAssetIds": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/IdentifierKeyValuePair"
-                }
-              },
-              "submodelDescriptors": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/SubmodelDescriptor"
-                }
-              }
-            }
-          }
-        ]
-      },
-      "Descriptor": {
-        "type": "object",
-        "properties": {
-          "endpoints": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Endpoint"
-            }
-          }
-        },
-        "example": "{  \"endpoints\": [{ \"protocolInformation\": { \"endpointAddress\": \"https://localhost:1234\", \"endpointProtocolVersion\": \"1.1\"  }, \"interface\": \"AAS-1.0\"  }, { \"protocolInformation\": {  \"endpointAddress\": \"opc.tcp://localhost:4840\" },    \"interface\": \"AAS-1.0\" }, {  \"protocolInformation\": { \"endpointAddress\": \"https://localhost:5678\",  \"endpointProtocolVersion\": \"1.1\", \"subprotocol\": \"OPC UA Basic SOAP\", \"subprotocolBody\": \"ns=2;s=MyAAS\", \"subprotocolBodyEncoding\": \"plain\"  }, \"interface\": \"AAS-1.0\"  }] }"
-      },
-      "Endpoint": {
-        "required": [
-          "interface",
-          "protocolInformation"
-        ],
-        "type": "object",
-        "properties": {
-          "interface": {
-            "type": "string"
-          },
-          "protocolInformation": {
-            "$ref": "#/components/schemas/ProtocolInformation"
-          }
-        }
-      },
-      "ProtocolInformation": {
-        "required": [
-          "endpointAddress"
-        ],
-        "type": "object",
-        "properties": {
-          "endpointAddress": {
-            "type": "string"
-          },
-          "endpointProtocol": {
-            "type": "string"
-          },
-          "endpointProtocolVersion": {
-            "type": "string"
-          },
-          "subprotocol": {
-            "type": "string"
-          },
-          "subprotocolBody": {
-            "type": "string"
-          },
-          "subprotocolBodyEncoding": {
-            "type": "string"
-          }
-        }
-      },
-      "SubmodelDescriptor": {
-        "required": [
-          "endpoints",
-          "identification"
-        ],
-        "type": "object",
-        "properties": {
-          "administration": {
-            "$ref": "#/components/schemas/AdministrativeInformation"
-          },
-          "description": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/LangString"
-            }
-          },
-          "idShort": {
-            "type": "string"
-          },
-          "identification": {
-            "$ref": "#/components/schemas/Identifier"
-          },
-          "semanticId": {
-            "$ref": "#/components/schemas/Reference"
-          }
-        },
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/Descriptor"
-          }
-        ]
-      },
       "ConceptDescription": {
         "allOf": [
           {
@@ -4255,20 +4192,6 @@
             }
           }
         ]
-      },
-      "PackageDescription": {
-        "type": "object",
-        "properties": {
-          "aasIds": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Identifier"
-            }
-          },
-          "packageId": {
-            "type": "string"
-          }
-        }
       },
       "AssetAdministrationShellEnvironment": {
         "type": "object",
@@ -4309,41 +4232,59 @@
             "type": "boolean"
           }
         }
-      },
-      "packages_body": {
-        "type": "object",
-        "properties": {
-          "aasIds": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Identifier"
-            }
-          },
-          "file": {
-            "type": "string",
-            "format": "binary"
-          },
-          "fileName": {
-            "type": "string"
-          }
+      }
+    },
+    "parameters": {
+      "Content": {
+        "name": "content",
+        "in": "query",
+        "description": "Determines the request or response kind of the resource",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "default": "normal",
+          "enum": [
+            "normal",
+            "trimmed",
+            "value",
+            "reference",
+            "path"
+          ]
         }
       },
-      "packages_packageId_body": {
-        "type": "object",
-        "properties": {
-          "aasIds": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Identifier"
-            }
-          },
-          "file": {
-            "type": "string",
-            "format": "binary"
-          },
-          "fileName": {
-            "type": "string"
-          }
+      "Level": {
+        "name": "level",
+        "in": "query",
+        "description": "Determines the structural depth of the respective resource content",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "default": "deep",
+          "enum": [
+            "deep",
+            "core"
+          ]
+        }
+      },
+      "Extent": {
+        "name": "extent",
+        "in": "query",
+        "description": "Determines to which extent the resource is being serialized",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "enum": [
+            "withBlobValue",
+            "withoutBlobValue"
+          ]
+        }
+      },
+      "SemanticId": {
+        "name": "semanticId",
+        "in": "query",
+        "description": "The value of the semantic id reference (BASE64-URL-encoded)",
+        "schema": {
+          "type": "string"
         }
       }
     }

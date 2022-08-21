@@ -1,13 +1,24 @@
 import re
-from dataclasses import dataclass, field
+from dataclasses import dataclass
+from typing import Union
 
 import requests
 
-import aasTest.helpers as helpers
+import helpers as helpers
 
 
 @dataclass
 class BaseParser:
+    password: Union[str, None]
+    _id: Union[str, None]
+
+    @property
+    def session(self):
+        if self.password and self._id:
+            session = requests.Session()
+            session.auth = (self._id, self.password)
+            return session
+        return False
 
     @property
     def raw_value(self):
@@ -46,12 +57,23 @@ class SubModel(BaseParser):
     def semantic_id(self):
         return self.raw_sub_model.get('semanticId')
 
+    @property
+    def has_sub_model_elements(self):
+        if 'submodelElements' in self.raw_sub_model:
+            return True
+        return False
+
+    @property
+    def id_short_path_sub_model_elements(self):
+        if 'submodelElements' in self.raw_sub_model:
+            return helpers.create_url_encoded_from_id(self.raw_sub_model.get('submodelElements')[0].get('idShort'))
+        return 'not available'
+
 
 @dataclass
 class AssetAdministrationShell(BaseParser):
     raw_asset_administration_shell: dict
     sub_model_collection_uri: str
-    sub_models: [SubModel] = field(default_factory=list)
     parsing_limit: int = 100
 
     @property
@@ -74,7 +96,8 @@ class AssetAdministrationShell(BaseParser):
         return sub_model_ids
 
     @property
-    def collect_all_sub_models(self) -> bool:
+    def sub_models(self):
+        sub_models = []
         if '{' not in self.sub_model_collection_uri:
             raise ValueError('Provided submodel collection path does not contains the path parameter for sub model id'
                              'without id we won`t be able to fetch particular sub model, so please provide a url'
@@ -82,10 +105,14 @@ class AssetAdministrationShell(BaseParser):
 
         for _ids in self.sub_model_ids:
             url = re.sub('{.*?}', _ids, self.sub_model_collection_uri)
-            response = requests.get(url=url).json()
-            sub_model = SubModel(raw_sub_model=response)
-            self.sub_models.append(sub_model)
-        return True
+            if self.session:
+                response = self.session.get(url=url).json()
+            else:
+                response = requests.get(url=url).json()
+            sub_model = SubModel(raw_sub_model=response, _id=None, password=None)
+            sub_models.append(sub_model)
+
+        return sub_models
 
 
 @dataclass
@@ -97,9 +124,6 @@ class ConceptDescription(BaseParser):
         return self.raw_concept_description.get('description')
 
 
-base_url = 'http://0.0.0.0:8080/'
-res_aas = requests.get(f'{base_url}shells/').json()[0]
-aas = AssetAdministrationShell(raw_asset_administration_shell=res_aas,
-                               sub_model_collection_uri=f'{base_url}submodels/{{ssss}}')
-
-aas
+@dataclass
+class Packages(BaseParser):
+    raw_packages: dict

@@ -2,7 +2,11 @@ from copy import copy
 from dataclasses import dataclass
 from typing import Optional, Any, Union
 
+import requests
 from requests import Response
+
+from aas_identifiers_parser import AssetAdministrationShell, ConceptDescription, Packages
+from helpers import convert_to_base64_form
 
 SCHEMA_PATH = None
 BASE_URL = None
@@ -11,6 +15,11 @@ BASE_URL = None
 @dataclass
 class AasBaseEndPoint:
     raw_endpoint: dict
+    password: Union[str, None]
+    _id: Union[str, None]
+    asset_administration_shells: [AssetAdministrationShell]
+    concept_description: ConceptDescription
+    packages: Union[Packages, None]
     base_url: str
     full_url_path: str
     substituted_url: str = None
@@ -32,8 +41,17 @@ class AasBaseEndPoint:
     patch_response: dict = None
     not_implemented_error_msg: str = 'no matching request mapper found'
     number_of_objects_available: int = 0
-    aas_identifier: str = None
     is_implemented: bool = True
+    current_aas = None
+    current_sub_model = None
+
+    @property
+    def session(self):
+        if self.password and self._id:
+            session = requests.Session()
+            session.auth = (self._id, self.password)
+            return session
+        return False
 
     def parse_endpoint_operations(self) -> None:
         operations = self.raw_endpoint.get(self.full_url_path)
@@ -46,15 +64,41 @@ class AasBaseEndPoint:
             if param in self.full_url_path:
                 replacement = None
                 if param.startswith('{aas'):
-                    replacement = self.aas_identifier
+                    for aas in self.asset_administration_shells:
+                        for sub_models in aas.sub_models:
+                            if sub_models.has_sub_model_elements:
+                                self.current_aas = aas
+                                replacement = aas.identifier
+                                break
+                            else:
+                                continue
+                            break
+                    # replacement = self.asset_administration_shells[0].identifier
                 if param.startswith('{submodel'):
-                    replacement = self.sub_model_identifier
+                    for aas in self.asset_administration_shells:
+                        for sub_models in aas.sub_models:
+                            if sub_models.has_sub_model_elements:
+                                self.current_aas = aas
+                    try:
+                        for sub_model in self.current_aas.sub_models:
+                            if sub_model.has_sub_model_elements:
+                                replacement = sub_model.identifier
+                                self.current_sub_model = sub_model
+                                break
+                            else:
+                                continue
+                    except IndexError as error:
+                        print(self.asset_administration_shells)
+                        replacement = self.asset_administration_shells[-1].sub_models[-1].identifier
                 if param.startswith('{idShort'):
-                    replacement = self.id_short
+                    replacement = self.current_sub_model.id_short_path_sub_model_elements
                 if param.startswith('{cdIdentifier'):
-                    replacement = self.cd_identifier
+                    replacement = self.concept_description.identifier
                 if param.startswith('{package'):
-                    replacement = self.package_identifer
+                    if self.packages:
+                        replacement = self.packages.identifier
+                    else:
+                        replacement = convert_to_base64_form('not_available')
                 if replacement:
                     self.replace_(param, replacement=replacement)
 
@@ -77,7 +121,7 @@ class AasBaseEndPoint:
 
     @staticmethod
     def get_single_object_from_response(response: Union[list, dict]) -> dict:
-        if isinstance(response, list):
+        if isinstance(response, list) and len(response) > 0:
             return response[-1]
         return response
 
@@ -101,23 +145,23 @@ class AasBaseEndPoint:
     @staticmethod
     def get_updated_identification_data_for_post(identification: dict) -> dict:
         _id = identification.get('id')
-        _id_list = list(_id)
-        _id_list[-1] = str(int(_id_list[-1]) + 1)
-        identification.update({'id': ''.join(_id_list)})
+        if isinstance(_id[-1], int):
+            _id_list = list(_id)
+            _id_list[-1] = str(int(_id_list[-1]) + 1)
+            identification.update({'id': ''.join(_id_list)})
+        else:
+            _id = _id+'something'
+            identification.update({'id': _id})
         return identification
 
-    def create_request_data_from_response(self):
+    def create_post_or_put_request_data_from_response(self):
         data = copy(self.single_get_response)
+        if 'identification' not in data:
+            if isinstance(data, list) and len(data) > 0:
+                return data[0]
+            return data
         identification = data.get('identification')
         updated_identification = self.get_updated_identification_data_for_post(identification)
         data.update(updated_identification)
         return data
 
-    def create_put_request_data_from_response(self):
-        data = copy(self.single_get_response)
-        # identification = data.pop('identification')
-        # data['assetInformation']['globalAssetId']['keys'].append(data['assetInformation']['globalAssetId']['keys'][0])
-        # identification = data.pop('idShort')
-        # updated_identification = self.get_updated_identification_data_for_post(identification)
-        # data.update(updated_identification)
-        return data
