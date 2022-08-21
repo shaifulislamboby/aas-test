@@ -169,3 +169,15 @@ class AASEndPoints:
                 # need to add things to log or file
                 pass
 
+    def get_aas_identifier_response(self) -> tuple[str, bool]:
+        _error = None
+        _response = None
+        try:
+            response = requests.get(url=f'{self.base_url}/shells/').json()
+            _response = self.parse_response(response=response, asset_identifier=True)
+        except Exception as error:
+            _error = error
+
+        if _response and not _error:
+            return _response, False
+        return str(_error), True

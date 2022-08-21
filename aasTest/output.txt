@@ -1,5 +1,0 @@
-test passed ---> ('/shells', 'get')
-test passed ---> ('/shells', 'post')
-test passed ---> ('/shells/{aasIdentifier}', 'get')
-test passed ---> ('/shells/{aasIdentifier}', 'put')
-test passed ---> ('/shells/{aasIdentifier}', 'delete')
