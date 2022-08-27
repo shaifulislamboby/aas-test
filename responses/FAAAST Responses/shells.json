@@ -1,0 +1,343 @@
+[
+  {
+    "modelType": {
+      "name": "AssetAdministrationShell"
+    },
+    "assetInformation": {
+      "assetKind": "Instance",
+      "globalAssetId": {
+        "keys": [
+          {
+            "idType": "Iri",
+            "type": "Asset",
+            "value": "https://acplt.org/Test_Asset"
+          }
+        ]
+      },
+      "billOfMaterial": [
+        {
+          "keys": [
+            {
+              "idType": "Iri",
+              "type": "Submodel",
+              "value": "http://acplt.org/Submodels/Assets/TestAsset/BillOfMaterial"
+            }
+          ]
+        }
+      ]
+    },
+    "submodels": [
+      {
+        "keys": [
+          {
+            "idType": "Iri",
+            "type": "Submodel",
+            "value": "https://example.com/ids/sm/1145_8090_6012_5097"
+          }
+        ]
+      },
+      {
+        "keys": [
+          {
+            "idType": "Iri",
+            "type": "Submodel",
+            "value": "https://example.com/ids/sm/4445_8090_6012_7409"
+          }
+        ]
+      },
+      {
+        "keys": [
+          {
+            "idType": "Iri",
+            "type": "Submodel",
+            "value": "https://example.com/ids/sm/2110_9090_6012_8448"
+          }
+        ]
+      },
+      {
+        "keys": [
+          {
+            "idType": "Iri",
+            "type": "Submodel",
+            "value": "https://example.com/ids/sm/5410_9090_6012_0950"
+          }
+        ]
+      },
+      {
+        "keys": [
+          {
+            "idType": "Iri",
+            "type": "Submodel",
+            "value": "https://example.com/ids/sm/2402_1191_1022_1090"
+          }
+        ]
+      }
+    ],
+    "identification": {
+      "idType": "Iri",
+      "id": "https://example.com/ids/aas/3235_8090_6012_8932"
+    },
+    "idShort": "FestoDemoAAS"
+  },
+  {
+    "name": "AssetAdministrationShell"
+  },
+  {
+    "assetKind": "Instance",
+    "globalAssetId": {
+      "keys": [
+        {
+          "idType": "Iri",
+          "type": "Asset",
+          "value": "https://acplt.org/Test_Asset"
+        }
+      ]
+    },
+    "billOfMaterial": [
+      {
+        "keys": [
+          {
+            "idType": "Iri",
+            "type": "Submodel",
+            "value": "http://acplt.org/Submodels/Assets/TestAsset/BillOfMaterial"
+          }
+        ]
+      }
+    ]
+  },
+  [
+    {
+      "keys": [
+        {
+          "idType": "Iri",
+          "type": "Submodel",
+          "value": "https://example.com/ids/sm/1145_8090_6012_5097"
+        }
+      ]
+    },
+    {
+      "keys": [
+        {
+          "idType": "Iri",
+          "type": "Submodel",
+          "value": "https://example.com/ids/sm/4445_8090_6012_7409"
+        }
+      ]
+    },
+    {
+      "keys": [
+        {
+          "idType": "Iri",
+          "type": "Submodel",
+          "value": "https://example.com/ids/sm/2110_9090_6012_8448"
+        }
+      ]
+    },
+    {
+      "keys": [
+        {
+          "idType": "Iri",
+          "type": "Submodel",
+          "value": "https://example.com/ids/sm/5410_9090_6012_0950"
+        }
+      ]
+    },
+    {
+      "keys": [
+        {
+          "idType": "Iri",
+          "type": "Submodel",
+          "value": "https://example.com/ids/sm/2402_1191_1022_1090"
+        }
+      ]
+    }
+  ],
+  {
+    "idType": "Iri",
+    "id": "https://example.com/ids/aas/3235_8090_6012_8932"
+  },
+  "FestoDemoAAS",
+  "AssetAdministrationShell",
+  "Instance",
+  {
+    "keys": [
+      {
+        "idType": "Iri",
+        "type": "Asset",
+        "value": "https://acplt.org/Test_Asset"
+      }
+    ]
+  },
+  [
+    {
+      "keys": [
+        {
+          "idType": "Iri",
+          "type": "Submodel",
+          "value": "http://acplt.org/Submodels/Assets/TestAsset/BillOfMaterial"
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "idType": "Iri",
+      "type": "Asset",
+      "value": "https://acplt.org/Test_Asset"
+    }
+  ],
+  {
+    "idType": "Iri",
+    "type": "Asset",
+    "value": "https://acplt.org/Test_Asset"
+  },
+  "Iri",
+  "Asset",
+  "https://acplt.org/Test_Asset",
+  {
+    "keys": [
+      {
+        "idType": "Iri",
+        "type": "Submodel",
+        "value": "http://acplt.org/Submodels/Assets/TestAsset/BillOfMaterial"
+      }
+    ]
+  },
+  [
+    {
+      "idType": "Iri",
+      "type": "Submodel",
+      "value": "http://acplt.org/Submodels/Assets/TestAsset/BillOfMaterial"
+    }
+  ],
+  {
+    "idType": "Iri",
+    "type": "Submodel",
+    "value": "http://acplt.org/Submodels/Assets/TestAsset/BillOfMaterial"
+  },
+  "Iri",
+  "Submodel",
+  "http://acplt.org/Submodels/Assets/TestAsset/BillOfMaterial",
+  {
+    "keys": [
+      {
+        "idType": "Iri",
+        "type": "Submodel",
+        "value": "https://example.com/ids/sm/1145_8090_6012_5097"
+      }
+    ]
+  },
+  {
+    "keys": [
+      {
+        "idType": "Iri",
+        "type": "Submodel",
+        "value": "https://example.com/ids/sm/4445_8090_6012_7409"
+      }
+    ]
+  },
+  {
+    "keys": [
+      {
+        "idType": "Iri",
+        "type": "Submodel",
+        "value": "https://example.com/ids/sm/2110_9090_6012_8448"
+      }
+    ]
+  },
+  {
+    "keys": [
+      {
+        "idType": "Iri",
+        "type": "Submodel",
+        "value": "https://example.com/ids/sm/5410_9090_6012_0950"
+      }
+    ]
+  },
+  {
+    "keys": [
+      {
+        "idType": "Iri",
+        "type": "Submodel",
+        "value": "https://example.com/ids/sm/2402_1191_1022_1090"
+      }
+    ]
+  },
+  [
+    {
+      "idType": "Iri",
+      "type": "Submodel",
+      "value": "https://example.com/ids/sm/1145_8090_6012_5097"
+    }
+  ],
+  {
+    "idType": "Iri",
+    "type": "Submodel",
+    "value": "https://example.com/ids/sm/1145_8090_6012_5097"
+  },
+  "Iri",
+  "Submodel",
+  "https://example.com/ids/sm/1145_8090_6012_5097",
+  [
+    {
+      "idType": "Iri",
+      "type": "Submodel",
+      "value": "https://example.com/ids/sm/4445_8090_6012_7409"
+    }
+  ],
+  {
+    "idType": "Iri",
+    "type": "Submodel",
+    "value": "https://example.com/ids/sm/4445_8090_6012_7409"
+  },
+  "Iri",
+  "Submodel",
+  "https://example.com/ids/sm/4445_8090_6012_7409",
+  [
+    {
+      "idType": "Iri",
+      "type": "Submodel",
+      "value": "https://example.com/ids/sm/2110_9090_6012_8448"
+    }
+  ],
+  {
+    "idType": "Iri",
+    "type": "Submodel",
+    "value": "https://example.com/ids/sm/2110_9090_6012_8448"
+  },
+  "Iri",
+  "Submodel",
+  "https://example.com/ids/sm/2110_9090_6012_8448",
+  [
+    {
+      "idType": "Iri",
+      "type": "Submodel",
+      "value": "https://example.com/ids/sm/5410_9090_6012_0950"
+    }
+  ],
+  {
+    "idType": "Iri",
+    "type": "Submodel",
+    "value": "https://example.com/ids/sm/5410_9090_6012_0950"
+  },
+  "Iri",
+  "Submodel",
+  "https://example.com/ids/sm/5410_9090_6012_0950",
+  [
+    {
+      "idType": "Iri",
+      "type": "Submodel",
+      "value": "https://example.com/ids/sm/2402_1191_1022_1090"
+    }
+  ],
+  {
+    "idType": "Iri",
+    "type": "Submodel",
+    "value": "https://example.com/ids/sm/2402_1191_1022_1090"
+  },
+  "Iri",
+  "Submodel",
+  "https://example.com/ids/sm/2402_1191_1022_1090",
+  "Iri",
+  "https://example.com/ids/aas/3235_8090_6012_8932"
+]
