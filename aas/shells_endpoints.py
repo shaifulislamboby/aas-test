@@ -23,7 +23,7 @@ class AasGETPOSTPUTEndPoint(AasBaseEndPoint):
             if 'post' in self.operations:
                 self.post_data = self.create_post_or_put_request_data_from_response()
             if 'put' in self.operations:
-                self.put_data = self.create_post_or_put_request_data_from_response()
+                self.put_data = self.create_post_or_put_request_data_from_response(put=True)
 
     def set_all_responses(self):
         url = f'{self.base_url}{self.substituted_url}'
@@ -42,5 +42,6 @@ class AasGETPOSTPUTEndPoint(AasBaseEndPoint):
                     self.put_response = requests.put(url, json=self.put_data)
                 try:
                     self.put_response_json = self.put_response.json()
-                except Exception:
+                except Exception as error:
+                    print(error)
                     self.put_response_json = self.put_response.ok

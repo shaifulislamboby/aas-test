@@ -14,6 +14,10 @@ BASE_URL = None
 
 @dataclass
 class AasBaseEndPoint:
+    """
+    This class is the base class which has all the common attributes and methods in it.
+    We can extend this class based on our requirements with more functionality
+    """
     raw_endpoint: dict
     password: Union[str, None]
     _id: Union[str, None]
@@ -154,14 +158,15 @@ class AasBaseEndPoint:
             identification.update({'id': _id})
         return identification
 
-    def create_post_or_put_request_data_from_response(self):
+    def create_post_or_put_request_data_from_response(self, put: bool = False):
         data = copy(self.single_get_response)
         if 'identification' not in data:
             if isinstance(data, list) and len(data) > 0:
                 return data[0]
             return data
         identification = data.get('identification')
-        updated_identification = self.get_updated_identification_data_for_post(identification)
-        data.update(updated_identification)
+        if not put:
+            updated_identification = self.get_updated_identification_data_for_post(identification)
+            data.update(updated_identification)
         return data
 
