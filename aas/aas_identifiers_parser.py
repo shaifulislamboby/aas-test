@@ -9,11 +9,21 @@ import helpers as helpers
 
 @dataclass
 class BaseParser:
+    """
+    This is the base class for parsing required information for the tests.
+    This will be extended and this only has the base functionality, but almost all
+    the required functionality in this class.
+    """
     password: Union[str, None]
     _id: Union[str, None]
 
     @property
     def session(self):
+        """
+        This method will generate a session object with provided auth, if they are provided
+        This will help to test server where it is required to pass some auth parameter
+        :return:
+        """
         if self.password and self._id:
             session = requests.Session()
             session.auth = (self._id, self.password)
@@ -22,26 +32,49 @@ class BaseParser:
 
     @property
     def raw_value(self):
+        """
+        :return: it will collect the raw_value of specific class and save it as raw_value as general use case.
+        """
         return getattr(self, f'raw_{helpers.convert_camel_case_to_snake_case(self.__class__.__name__)}')
 
     @property
     def mode_type(self):
+        """
+        :return: name of the model type
+        """
         return self.raw_value.get('modelType').get('name')
 
     @property
     def id_type(self):
+        """
+        :return: This method will collect the id_type
+        """
         return self.raw_value.get('identification').get('idType')
 
     @property
     def identification(self) -> dict:
+        """
+        This will collect the identification of the AAS or submodels or concept-description
+        :return:
+        """
         return self.raw_value.get('identification')
 
     @property
     def id_short_path(self):
+        """
+        This will collect the idShort of the AAS or submodels or concept-description
+        :return:
+        """
         return helpers.create_url_encoded_from_id(self.raw_value.get('idShort'))
 
     @property
     def identifier(self):
+        """
+        This method will collect the id and convert it to base64 format and save it,
+        As for getting particular asset administration shell, submodels or concept-description we will need
+        the base64 format of the id of that particular object
+        :return:
+        """
         return helpers.convert_to_base64_form(self.raw_value.get('identification').get('id'))
 
 
