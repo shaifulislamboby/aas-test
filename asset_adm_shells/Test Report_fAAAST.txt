@@ -1,0 +1,114 @@
+|| Test passed ---> || ('/shells', 'get'), substituted-url = /shells ||
+------------------------------------------------------------------------
+|| Test passed ---> || ('/shells', 'post'), substituted-url = /shells ||
+-------------------------------------------------------------------------
+|| Test passed ---> || ('/shells/{aasIdentifier}', 'get'), substituted-url = /shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzJzb21ldGhpbmc= ||
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/shells/{aasIdentifier}', 'put'), substituted-url = /shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzJzb21ldGhpbmc= ||
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/shells/{aasIdentifier}/aas', 'get'), substituted-url = /shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzJzb21ldGhpbmc=/aas ||
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/shells/{aasIdentifier}/aas', 'put'), substituted-url = /shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzJzb21ldGhpbmc=/aas ||
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/shells/{aasIdentifier}/aas/asset-information', 'get'), substituted-url = /shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzJzb21ldGhpbmc=/aas/asset-information ||
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/shells/{aasIdentifier}/aas/asset-information', 'put'), substituted-url = /shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzJzb21ldGhpbmc=/aas/asset-information ||
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/shells/{aasIdentifier}/aas/submodels', 'get'), substituted-url = /shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzJzb21ldGhpbmc=/aas/submodels ||
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/shells/{aasIdentifier}/aas/submodels', 'post'), substituted-url = /shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzJzb21ldGhpbmc=/aas/submodels ||
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/submodels', 'get'), substituted-url = /submodels ||
+------------------------------------------------------------------------------
+|| Test passed ---> || ('/submodels', 'post'), substituted-url = /submodels ||
+-------------------------------------------------------------------------------
+|| Test passed ---> || ('/submodels/{submodelIdentifier}', 'get'), substituted-url = /submodels/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvc20vNTQxMF85MDkwXzYwMTJfMDk1MA== ||
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/submodels/{submodelIdentifier}', 'put'), substituted-url = /submodels/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvc20vNTQxMF85MDkwXzYwMTJfMDk1MA== ||
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/submodels/{submodelIdentifier}/submodel', 'get'), substituted-url = /submodels/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvc20vNTQxMF85MDkwXzYwMTJfMDk1MA==/submodel ||
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/submodels/{submodelIdentifier}/submodel', 'put'), substituted-url = /submodels/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvc20vNTQxMF85MDkwXzYwMTJfMDk1MA==/submodel ||
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/submodels/{submodelIdentifier}/submodel/submodel-elements', 'get'), substituted-url = /submodels/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvc20vNTQxMF85MDkwXzYwMTJfMDk1MA==/submodel/submodel-elements ||
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/submodels/{submodelIdentifier}/submodel/submodel-elements', 'post'), substituted-url = /submodels/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvc20vNTQxMF85MDkwXzYwMTJfMDk1MA==/submodel/submodel-elements ||
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/submodels/{submodelIdentifier}/submodel/submodel-elements/{idShortPath}', 'get'), substituted-url = /submodels/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvc20vNTQxMF85MDkwXzYwMTJfMDk1MA==/submodel/submodel-elements/JTS_data ||
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/submodels/{submodelIdentifier}/submodel/submodel-elements/{idShortPath}', 'put'), substituted-url = /submodels/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvc20vNTQxMF85MDkwXzYwMTJfMDk1MA==/submodel/submodel-elements/JTS_data ||
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/submodels/{submodelIdentifier}/submodel/submodel-elements/{idShortPath}', 'post'), substituted-url = /submodels/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvc20vNTQxMF85MDkwXzYwMTJfMDk1MA==/submodel/submodel-elements/JTS_data ||
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test returned non parsable response or this endpoint is not implemented ---> ('/submodels/{submodelIdentifier}/submodel/submodel-elements/{idShortPath}/invoke', 'post') ||
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test fails ---> || ('/submodels/{submodelIdentifier}/submodel/submodel-elements/{idShortPath}/operation-results/{handleId}', 'get'), substituted-url = /submodels/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvc20vNTQxMF85MDkwXzYwMTJfMDk1MA==/submodel/submodel-elements/JTS_data/operation-results/{handleId} ||
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| This endpoint is not implemented  ---> || ('/registry/shell-descriptors', 'get'), substituted-url = /registry/shell-descriptors ||
+--------------------------------------------------------------------------------------------------------------------------------------
+|| This endpoint is not implemented  ---> || ('/registry/shell-descriptors', 'post'), substituted-url = /registry/shell-descriptors ||
+---------------------------------------------------------------------------------------------------------------------------------------
+|| This endpoint is not implemented  ---> || ('/registry/shell-descriptors/{aasIdentifier}', 'get'), substituted-url = /registry/shell-descriptors/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzJzb21ldGhpbmc= ||
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| This endpoint is not implemented  ---> || ('/registry/shell-descriptors/{aasIdentifier}', 'put'), substituted-url = /registry/shell-descriptors/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzJzb21ldGhpbmc= ||
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| This endpoint is not implemented  ---> || ('/registry/shell-descriptors/{aasIdentifier}/submodel-descriptors', 'get'), substituted-url = /registry/shell-descriptors/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzJzb21ldGhpbmc=/submodel-descriptors ||
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| This endpoint is not implemented  ---> || ('/registry/shell-descriptors/{aasIdentifier}/submodel-descriptors', 'post'), substituted-url = /registry/shell-descriptors/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzJzb21ldGhpbmc=/submodel-descriptors ||
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| This endpoint is not implemented  ---> || ('/registry/shell-descriptors/{aasIdentifier}/submodel-descriptors/{submodelIdentifier}', 'get'), substituted-url = /registry/shell-descriptors/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzJzb21ldGhpbmc=/submodel-descriptors/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvc20vNTQxMF85MDkwXzYwMTJfMDk1MA== ||
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| This endpoint is not implemented  ---> || ('/registry/shell-descriptors/{aasIdentifier}/submodel-descriptors/{submodelIdentifier}', 'put'), substituted-url = /registry/shell-descriptors/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzJzb21ldGhpbmc=/submodel-descriptors/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvc20vNTQxMF85MDkwXzYwMTJfMDk1MA== ||
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| This endpoint is not implemented  ---> || ('/registry/submodel-descriptors', 'get'), substituted-url = /registry/submodel-descriptors ||
+--------------------------------------------------------------------------------------------------------------------------------------------
+|| This endpoint is not implemented  ---> || ('/registry/submodel-descriptors', 'post'), substituted-url = /registry/submodel-descriptors ||
+---------------------------------------------------------------------------------------------------------------------------------------------
+|| This endpoint is not implemented  ---> || ('/registry/submodel-descriptors/{submodelIdentifier}', 'get'), substituted-url = /registry/submodel-descriptors/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvc20vNTQxMF85MDkwXzYwMTJfMDk1MA== ||
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| This endpoint is not implemented  ---> || ('/registry/submodel-descriptors/{submodelIdentifier}', 'put'), substituted-url = /registry/submodel-descriptors/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvc20vNTQxMF85MDkwXzYwMTJfMDk1MA== ||
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/concept-descriptions', 'get'), substituted-url = /concept-descriptions ||
+----------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/concept-descriptions', 'post'), substituted-url = /concept-descriptions ||
+-----------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/concept-descriptions/{cdIdentifier}', 'get'), substituted-url = /concept-descriptions/aHR0cHM6Ly9hY3BsdC5vcmcvVGVzdF9Db25jZXB0RGVzY3JpcHRpb25zb21ldGhpbmdzb21ldGhpbmc= ||
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/concept-descriptions/{cdIdentifier}', 'put'), substituted-url = /concept-descriptions/aHR0cHM6Ly9hY3BsdC5vcmcvVGVzdF9Db25jZXB0RGVzY3JpcHRpb25zb21ldGhpbmdzb21ldGhpbmc= ||
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| This endpoint is not implemented  ---> || ('/packages', 'get'), substituted-url = /packages ||
+--------------------------------------------------------------------------------------------------
+|| This endpoint is not implemented  ---> || ('/packages', 'post'), substituted-url = /packages ||
+---------------------------------------------------------------------------------------------------
+|| This endpoint is not implemented  ---> || ('/packages/{packageId}', 'get'), substituted-url = /packages/bm90X2F2YWlsYWJsZQ== ||
+-----------------------------------------------------------------------------------------------------------------------------------
+|| This endpoint is not implemented  ---> || ('/packages/{packageId}', 'put'), substituted-url = /packages/bm90X2F2YWlsYWJsZQ== ||
+-----------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/serialization', 'get'), substituted-url = /serialization ||
+--------------------------------------------------------------------------------------
+|| Test passed ---> || ('/lookup/shells', 'get'), substituted-url = /lookup/shells ||
+--------------------------------------------------------------------------------------
+|| Test passed ---> || ('/lookup/shells/{aasIdentifier}', 'get'), substituted-url = /lookup/shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzJzb21ldGhpbmc= ||
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test returned non parsable response or this endpoint is not implemented ---> ('/lookup/shells/{aasIdentifier}', 'post') ||
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| This endpoint is not implemented  ---> || ('/descriptor', 'get'), substituted-url = /descriptor ||
+------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/shells/{aasIdentifier}', 'delete'), substituted-url = /shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzJzb21ldGhpbmc= ||
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test fails ---> || ('/submodels/{submodelIdentifier}', 'delete'), substituted-url = /submodels/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvc20vNTQxMF85MDkwXzYwMTJfMDk1MA== ||
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test returned non parsable response or this endpoint is not implemented ---> ('/submodels/{submodelIdentifier}/submodel/submodel-elements/{idShortPath}', 'delete') ||
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/registry/shell-descriptors/{aasIdentifier}', 'delete'), substituted-url = /registry/shell-descriptors/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzJzb21ldGhpbmc= ||
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/registry/shell-descriptors/{aasIdentifier}/submodel-descriptors/{submodelIdentifier}', 'delete'), substituted-url = /registry/shell-descriptors/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzJzb21ldGhpbmc=/submodel-descriptors/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvc20vNTQxMF85MDkwXzYwMTJfMDk1MA== ||
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/registry/submodel-descriptors/{submodelIdentifier}', 'delete'), substituted-url = /registry/submodel-descriptors/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvc20vNTQxMF85MDkwXzYwMTJfMDk1MA== ||
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/concept-descriptions/{cdIdentifier}', 'delete'), substituted-url = /concept-descriptions/aHR0cHM6Ly9hY3BsdC5vcmcvVGVzdF9Db25jZXB0RGVzY3JpcHRpb25zb21ldGhpbmdzb21ldGhpbmc= ||
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/packages/{packageId}', 'delete'), substituted-url = /packages/bm90X2F2YWlsYWJsZQ== ||
+----------------------------------------------------------------------------------------------------------------
+|| Test fails ---> || ('/lookup/shells/{aasIdentifier}', 'delete'), substituted-url = /lookup/shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzJzb21ldGhpbmc= ||
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
