@@ -2,22 +2,22 @@ from dataclasses import dataclass
 
 import requests
 
-from shells_endpoints import AasGETPOSTPUTEndPoint
+from asset_adm_shells.negative_shells_endpoint import AASGETPOSTPUTEndPointNegativeTestOne
 from base_test import BaseTest, DeleteEndpoint, TestResult
 
 
 @dataclass
-class PositiveTestRunner(BaseTest):
+class NegativeTestRunner(BaseTest):
     def start_test(self):
         for path in self.aas_schema.paths:
-            test = AasGETPOSTPUTEndPoint(raw_endpoint=self.aas_schema.paths.get(path),
-                                         base_url=self.base_url,
-                                         full_url_path=path,
-                                         asset_administration_shells=self.get_asset_administration_shells(),
-                                         concept_description=self.get_concept_description(),
-                                         packages=None,
-                                         _id=self._id,
-                                         password=self.password)
+            test = AASGETPOSTPUTEndPointNegativeTestOne(raw_endpoint=self.aas_schema.paths.get(path),
+                                                        base_url=self.base_url,
+                                                        full_url_path=path,
+                                                        asset_administration_shells=self.get_asset_administration_shells(),
+                                                        concept_description=self.get_concept_description(),
+                                                        packages=None,
+                                                        _id=self._id,
+                                                        password=self.password)
             test.set_all_required_attributes()
             with open(self.output_file_name, 'a') as file:
                 for operation in test.operations:
@@ -29,7 +29,7 @@ class PositiveTestRunner(BaseTest):
                             # in this line we will get response from AasGETPOSTPUTEndPoint class
                             # we are using getattr for dynamically getting the attributes based on http verb
                             response = getattr(test, f'{operation}_response')
-                            test_result = function(response)
+                            test_result = function(response, positive=False)
                             if not isinstance(test_result, str) and not test_result.passed:
                                 length_of_dash_sign = len(f'|| Test fails ---> || {path, operation}, substituted-url ='
                                                           f' {test.substituted_url}, error is {test_result} ||\n')

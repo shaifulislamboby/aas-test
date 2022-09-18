@@ -33,7 +33,7 @@ class BaseTest:
     sub_model_path: str
     concept_description_path: str
     error_message = ('no matching request mapper found for URL', 'not allowed for', 'currently not supported',
-                     'no handler defined')
+                     'no handler defined', 'error parsing')
     delete_urls: [DeleteEndpoint] = field(default_factory=lambda: [])
 
     @property
@@ -44,13 +44,21 @@ class BaseTest:
             return session
         return False
 
-    def check_get_response_conforms(self, response):
-        if response.status_code != 200:
+    def check_get_response_conforms(self, response, positive=True):
+        @dataclass
+        class ResponseCode:
+            positive: int = 200
+            negative: int = 404
+
+        response_status_code = ResponseCode.negative
+        if positive:
+            response_status_code = ResponseCode.positive
+        if response.status_code != response_status_code:
             if any(error_m in response.json().get('messages')[0]['text'] for error_m in self.error_message):
                 return BaseTest.error_message[0]
             return TestResult()
         try:
-            # we will validate the json schema in case of json response, non-conforming
+            # we will validate the json schema in case of get verb's response, non-conforming
             # json response will raise an exception
             jsonschema.validate(response.json(), schema=self.aas_schema.raw_schema)
             return TestResult(passed=True, schema_conformation=True, status_code=True)
@@ -59,24 +67,54 @@ class BaseTest:
             return TestResult(passed=True, schema_conformation=False, status_code=True)
 
     @staticmethod
-    def check_post_response_conforms(response):
-        if response.status_code != 201:
+    def check_post_response_conforms(response, positive=True):
+        @dataclass
+        class ResponseCode:
+            positive: int = 201
+            negative: int = 404
+
+        response_status_code = ResponseCode.negative
+        if positive:
+            response_status_code = ResponseCode.positive
+
+        if response.status_code != response_status_code:
+            try:
+                if any(error_m in response.json().get('messages')[0]['text'] for error_m in BaseTest.error_message):
+                    return BaseTest.error_message[0]
+                return TestResult()
+            except Exception as error:
+                print(error)
+                return response.json().get('messages')[0]['messageType']
+        return TestResult(passed=True)
+
+    @staticmethod
+    def check_put_response_conforms(response, positive=True):
+        @dataclass
+        class ResponseCode:
+            positive: tuple = (200, 204)
+            negative: tuple = (404,)
+
+        response_status_code = ResponseCode.negative
+        if positive:
+            response_status_code = ResponseCode.positive
+        if response.status_code not in response_status_code:
             if any(error_m in response.json().get('messages')[0]['text'] for error_m in BaseTest.error_message):
                 return BaseTest.error_message[0]
             return TestResult()
         return TestResult(passed=True)
 
     @staticmethod
-    def check_put_response_conforms(response):
-        if response.status_code not in (200, 204):
-            if any(error_m in response.json().get('messages')[0]['text'] for error_m in BaseTest.error_message):
-                return BaseTest.error_message[0]
-            return TestResult()
-        return TestResult(passed=True)
+    def check_delete_response_conforms(response, positive=True):
+        @dataclass
+        class ResponseCode:
+            positive: tuple = (204,)
+            negative: tuple = (404,)
 
-    @staticmethod
-    def check_delete_response_conforms(response):
-        if response.status_code != 204:
+        response_status_code = ResponseCode.negative
+        if positive:
+            response_status_code = ResponseCode.positive
+
+        if response.status_code != response_status_code:
             if any(error_m in response.json().get('messages')[0]['text'] for error_m in BaseTest.error_message):
                 return BaseTest.error_message[0]
             return TestResult()
