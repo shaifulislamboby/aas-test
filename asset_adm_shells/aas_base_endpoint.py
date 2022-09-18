@@ -168,4 +168,3 @@ class AasBaseEndPoint:
             updated_identification = self.get_updated_identification_data_for_post(identification)
             data.update(updated_identification)
         return data
-

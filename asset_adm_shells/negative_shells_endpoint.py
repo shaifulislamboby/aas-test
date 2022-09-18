@@ -1,0 +1,63 @@
+from copy import copy
+from dataclasses import dataclass
+
+import requests
+
+from aas_base_endpoint import AasBaseEndPoint
+from asset_adm_shells.helpers import convert_to_base64_form
+
+
+@dataclass
+class AASGETPOSTPUTEndPointNegativeTestOne(AasBaseEndPoint):
+    negative_get_response = None
+
+    def create_post_or_put_request_data_from_response(self, put: bool = False):
+        return {}
+
+    def substitute_path_parameters(self):
+        self.substituted_url = copy(self.full_url_path)
+        for param in self.general_path_params_in_schema:
+            if param in self.full_url_path:
+                replacement = convert_to_base64_form('not_available')
+                self.replace_(param, replacement=replacement)
+
+    def set_all_required_attributes(self):
+        if self.is_implemented and 'get' in self.operations:
+            self.substitute_path_parameters()
+            if self.session:
+                res = self.session.get(url=f'{self.base_url}{self.substituted_url}')
+            else:
+                res = requests.get(url=f'{self.base_url}{self.substituted_url}')
+            self.get_response = res
+            self.get_response_json = self.get_response.json()
+            self.single_get_response = self.get_single_object_from_response(self.get_response_json)
+        self.create_post_and_put_data()
+        self.set_all_responses()
+
+    def create_post_and_put_data(self):
+        if 'get' in self.operations:
+            if 'post' in self.operations:
+                self.post_data = self.create_post_or_put_request_data_from_response()
+            if 'put' in self.operations:
+                self.put_data = self.create_post_or_put_request_data_from_response(put=True)
+
+    def set_all_responses(self):
+        url = f'{self.base_url}{self.substituted_url}'
+        if self.is_implemented:
+            if self.post_data is not None:
+                if self.session:
+                    self.post_response = self.session.post(url, json=self.post_data)
+                else:
+                    self.post_response = requests.post(url, json=self.post_data)
+                self.post_response_json = self.post_response.json()
+            if self.put_data:
+                print(url), print(self.put_data)
+                if self.session:
+                    self.post_response = self.session.put(url, json=self.put_data)
+                else:
+                    self.put_response = requests.put(url, json=self.put_data)
+                try:
+                    self.put_response_json = self.put_response.json()
+                except Exception as error:
+                    print(error)
+                    self.put_response_json = self.put_response.ok

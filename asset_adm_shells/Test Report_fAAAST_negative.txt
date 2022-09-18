@@ -1,0 +1,114 @@
+|| Test returned non parsable response or this endpoint is not implemented ---> ('/shells', 'get'), substituted-url = /shells, error is 'list' object has no attribute 'get' ||
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/shells', 'post'), substituted-url = /shells ||
+-------------------------------------------------------------------------
+|| Test passed ---> || ('/shells/{aasIdentifier}', 'get'), substituted-url = /shells/bm90X2F2YWlsYWJsZQ== ||
+-------------------------------------------------------------------------------------------------------------
+|| Test returned non parsable response or this endpoint is not implemented ---> ('/shells/{aasIdentifier}', 'put'), substituted-url = /shells/bm90X2F2YWlsYWJsZQ==, error is 'NoneType' object has no attribute 'status_code' ||
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/shells/{aasIdentifier}/aas', 'get'), substituted-url = /shells/bm90X2F2YWlsYWJsZQ==/aas ||
+---------------------------------------------------------------------------------------------------------------------
+|| Test returned non parsable response or this endpoint is not implemented ---> ('/shells/{aasIdentifier}/aas', 'put'), substituted-url = /shells/bm90X2F2YWlsYWJsZQ==/aas, error is 'NoneType' object has no attribute 'status_code' ||
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/shells/{aasIdentifier}/aas/asset-information', 'get'), substituted-url = /shells/bm90X2F2YWlsYWJsZQ==/aas/asset-information ||
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test returned non parsable response or this endpoint is not implemented ---> ('/shells/{aasIdentifier}/aas/asset-information', 'put'), substituted-url = /shells/bm90X2F2YWlsYWJsZQ==/aas/asset-information, error is 'NoneType' object has no attribute 'status_code' ||
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/shells/{aasIdentifier}/aas/submodels', 'get'), substituted-url = /shells/bm90X2F2YWlsYWJsZQ==/aas/submodels ||
+-----------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/shells/{aasIdentifier}/aas/submodels', 'post'), substituted-url = /shells/bm90X2F2YWlsYWJsZQ==/aas/submodels ||
+------------------------------------------------------------------------------------------------------------------------------------------
+|| Test returned non parsable response or this endpoint is not implemented ---> ('/submodels', 'get'), substituted-url = /submodels, error is 'list' object has no attribute 'get' ||
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/submodels', 'post'), substituted-url = /submodels ||
+-------------------------------------------------------------------------------
+|| Test passed ---> || ('/submodels/{submodelIdentifier}', 'get'), substituted-url = /submodels/bm90X2F2YWlsYWJsZQ== ||
+------------------------------------------------------------------------------------------------------------------------
+|| Test returned non parsable response or this endpoint is not implemented ---> ('/submodels/{submodelIdentifier}', 'put'), substituted-url = /submodels/bm90X2F2YWlsYWJsZQ==, error is 'NoneType' object has no attribute 'status_code' ||
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/submodels/{submodelIdentifier}/submodel', 'get'), substituted-url = /submodels/bm90X2F2YWlsYWJsZQ==/submodel ||
+------------------------------------------------------------------------------------------------------------------------------------------
+|| Test returned non parsable response or this endpoint is not implemented ---> ('/submodels/{submodelIdentifier}/submodel', 'put'), substituted-url = /submodels/bm90X2F2YWlsYWJsZQ==/submodel, error is 'NoneType' object has no attribute 'status_code' ||
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/submodels/{submodelIdentifier}/submodel/submodel-elements', 'get'), substituted-url = /submodels/bm90X2F2YWlsYWJsZQ==/submodel/submodel-elements ||
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| This endpoint is not implemented  ---> || ('/submodels/{submodelIdentifier}/submodel/submodel-elements', 'post'), substituted-url = /submodels/bm90X2F2YWlsYWJsZQ==/submodel/submodel-elements, error is no matching request mapper found for URL  ||
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test returned non parsable response or this endpoint is not implemented ---> ('/submodels/{submodelIdentifier}/submodel/submodel-elements/{idShortPath}', 'get'), substituted-url = /submodels/bm90X2F2YWlsYWJsZQ==/submodel/submodel-elements/bm90X2F2YWlsYWJsZQ==, error is 'text' ||
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test returned non parsable response or this endpoint is not implemented ---> ('/submodels/{submodelIdentifier}/submodel/submodel-elements/{idShortPath}', 'put'), substituted-url = /submodels/bm90X2F2YWlsYWJsZQ==/submodel/submodel-elements/bm90X2F2YWlsYWJsZQ==, error is 'NoneType' object has no attribute 'status_code' ||
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| This endpoint is not implemented  ---> || ('/submodels/{submodelIdentifier}/submodel/submodel-elements/{idShortPath}', 'post'), substituted-url = /submodels/bm90X2F2YWlsYWJsZQ==/submodel/submodel-elements/bm90X2F2YWlsYWJsZQ==, error is no matching request mapper found for URL  ||
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test returned non parsable response or this endpoint is not implemented ---> ('/submodels/{submodelIdentifier}/submodel/submodel-elements/{idShortPath}/invoke', 'post'), substituted-url = None, error is 'NoneType' object has no attribute 'status_code' ||
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test fails ---> || ('/submodels/{submodelIdentifier}/submodel/submodel-elements/{idShortPath}/operation-results/{handleId}', 'get'), substituted-url = /submodels/bm90X2F2YWlsYWJsZQ==/submodel/submodel-elements/bm90X2F2YWlsYWJsZQ==/operation-results/{handleId}, error is TestResult(passed=False, status_code=False, schema_conformation=False) ||
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| This endpoint is not implemented  ---> || ('/registry/shell-descriptors', 'get'), substituted-url = /registry/shell-descriptors, error is no matching request mapper found for URL  ||
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| This endpoint is not implemented  ---> || ('/registry/shell-descriptors', 'post'), substituted-url = /registry/shell-descriptors, error is no matching request mapper found for URL  ||
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| This endpoint is not implemented  ---> || ('/registry/shell-descriptors/{aasIdentifier}', 'get'), substituted-url = /registry/shell-descriptors/bm90X2F2YWlsYWJsZQ==, error is no matching request mapper found for URL  ||
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test returned non parsable response or this endpoint is not implemented ---> ('/registry/shell-descriptors/{aasIdentifier}', 'put'), substituted-url = /registry/shell-descriptors/bm90X2F2YWlsYWJsZQ==, error is 'NoneType' object has no attribute 'status_code' ||
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| This endpoint is not implemented  ---> || ('/registry/shell-descriptors/{aasIdentifier}/submodel-descriptors', 'get'), substituted-url = /registry/shell-descriptors/bm90X2F2YWlsYWJsZQ==/submodel-descriptors, error is no matching request mapper found for URL  ||
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| This endpoint is not implemented  ---> || ('/registry/shell-descriptors/{aasIdentifier}/submodel-descriptors', 'post'), substituted-url = /registry/shell-descriptors/bm90X2F2YWlsYWJsZQ==/submodel-descriptors, error is no matching request mapper found for URL  ||
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| This endpoint is not implemented  ---> || ('/registry/shell-descriptors/{aasIdentifier}/submodel-descriptors/{submodelIdentifier}', 'get'), substituted-url = /registry/shell-descriptors/bm90X2F2YWlsYWJsZQ==/submodel-descriptors/bm90X2F2YWlsYWJsZQ==, error is no matching request mapper found for URL  ||
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test returned non parsable response or this endpoint is not implemented ---> ('/registry/shell-descriptors/{aasIdentifier}/submodel-descriptors/{submodelIdentifier}', 'put'), substituted-url = /registry/shell-descriptors/bm90X2F2YWlsYWJsZQ==/submodel-descriptors/bm90X2F2YWlsYWJsZQ==, error is 'NoneType' object has no attribute 'status_code' ||
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| This endpoint is not implemented  ---> || ('/registry/submodel-descriptors', 'get'), substituted-url = /registry/submodel-descriptors, error is no matching request mapper found for URL  ||
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| This endpoint is not implemented  ---> || ('/registry/submodel-descriptors', 'post'), substituted-url = /registry/submodel-descriptors, error is no matching request mapper found for URL  ||
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| This endpoint is not implemented  ---> || ('/registry/submodel-descriptors/{submodelIdentifier}', 'get'), substituted-url = /registry/submodel-descriptors/bm90X2F2YWlsYWJsZQ==, error is no matching request mapper found for URL  ||
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test returned non parsable response or this endpoint is not implemented ---> ('/registry/submodel-descriptors/{submodelIdentifier}', 'put'), substituted-url = /registry/submodel-descriptors/bm90X2F2YWlsYWJsZQ==, error is 'NoneType' object has no attribute 'status_code' ||
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test returned non parsable response or this endpoint is not implemented ---> ('/concept-descriptions', 'get'), substituted-url = /concept-descriptions, error is 'list' object has no attribute 'get' ||
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/concept-descriptions', 'post'), substituted-url = /concept-descriptions ||
+-----------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/concept-descriptions/{cdIdentifier}', 'get'), substituted-url = /concept-descriptions/bm90X2F2YWlsYWJsZQ== ||
+----------------------------------------------------------------------------------------------------------------------------------------
+|| Test returned non parsable response or this endpoint is not implemented ---> ('/concept-descriptions/{cdIdentifier}', 'put'), substituted-url = /concept-descriptions/bm90X2F2YWlsYWJsZQ==, error is 'NoneType' object has no attribute 'status_code' ||
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| This endpoint is not implemented  ---> || ('/packages', 'get'), substituted-url = /packages, error is no matching request mapper found for URL  ||
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+|| This endpoint is not implemented  ---> || ('/packages', 'post'), substituted-url = /packages, error is no matching request mapper found for URL  ||
+------------------------------------------------------------------------------------------------------------------------------------------------------
+|| This endpoint is not implemented  ---> || ('/packages/{packageId}', 'get'), substituted-url = /packages/bm90X2F2YWlsYWJsZQ==, error is no matching request mapper found for URL  ||
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test returned non parsable response or this endpoint is not implemented ---> ('/packages/{packageId}', 'put'), substituted-url = /packages/bm90X2F2YWlsYWJsZQ==, error is 'NoneType' object has no attribute 'status_code' ||
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test returned non parsable response or this endpoint is not implemented ---> ('/serialization', 'get'), substituted-url = /serialization, error is 'NoneType' object is not subscriptable ||
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test returned non parsable response or this endpoint is not implemented ---> ('/lookup/shells', 'get'), substituted-url = /lookup/shells, error is 'text' ||
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/lookup/shells/{aasIdentifier}', 'get'), substituted-url = /lookup/shells/bm90X2F2YWlsYWJsZQ== ||
+---------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/lookup/shells/{aasIdentifier}', 'post'), substituted-url = /lookup/shells/bm90X2F2YWlsYWJsZQ== ||
+----------------------------------------------------------------------------------------------------------------------------
+|| This endpoint is not implemented  ---> || ('/descriptor', 'get'), substituted-url = /descriptor, error is no matching request mapper found for URL  ||
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test fails ---> || ('/shells/{aasIdentifier}', 'delete'), substituted-url = /shells/bm90X2F2YWlsYWJsZQ== ||
+---------------------------------------------------------------------------------------------------------------
+|| Test fails ---> || ('/submodels/{submodelIdentifier}', 'delete'), substituted-url = /submodels/bm90X2F2YWlsYWJsZQ== ||
+--------------------------------------------------------------------------------------------------------------------------
+|| Test returned non parsable response or this endpoint is not implemented ---> ('/submodels/{submodelIdentifier}/submodel/submodel-elements/{idShortPath}', 'delete') ||
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/registry/shell-descriptors/{aasIdentifier}', 'delete'), substituted-url = /registry/shell-descriptors/bm90X2F2YWlsYWJsZQ== ||
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/registry/shell-descriptors/{aasIdentifier}/submodel-descriptors/{submodelIdentifier}', 'delete'), substituted-url = /registry/shell-descriptors/bm90X2F2YWlsYWJsZQ==/submodel-descriptors/bm90X2F2YWlsYWJsZQ== ||
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/registry/submodel-descriptors/{submodelIdentifier}', 'delete'), substituted-url = /registry/submodel-descriptors/bm90X2F2YWlsYWJsZQ== ||
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test fails ---> || ('/concept-descriptions/{cdIdentifier}', 'delete'), substituted-url = /concept-descriptions/bm90X2F2YWlsYWJsZQ== ||
+------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/packages/{packageId}', 'delete'), substituted-url = /packages/bm90X2F2YWlsYWJsZQ== ||
+----------------------------------------------------------------------------------------------------------------
+|| Test fails ---> || ('/lookup/shells/{aasIdentifier}', 'delete'), substituted-url = /lookup/shells/bm90X2F2YWlsYWJsZQ== ||
+-----------------------------------------------------------------------------------------------------------------------------
