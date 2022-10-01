@@ -684,3 +684,259 @@
 ----------------------------------------------------------------------------------------------------------------
 || Test fails ---> || ('/lookup/shells/{aasIdentifier}', 'delete'), substituted-url = /lookup/shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzJzb21ldGhpbmdzb21ldGhpbmc= ||
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/shells', 'get'), substituted-url = /shells ||
+------------------------------------------------------------------------
+|| Test returned non parsable response or this endpoint is not implemented ---> ('/shells', 'post'), substituted-url = /shells, error is 'NoneType' object has no attribute 'status_code' ||
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/shells/{aasIdentifier}', 'get'), substituted-url = /shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzI= ||
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/shells/{aasIdentifier}', 'put'), substituted-url = /shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzI= ||
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/shells/{aasIdentifier}/aas', 'get'), substituted-url = /shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzI=/aas ||
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/shells/{aasIdentifier}/aas', 'put'), substituted-url = /shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzI=/aas ||
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/shells/{aasIdentifier}/aas/asset-information', 'get'), substituted-url = /shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzI=/aas/asset-information ||
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/shells/{aasIdentifier}/aas/asset-information', 'put'), substituted-url = /shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzI=/aas/asset-information ||
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/shells/{aasIdentifier}/aas/submodels', 'get'), substituted-url = /shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzI=/aas/submodels ||
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/shells/{aasIdentifier}/aas/submodels', 'post'), substituted-url = /shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzI=/aas/submodels ||
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/submodels', 'get'), substituted-url = /submodels ||
+------------------------------------------------------------------------------
+|| Test returned non parsable response or this endpoint is not implemented ---> ('/submodels', 'post'), substituted-url = /submodels, error is 'NoneType' object has no attribute 'status_code' ||
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/submodels/{submodelIdentifier}', 'get'), substituted-url = /submodels/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvc20vNDQ0NV84MDkwXzYwMTJfNzQwOQ== ||
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/submodels/{submodelIdentifier}', 'put'), substituted-url = /submodels/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvc20vNDQ0NV84MDkwXzYwMTJfNzQwOQ== ||
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/submodels/{submodelIdentifier}/submodel', 'get'), substituted-url = /submodels/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvc20vNDQ0NV84MDkwXzYwMTJfNzQwOQ==/submodel ||
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/submodels/{submodelIdentifier}/submodel', 'put'), substituted-url = /submodels/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvc20vNDQ0NV84MDkwXzYwMTJfNzQwOQ==/submodel ||
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/submodels/{submodelIdentifier}/submodel/submodel-elements', 'get'), substituted-url = /submodels/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvc20vNDQ0NV84MDkwXzYwMTJfNzQwOQ==/submodel/submodel-elements ||
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/submodels/{submodelIdentifier}/submodel/submodel-elements', 'post'), substituted-url = /submodels/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvc20vNDQ0NV84MDkwXzYwMTJfNzQwOQ==/submodel/submodel-elements ||
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/submodels/{submodelIdentifier}/submodel/submodel-elements/{idShortPath}', 'get'), substituted-url = /submodels/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvc20vNDQ0NV84MDkwXzYwMTJfNzQwOQ==/submodel/submodel-elements/GripperUp ||
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/submodels/{submodelIdentifier}/submodel/submodel-elements/{idShortPath}', 'put'), substituted-url = /submodels/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvc20vNDQ0NV84MDkwXzYwMTJfNzQwOQ==/submodel/submodel-elements/GripperUp ||
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/submodels/{submodelIdentifier}/submodel/submodel-elements/{idShortPath}', 'post'), substituted-url = /submodels/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvc20vNDQ0NV84MDkwXzYwMTJfNzQwOQ==/submodel/submodel-elements/GripperUp ||
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test returned non parsable response or this endpoint is not implemented ---> ('/submodels/{submodelIdentifier}/submodel/submodel-elements/{idShortPath}/invoke', 'post'), substituted-url = None, error is 'NoneType' object has no attribute 'status_code' ||
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test fails ---> || ('/submodels/{submodelIdentifier}/submodel/submodel-elements/{idShortPath}/operation-results/{handleId}', 'get'), substituted-url = /submodels/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvc20vNDQ0NV84MDkwXzYwMTJfNzQwOQ==/submodel/submodel-elements/GripperUp/operation-results/{handleId}, error is TestResult(passed=False, status_code=False, schema_conformation=False) ||
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| This endpoint is not implemented  ---> || ('/registry/shell-descriptors', 'get'), substituted-url = /registry/shell-descriptors, error is no matching request mapper found for URL  ||
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| This endpoint is not implemented  ---> || ('/registry/shell-descriptors', 'post'), substituted-url = /registry/shell-descriptors, error is no matching request mapper found for URL  ||
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| This endpoint is not implemented  ---> || ('/registry/shell-descriptors/{aasIdentifier}', 'get'), substituted-url = /registry/shell-descriptors/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzI=, error is no matching request mapper found for URL  ||
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| This endpoint is not implemented  ---> || ('/registry/shell-descriptors/{aasIdentifier}', 'put'), substituted-url = /registry/shell-descriptors/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzI=, error is no matching request mapper found for URL  ||
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| This endpoint is not implemented  ---> || ('/registry/shell-descriptors/{aasIdentifier}/submodel-descriptors', 'get'), substituted-url = /registry/shell-descriptors/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzI=/submodel-descriptors, error is no matching request mapper found for URL  ||
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| This endpoint is not implemented  ---> || ('/registry/shell-descriptors/{aasIdentifier}/submodel-descriptors', 'post'), substituted-url = /registry/shell-descriptors/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzI=/submodel-descriptors, error is no matching request mapper found for URL  ||
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| This endpoint is not implemented  ---> || ('/registry/shell-descriptors/{aasIdentifier}/submodel-descriptors/{submodelIdentifier}', 'get'), substituted-url = /registry/shell-descriptors/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzI=/submodel-descriptors/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvc20vNDQ0NV84MDkwXzYwMTJfNzQwOQ==, error is no matching request mapper found for URL  ||
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| This endpoint is not implemented  ---> || ('/registry/shell-descriptors/{aasIdentifier}/submodel-descriptors/{submodelIdentifier}', 'put'), substituted-url = /registry/shell-descriptors/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzI=/submodel-descriptors/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvc20vNDQ0NV84MDkwXzYwMTJfNzQwOQ==, error is no matching request mapper found for URL  ||
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| This endpoint is not implemented  ---> || ('/registry/submodel-descriptors', 'get'), substituted-url = /registry/submodel-descriptors, error is no matching request mapper found for URL  ||
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| This endpoint is not implemented  ---> || ('/registry/submodel-descriptors', 'post'), substituted-url = /registry/submodel-descriptors, error is no matching request mapper found for URL  ||
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| This endpoint is not implemented  ---> || ('/registry/submodel-descriptors/{submodelIdentifier}', 'get'), substituted-url = /registry/submodel-descriptors/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvc20vNDQ0NV84MDkwXzYwMTJfNzQwOQ==, error is no matching request mapper found for URL  ||
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| This endpoint is not implemented  ---> || ('/registry/submodel-descriptors/{submodelIdentifier}', 'put'), substituted-url = /registry/submodel-descriptors/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvc20vNDQ0NV84MDkwXzYwMTJfNzQwOQ==, error is no matching request mapper found for URL  ||
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/concept-descriptions', 'get'), substituted-url = /concept-descriptions ||
+----------------------------------------------------------------------------------------------------
+|| Test returned non parsable response or this endpoint is not implemented ---> ('/concept-descriptions', 'post'), substituted-url = /concept-descriptions, error is 'NoneType' object has no attribute 'status_code' ||
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/concept-descriptions/{cdIdentifier}', 'get'), substituted-url = /concept-descriptions/aHR0cHM6Ly9hY3BsdC5vcmcvVGVzdF9Db25jZXB0RGVzY3JpcHRpb24= ||
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/concept-descriptions/{cdIdentifier}', 'put'), substituted-url = /concept-descriptions/aHR0cHM6Ly9hY3BsdC5vcmcvVGVzdF9Db25jZXB0RGVzY3JpcHRpb24= ||
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| This endpoint is not implemented  ---> || ('/packages', 'get'), substituted-url = /packages, error is no matching request mapper found for URL  ||
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+|| This endpoint is not implemented  ---> || ('/packages', 'post'), substituted-url = /packages, error is no matching request mapper found for URL  ||
+------------------------------------------------------------------------------------------------------------------------------------------------------
+|| This endpoint is not implemented  ---> || ('/packages/{packageId}', 'get'), substituted-url = /packages/bm90X2F2YWlsYWJsZQ==, error is no matching request mapper found for URL  ||
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| This endpoint is not implemented  ---> || ('/packages/{packageId}', 'put'), substituted-url = /packages/bm90X2F2YWlsYWJsZQ==, error is no matching request mapper found for URL  ||
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/serialization', 'get'), substituted-url = /serialization ||
+--------------------------------------------------------------------------------------
+|| Test passed ---> || ('/lookup/shells', 'get'), substituted-url = /lookup/shells ||
+--------------------------------------------------------------------------------------
+|| Test passed ---> || ('/lookup/shells/{aasIdentifier}', 'get'), substituted-url = /lookup/shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzI= ||
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/lookup/shells/{aasIdentifier}', 'post'), substituted-url = /lookup/shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzI= ||
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| This endpoint is not implemented  ---> || ('/descriptor', 'get'), substituted-url = /descriptor, error is no matching request mapper found for URL  ||
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test returned non parsable response or this endpoint is not implemented ---> ('/shells/{aasIdentifier}', 'delete') ||
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test fails ---> || ('/submodels/{submodelIdentifier}', 'delete'), substituted-url = /submodels/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvc20vNDQ0NV84MDkwXzYwMTJfNzQwOQ== ||
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test returned non parsable response or this endpoint is not implemented ---> ('/submodels/{submodelIdentifier}/submodel/submodel-elements/{idShortPath}', 'delete') ||
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/registry/shell-descriptors/{aasIdentifier}', 'delete'), substituted-url = /registry/shell-descriptors/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzI= ||
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/registry/shell-descriptors/{aasIdentifier}/submodel-descriptors/{submodelIdentifier}', 'delete'), substituted-url = /registry/shell-descriptors/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzI=/submodel-descriptors/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvc20vNDQ0NV84MDkwXzYwMTJfNzQwOQ== ||
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/registry/submodel-descriptors/{submodelIdentifier}', 'delete'), substituted-url = /registry/submodel-descriptors/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvc20vNDQ0NV84MDkwXzYwMTJfNzQwOQ== ||
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test returned non parsable response or this endpoint is not implemented ---> ('/concept-descriptions/{cdIdentifier}', 'delete') ||
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/packages/{packageId}', 'delete'), substituted-url = /packages/bm90X2F2YWlsYWJsZQ== ||
+----------------------------------------------------------------------------------------------------------------
+|| Test fails ---> || ('/lookup/shells/{aasIdentifier}', 'delete'), substituted-url = /lookup/shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzI= ||
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test returned non parsable response or this endpoint is not implemented ---> ('/shells', 'get'), substituted-url = /shells, error is 'text' ||
+------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/shells', 'post'), substituted-url = /shells ||
+-------------------------------------------------------------------------
+|| Test passed ---> || ('/shells', 'get'), substituted-url = /shells ||
+------------------------------------------------------------------------
+|| Test returned non parsable response or this endpoint is not implemented ---> ('/shells', 'post'), substituted-url = /shells, error is 'NoneType' object has no attribute 'status_code' ||
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/shells/{aasIdentifier}', 'get'), substituted-url = /shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzI= ||
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/shells/{aasIdentifier}', 'put'), substituted-url = /shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzI= ||
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/shells/{aasIdentifier}/aas', 'get'), substituted-url = /shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzI=/aas ||
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/shells/{aasIdentifier}/aas', 'put'), substituted-url = /shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzI=/aas ||
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/shells/{aasIdentifier}/aas/asset-information', 'get'), substituted-url = /shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzI=/aas/asset-information ||
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/shells/{aasIdentifier}/aas/asset-information', 'put'), substituted-url = /shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzI=/aas/asset-information ||
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/shells/{aasIdentifier}/aas/submodels', 'get'), substituted-url = /shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzI=/aas/submodels ||
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/shells/{aasIdentifier}/aas/submodels', 'post'), substituted-url = /shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzI=/aas/submodels ||
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/submodels', 'get'), substituted-url = /submodels ||
+------------------------------------------------------------------------------
+|| Test returned non parsable response or this endpoint is not implemented ---> ('/submodels', 'post'), substituted-url = /submodels, error is 'NoneType' object has no attribute 'status_code' ||
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/shells', 'get'), substituted-url = /shells ||
+------------------------------------------------------------------------
+|| Test returned non parsable response or this endpoint is not implemented ---> ('/shells', 'post'), substituted-url = /shells, error is 'NoneType' object has no attribute 'status_code' ||
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/shells/{aasIdentifier}', 'get'), substituted-url = /shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzI= ||
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/shells/{aasIdentifier}', 'put'), substituted-url = /shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzI= ||
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/shells/{aasIdentifier}/aas', 'get'), substituted-url = /shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzI=/aas ||
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/shells/{aasIdentifier}/aas', 'put'), substituted-url = /shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzI=/aas ||
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/shells/{aasIdentifier}/aas/asset-information', 'get'), substituted-url = /shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzI=/aas/asset-information ||
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/shells/{aasIdentifier}/aas/asset-information', 'put'), substituted-url = /shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzI=/aas/asset-information ||
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/shells/{aasIdentifier}/aas/submodels', 'get'), substituted-url = /shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzI=/aas/submodels ||
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/shells/{aasIdentifier}/aas/submodels', 'post'), substituted-url = /shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzI=/aas/submodels ||
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/submodels', 'get'), substituted-url = /submodels ||
+------------------------------------------------------------------------------
+|| Test returned non parsable response or this endpoint is not implemented ---> ('/submodels', 'post'), substituted-url = /submodels, error is 'NoneType' object has no attribute 'status_code' ||
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/submodels/{submodelIdentifier}', 'get'), substituted-url = /submodels/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvc20vNDQ0NV84MDkwXzYwMTJfNzQwOQ== ||
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/submodels/{submodelIdentifier}', 'put'), substituted-url = /submodels/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvc20vNDQ0NV84MDkwXzYwMTJfNzQwOQ== ||
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/submodels/{submodelIdentifier}/submodel', 'get'), substituted-url = /submodels/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvc20vNDQ0NV84MDkwXzYwMTJfNzQwOQ==/submodel ||
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/submodels/{submodelIdentifier}/submodel', 'put'), substituted-url = /submodels/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvc20vNDQ0NV84MDkwXzYwMTJfNzQwOQ==/submodel ||
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/submodels/{submodelIdentifier}/submodel/submodel-elements', 'get'), substituted-url = /submodels/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvc20vNDQ0NV84MDkwXzYwMTJfNzQwOQ==/submodel/submodel-elements ||
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/submodels/{submodelIdentifier}/submodel/submodel-elements', 'post'), substituted-url = /submodels/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvc20vNDQ0NV84MDkwXzYwMTJfNzQwOQ==/submodel/submodel-elements ||
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/submodels/{submodelIdentifier}/submodel/submodel-elements/{idShortPath}', 'get'), substituted-url = /submodels/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvc20vNDQ0NV84MDkwXzYwMTJfNzQwOQ==/submodel/submodel-elements/GripperUp ||
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/submodels/{submodelIdentifier}/submodel/submodel-elements/{idShortPath}', 'put'), substituted-url = /submodels/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvc20vNDQ0NV84MDkwXzYwMTJfNzQwOQ==/submodel/submodel-elements/GripperUp ||
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/submodels/{submodelIdentifier}/submodel/submodel-elements/{idShortPath}', 'post'), substituted-url = /submodels/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvc20vNDQ0NV84MDkwXzYwMTJfNzQwOQ==/submodel/submodel-elements/GripperUp ||
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test returned non parsable response or this endpoint is not implemented ---> ('/submodels/{submodelIdentifier}/submodel/submodel-elements/{idShortPath}/invoke', 'post'), substituted-url = None, error is 'NoneType' object has no attribute 'status_code' ||
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test fails ---> || ('/submodels/{submodelIdentifier}/submodel/submodel-elements/{idShortPath}/operation-results/{handleId}', 'get'), substituted-url = /submodels/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvc20vNDQ0NV84MDkwXzYwMTJfNzQwOQ==/submodel/submodel-elements/GripperUp/operation-results/{handleId}, error is TestResult(passed=False, status_code=False, schema_conformation=False) ||
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| This endpoint is not implemented  ---> || ('/registry/shell-descriptors', 'get'), substituted-url = /registry/shell-descriptors, error is no matching request mapper found for URL  ||
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| This endpoint is not implemented  ---> || ('/registry/shell-descriptors', 'post'), substituted-url = /registry/shell-descriptors, error is no matching request mapper found for URL  ||
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| This endpoint is not implemented  ---> || ('/registry/shell-descriptors/{aasIdentifier}', 'get'), substituted-url = /registry/shell-descriptors/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzI=, error is no matching request mapper found for URL  ||
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| This endpoint is not implemented  ---> || ('/registry/shell-descriptors/{aasIdentifier}', 'put'), substituted-url = /registry/shell-descriptors/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzI=, error is no matching request mapper found for URL  ||
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| This endpoint is not implemented  ---> || ('/registry/shell-descriptors/{aasIdentifier}/submodel-descriptors', 'get'), substituted-url = /registry/shell-descriptors/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzI=/submodel-descriptors, error is no matching request mapper found for URL  ||
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| This endpoint is not implemented  ---> || ('/registry/shell-descriptors/{aasIdentifier}/submodel-descriptors', 'post'), substituted-url = /registry/shell-descriptors/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzI=/submodel-descriptors, error is no matching request mapper found for URL  ||
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| This endpoint is not implemented  ---> || ('/registry/shell-descriptors/{aasIdentifier}/submodel-descriptors/{submodelIdentifier}', 'get'), substituted-url = /registry/shell-descriptors/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzI=/submodel-descriptors/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvc20vNDQ0NV84MDkwXzYwMTJfNzQwOQ==, error is no matching request mapper found for URL  ||
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| This endpoint is not implemented  ---> || ('/registry/shell-descriptors/{aasIdentifier}/submodel-descriptors/{submodelIdentifier}', 'put'), substituted-url = /registry/shell-descriptors/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzI=/submodel-descriptors/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvc20vNDQ0NV84MDkwXzYwMTJfNzQwOQ==, error is no matching request mapper found for URL  ||
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| This endpoint is not implemented  ---> || ('/registry/submodel-descriptors', 'get'), substituted-url = /registry/submodel-descriptors, error is no matching request mapper found for URL  ||
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| This endpoint is not implemented  ---> || ('/registry/submodel-descriptors', 'post'), substituted-url = /registry/submodel-descriptors, error is no matching request mapper found for URL  ||
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| This endpoint is not implemented  ---> || ('/registry/submodel-descriptors/{submodelIdentifier}', 'get'), substituted-url = /registry/submodel-descriptors/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvc20vNDQ0NV84MDkwXzYwMTJfNzQwOQ==, error is no matching request mapper found for URL  ||
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| This endpoint is not implemented  ---> || ('/registry/submodel-descriptors/{submodelIdentifier}', 'put'), substituted-url = /registry/submodel-descriptors/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvc20vNDQ0NV84MDkwXzYwMTJfNzQwOQ==, error is no matching request mapper found for URL  ||
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/concept-descriptions', 'get'), substituted-url = /concept-descriptions ||
+----------------------------------------------------------------------------------------------------
+|| Test returned non parsable response or this endpoint is not implemented ---> ('/concept-descriptions', 'post'), substituted-url = /concept-descriptions, error is 'NoneType' object has no attribute 'status_code' ||
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/concept-descriptions/{cdIdentifier}', 'get'), substituted-url = /concept-descriptions/aHR0cHM6Ly9hY3BsdC5vcmcvVGVzdF9Db25jZXB0RGVzY3JpcHRpb24= ||
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/concept-descriptions/{cdIdentifier}', 'put'), substituted-url = /concept-descriptions/aHR0cHM6Ly9hY3BsdC5vcmcvVGVzdF9Db25jZXB0RGVzY3JpcHRpb24= ||
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| This endpoint is not implemented  ---> || ('/packages', 'get'), substituted-url = /packages, error is no matching request mapper found for URL  ||
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+|| This endpoint is not implemented  ---> || ('/packages', 'post'), substituted-url = /packages, error is no matching request mapper found for URL  ||
+------------------------------------------------------------------------------------------------------------------------------------------------------
+|| This endpoint is not implemented  ---> || ('/packages/{packageId}', 'get'), substituted-url = /packages/bm90X2F2YWlsYWJsZQ==, error is no matching request mapper found for URL  ||
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| This endpoint is not implemented  ---> || ('/packages/{packageId}', 'put'), substituted-url = /packages/bm90X2F2YWlsYWJsZQ==, error is no matching request mapper found for URL  ||
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/serialization', 'get'), substituted-url = /serialization ||
+--------------------------------------------------------------------------------------
+|| Test passed ---> || ('/lookup/shells', 'get'), substituted-url = /lookup/shells ||
+--------------------------------------------------------------------------------------
+|| Test passed ---> || ('/lookup/shells/{aasIdentifier}', 'get'), substituted-url = /lookup/shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzI= ||
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/lookup/shells/{aasIdentifier}', 'post'), substituted-url = /lookup/shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzI= ||
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| This endpoint is not implemented  ---> || ('/descriptor', 'get'), substituted-url = /descriptor, error is no matching request mapper found for URL  ||
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test returned non parsable response or this endpoint is not implemented ---> ('/shells/{aasIdentifier}', 'delete') ||
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test fails ---> || ('/submodels/{submodelIdentifier}', 'delete'), substituted-url = /submodels/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvc20vNDQ0NV84MDkwXzYwMTJfNzQwOQ== ||
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test returned non parsable response or this endpoint is not implemented ---> ('/submodels/{submodelIdentifier}/submodel/submodel-elements/{idShortPath}', 'delete') ||
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/registry/shell-descriptors/{aasIdentifier}', 'delete'), substituted-url = /registry/shell-descriptors/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzI= ||
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/registry/shell-descriptors/{aasIdentifier}/submodel-descriptors/{submodelIdentifier}', 'delete'), substituted-url = /registry/shell-descriptors/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzI=/submodel-descriptors/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvc20vNDQ0NV84MDkwXzYwMTJfNzQwOQ== ||
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/registry/submodel-descriptors/{submodelIdentifier}', 'delete'), substituted-url = /registry/submodel-descriptors/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvc20vNDQ0NV84MDkwXzYwMTJfNzQwOQ== ||
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test returned non parsable response or this endpoint is not implemented ---> ('/concept-descriptions/{cdIdentifier}', 'delete') ||
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test passed ---> || ('/packages/{packageId}', 'delete'), substituted-url = /packages/bm90X2F2YWlsYWJsZQ== ||
+----------------------------------------------------------------------------------------------------------------
+|| Test fails ---> || ('/lookup/shells/{aasIdentifier}', 'delete'), substituted-url = /lookup/shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzI= ||
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------

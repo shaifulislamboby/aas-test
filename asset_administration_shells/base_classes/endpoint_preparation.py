@@ -5,26 +5,30 @@ from typing import Optional, Any, Union
 import requests
 from requests import Response
 
-from aas_identifiers_parser import AssetAdministrationShell, ConceptDescription, Packages
-from helpers import convert_to_base64_form
+from asset_administration_shells.parsers import (
+    AssetAdministrationShell, ConceptDescription, Packages
+)
+from asset_administration_shells.helpers import convert_to_base64_form
 
 SCHEMA_PATH = None
 BASE_URL = None
 
 
 @dataclass
-class AasBaseEndPoint:
+class BaseAASEndPointPreparation:
     """
     This class is the base class which has all the common attributes and methods in it.
     We can extend this class based on our requirements with more functionality
     """
+    asset_administration_shells: [AssetAdministrationShell]
+    base_url: str
+    current_aas = None
+    current_sub_model = None
     raw_endpoint: dict
     password: Union[str, None]
     _id: Union[str, None]
-    asset_administration_shells: [AssetAdministrationShell]
     concept_description: ConceptDescription
     packages: Union[Packages, None]
-    base_url: str
     full_url_path: str
     substituted_url: str = None
     general_path_params_in_schema = ['{aasIdentifier}', '{submodelIdentifier}', '{idShortPath}', '{cdIdentifier}',
@@ -46,8 +50,6 @@ class AasBaseEndPoint:
     not_implemented_error_msg: str = 'no matching request mapper found'
     number_of_objects_available: int = 0
     is_implemented: bool = True
-    current_aas = None
-    current_sub_model = None
 
     @property
     def session(self):
@@ -157,14 +159,32 @@ class AasBaseEndPoint:
             identification.update({'id': _id})
         return identification
 
-    def create_post_or_put_request_data_from_response(self, put: bool = False):
+    def create_post_or_put_request_data_from_response(self, put: bool = False, negative: bool = False) -> dict:
         data = copy(self.single_get_response)
         if 'identification' not in data:
             if isinstance(data, list) and len(data) > 0:
                 return data[0]
             return data
         identification = data.get('identification')
+        # in case of post which is creating another object, we need to provide a new identification, otherwise
+        # the AAS server will complain that several objects can not contain same identification.
         if not put:
-            updated_identification = self.get_updated_identification_data_for_post(identification)
+            if negative:
+                # for negative test case we are passing an invalid id which is an int value, while
+                # the server is expecting a string url in place of id, so that should fail to save and raise
+                # an 404.
+                updated_identification = {'id': 999_22}
+            else:
+                updated_identification = self.get_updated_identification_data_for_post(identification)
             data.update(updated_identification)
-        return data
+        # in case of put which is updating the object, we are just trying to replace the object with
+        # exactly same values, that also should work in case of replacement, this is also necessary as we
+        # already have those AAS and Submodels saved in memory, that we will use for other test cases, so it is
+        # important that we do not alter the identification, which might cause the other tests to fail.
+        else:
+            if negative:
+                # in case of negative test case we will try to put or update the object by providing a false
+                # or unavailable object, to check if it is still raising a proper error or not.
+                updated_identification = self.get_updated_identification_data_for_post(identification)
+                data.update(updated_identification)
+            return data

@@ -1,11 +1,12 @@
 from dataclasses import dataclass, field
-from typing import Union
+from typing import Union, Type
 
 import jsonschema
 import requests
 
-from aas_schema_parser import AasSchemaParser
-from asset_adm_shells.aas_identifiers_parser import AssetAdministrationShell, ConceptDescription
+from asset_administration_shells.base_classes.endpoint_preparation import BaseAASEndPointPreparation
+from asset_administration_shells.parsers.schema_parser import AasSchemaParser
+from asset_administration_shells.parsers.elements_parser import AssetAdministrationShell, ConceptDescription
 
 
 @dataclass
@@ -24,6 +25,7 @@ class DeleteEndpoint:
 
 @dataclass
 class BaseTest:
+    preparation_class: Type[BaseAASEndPointPreparation]
     aas_schema: AasSchemaParser
     _id: Union[str, None]
     password: Union[str, None]

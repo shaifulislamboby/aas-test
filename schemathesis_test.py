@@ -1,6 +1,7 @@
 import schemathesis
 
-schema = schemathesis.from_path('asset_adm_shells/open_api_specification_aas_v2.json')
+schema = schemathesis.from_path(
+    'asset_administration_shells/aas_openapi_specifications/open_api_specification_aas_v2.json')
 
 schema.base_url = 'http://localhost:8080'
 

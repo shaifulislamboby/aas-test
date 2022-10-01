@@ -2,22 +2,27 @@ from dataclasses import dataclass
 
 import requests
 
-from asset_adm_shells.negative_shells_endpoint import AASGETPOSTPUTEndPointNegativeTestOne
-from base_test import BaseTest, DeleteEndpoint, TestResult
+from asset_administration_shells.base_classes.endpoint_preparation import BaseAASEndPointPreparation
+from asset_administration_shells.negative_tests.first_test. \
+    endpoints_preparation.prepare_endpoints_for_first_negative_test import (
+    PrepareAASGETPOSTPUTEndPointForFirstNegativeTest as PPos
+)
+
+from asset_administration_shells.base_classes.base_test import BaseTest, DeleteEndpoint, TestResult
 
 
 @dataclass
 class NegativeTestRunner(BaseTest):
     def start_test(self):
         for path in self.aas_schema.paths:
-            test = AASGETPOSTPUTEndPointNegativeTestOne(raw_endpoint=self.aas_schema.paths.get(path),
-                                                        base_url=self.base_url,
-                                                        full_url_path=path,
-                                                        asset_administration_shells=self.get_asset_administration_shells(),
-                                                        concept_description=self.get_concept_description(),
-                                                        packages=None,
-                                                        _id=self._id,
-                                                        password=self.password)
+            test = self.preparation_class(raw_endpoint=self.aas_schema.paths.get(path),
+                                          base_url=self.base_url,
+                                          full_url_path=path,
+                                          asset_administration_shells=self.get_asset_administration_shells(),
+                                          concept_description=self.get_concept_description(),
+                                          packages=None,
+                                          _id=self._id,
+                                          password=self.password)
             test.set_all_required_attributes()
             with open(self.output_file_name, 'a') as file:
                 for operation in test.operations:
