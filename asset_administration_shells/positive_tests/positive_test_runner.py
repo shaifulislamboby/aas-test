@@ -2,22 +2,24 @@ from dataclasses import dataclass
 
 import requests
 
-from shells_endpoints import AasGETPOSTPUTEndPoint
-from base_test import BaseTest, DeleteEndpoint, TestResult
+from asset_administration_shells.positive_tests.endpoints_preparation.prepare_endpoints_for_positive_test import (
+    PrepareAASGETPOSTPUTEndPointForPositiveTest as PTR
+)
+from asset_administration_shells.base_classes.base_test import BaseTest, DeleteEndpoint, TestResult
 
 
 @dataclass
 class PositiveTestRunner(BaseTest):
     def start_test(self):
         for path in self.aas_schema.paths:
-            test = AasGETPOSTPUTEndPoint(raw_endpoint=self.aas_schema.paths.get(path),
-                                         base_url=self.base_url,
-                                         full_url_path=path,
-                                         asset_administration_shells=self.get_asset_administration_shells(),
-                                         concept_description=self.get_concept_description(),
-                                         packages=None,
-                                         _id=self._id,
-                                         password=self.password)
+            test = self.preparation_class(raw_endpoint=self.aas_schema.paths.get(path),
+                                          base_url=self.base_url,
+                                          full_url_path=path,
+                                          asset_administration_shells=self.get_asset_administration_shells(),
+                                          concept_description=self.get_concept_description(),
+                                          packages=None,
+                                          _id=self._id,
+                                          password=self.password)
             test.set_all_required_attributes()
             with open(self.output_file_name, 'a') as file:
                 for operation in test.operations:
