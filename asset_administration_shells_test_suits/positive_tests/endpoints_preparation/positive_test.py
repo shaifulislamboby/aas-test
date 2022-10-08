@@ -1,6 +1,6 @@
 import requests
 
-from asset_administration_shells.base_classes.preparation import (
+from asset_administration_shells_test_suits.base_classes.preparation import (
     BaseAASPreparation
 )
 

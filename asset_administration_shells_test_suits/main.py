@@ -1,17 +1,17 @@
-from asset_administration_shells.negative_tests.first_test.endpoints_preparation.negative_test_one import (
+from asset_administration_shells_test_suits.negative_tests.first_test.endpoints_preparation.negative_test_one import (
     PreparePPDNegative
 )
-from asset_administration_shells.negative_tests.first_test.negative_test_runner import (
+from asset_administration_shells_test_suits.negative_tests.first_test.negative_test_runner import (
     NegativeTestRunner
 )
-from asset_administration_shells.negative_tests.second_test.endpoints_preparation.negative_test_two import (
+from asset_administration_shells_test_suits.negative_tests.second_test.endpoints_preparation.negative_test_two import (
     PreparePPDNegativeTwo
 )
-from asset_administration_shells.positive_tests.endpoints_preparation.positive_test import (
+from asset_administration_shells_test_suits.positive_tests.endpoints_preparation.positive_test import (
     PreparePPDPositive
 )
-from asset_administration_shells.positive_tests.positive_test_runner import PositiveTestRunner
-from asset_administration_shells.parsers.schema_parser import AasSchemaParser
+from asset_administration_shells_test_suits.positive_tests.positive_test_runner import PositiveTestRunner
+from asset_administration_shells_test_suits.parsers.schema_parser import AasSchemaParser
 
 if __name__ == '__main__':
     file_location = 'aas_openapi_specifications/open_api_specification_aas_v2.json'

@@ -5,10 +5,10 @@ from typing import Optional, Any, Union
 import requests
 from requests import Response
 
-from asset_administration_shells.parsers import (
+from asset_administration_shells_test_suits.parsers import (
     AssetAdministrationShell, ConceptDescription, Packages
 )
-from asset_administration_shells.helpers import convert_to_base64_form
+from asset_administration_shells_test_suits.helpers import convert_to_base64_form
 
 SCHEMA_PATH = None
 BASE_URL = None
@@ -119,8 +119,10 @@ class BaseAASPreparation:
         return response
 
     def has_implementation(self, response) -> bool:
-        if response.get('success') == 'false' and response.get('messages').get('text') == \
-                self.not_implemented_error_msg:
+        if (
+                response.get('success') == 'false' and response.get('messages').get('text') ==
+                self.not_implemented_error_msg
+        ):
             return False
         return True
 
