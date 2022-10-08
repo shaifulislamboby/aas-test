@@ -4,7 +4,7 @@ from typing import Union
 
 import requests
 
-import asset_administration_shells.helpers as helpers
+import asset_administration_shells_test_suits.helpers as helpers
 
 
 @dataclass
@@ -130,19 +130,30 @@ class AssetAdministrationShell(BaseParser):
 
     @property
     def sub_models(self):
+        """
+        This property method will collect all the submodels that belongs to an AAS,
+        By making request to the url that has been provided for the submodel
+        collections.
+        :return:
+        """
         sub_models = []
         if '{' not in self.sub_model_collection_uri:
             raise ValueError('Provided submodel collection path does not contains the path parameter for sub model id'
-                             'without id we won`t be able to fetch particular sub model, so please provide a url'
-                             'where we can get all the information for a particular submodel')
+                             'without id the test won`t be able to fetch particular sub model, so please provide a url'
+                             'where the test can get all the information for a particular submodel')
 
         for _ids in self.sub_model_ids:
             url = re.sub('{.*?}', _ids, self.sub_model_collection_uri)
-            if self.session:
-                response = self.session.get(url=url).json()
-            else:
-                response = requests.get(url=url).json()
-            sub_model = SubModel(raw_sub_model=response, _id=None, password=None)
+            """"This method will use try and except here in case submodels endpoint is not implemented, then the
+            test shall run with the AAS only, it should not stop running for the endpoint not being available."""
+            try:
+                if self.session:
+                    response = self.session.get(url=url).json()
+                else:
+                    response = requests.get(url=url).json()
+                sub_model = SubModel(raw_sub_model=response, _id=None, password=None)
+            except Exception as error:
+                sub_model = {'error': error}
             sub_models.append(sub_model)
 
         return sub_models

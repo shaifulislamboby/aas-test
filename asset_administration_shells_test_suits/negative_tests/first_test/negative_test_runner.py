@@ -1,20 +1,21 @@
 import requests
 
-from asset_administration_shells.base_classes.test import (
+from asset_administration_shells_test_suits.base_classes.test import (
     BaseTest, DeleteEndpoint
 )
-from asset_administration_shells.test_report_writing.test_report import (
+from asset_administration_shells_test_suits.test_report_writing.test_report import (
     write_test_results_to_file, write_non_implemented_test_results_to_file
 )
 
 
-class PositiveTestRunner(BaseTest):
+class NegativeTestRunner(BaseTest):
     def start_test(self):
         for path in self.aas_schema.paths:
             test = self.preparation_class(
-                raw_endpoint=self.aas_schema.paths.get(path), base_url=self.base_url, full_url_path=path,
-                asset_administration_shells=self.get_asset_administration_shells(),
-                concept_description=self.get_concept_description(), packages=None, _id=self._id, password=self.password
+                raw_endpoint=self.aas_schema.paths.get(path), base_url=self.base_url,
+                full_url_path=path, asset_administration_shells=self.get_asset_administration_shells(),
+                concept_description=self.get_concept_description(),
+                packages=None, _id=self._id, password=self.password
             )
             test.set_all_required_attributes()
             with open(self.output_file_name, 'a') as file:
@@ -31,7 +32,7 @@ class PositiveTestRunner(BaseTest):
                             response = getattr(
                                 test, f'{operation}_response'
                             )
-                            test_result = function(response)
+                            test_result = function(response, positive=False)
                             length_of_dash_sign = write_test_results_to_file(
                                 test_result, path, operation, test, file
                             )
@@ -40,9 +41,7 @@ class PositiveTestRunner(BaseTest):
                             length_of_dash_sign = write_non_implemented_test_results_to_file(
                                 path, operation, test, error, file
                             )
-                        file.write(
-                            '-' * length_of_dash_sign + '\n'
-                        )
+                        file.write('-' * length_of_dash_sign + '\n')
                     elif operation == 'delete' and len(test.operations) > 1:
                         self.delete_urls.append(
                             DeleteEndpoint(
@@ -64,7 +63,9 @@ class PositiveTestRunner(BaseTest):
                 )
             func = self.check_delete_response_conforms
             try:
-                test_result = func(delete_response)
+                test_result = func(
+                    delete_response, positive=False
+                )
                 length_of_equal_sign = write_test_results_to_file(
                     test_result, url.path, url.operation, url, file
                 )

@@ -4,13 +4,13 @@ from typing import Union, Type
 import jsonschema
 import requests
 
-from asset_administration_shells.base_classes.preparation import (
+from asset_administration_shells_test_suits.base_classes.preparation import (
     BaseAASPreparation
 )
-from asset_administration_shells.parsers.schema_parser import (
+from asset_administration_shells_test_suits.parsers.schema_parser import (
     AasSchemaParser
 )
-from asset_administration_shells.parsers.elements_parser import (
+from asset_administration_shells_test_suits.parsers.elements_parser import (
     AssetAdministrationShell, ConceptDescription
 )
 
@@ -82,7 +82,7 @@ class BaseTest:
 
     @staticmethod
     def check_put_response_conforms(response, positive=True):
-        response_status_code = (200, 204) if positive else (404,)
+        response_status_code = (204,) if positive else (404,)
         if response.status_code not in response_status_code:
             if any(error_m in response.json().get('messages')[0]['text'] for error_m in BaseTest.error_message):
                 return BaseTest.error_message[0]

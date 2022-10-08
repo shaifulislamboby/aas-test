@@ -1,7 +1,7 @@
 from typing import Optional
 
-from asset_administration_shells.base_classes.test import TestResult, BaseTest
-from asset_administration_shells.base_classes.preparation import BaseAASPreparation
+from asset_administration_shells_test_suits.base_classes.test import TestResult, BaseTest
+from asset_administration_shells_test_suits.base_classes.preparation import BaseAASPreparation
 
 
 def write_test_results_to_file(
