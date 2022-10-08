@@ -1,27 +1,11 @@
-from copy import copy
-from dataclasses import dataclass
-
 import requests
 
-from asset_administration_shells.base_classes.endpoint_preparation import (
-    BaseAASEndPointPreparation
+from asset_administration_shells.base_classes.preparation import (
+    BaseAASPreparation
 )
-from asset_administration_shells.helpers import convert_to_base64_form
 
 
-@dataclass
-class PrepareAASGETPOSTPUTEndPointForFirstNegativeTest(BaseAASEndPointPreparation):
-    negative_get_response = None
-
-    def create_post_or_put_request_data_from_response(self, put: bool = False):
-        return {}
-
-    def substitute_path_parameters(self):
-        self.substituted_url = copy(self.full_url_path)
-        for param in self.general_path_params_in_schema:
-            if param in self.full_url_path:
-                replacement = convert_to_base64_form('not_available')
-                self.replace_(param, replacement=replacement)
+class PreparePOSTPUTDataPositiveTest(BaseAASPreparation):
 
     def set_all_required_attributes(self):
         if self.is_implemented and 'get' in self.operations:
@@ -46,7 +30,7 @@ class PrepareAASGETPOSTPUTEndPointForFirstNegativeTest(BaseAASEndPointPreparatio
     def set_all_responses(self):
         url = f'{self.base_url}{self.substituted_url}'
         if self.is_implemented:
-            if self.post_data is not None:
+            if self.post_data:
                 if self.session:
                     self.post_response = self.session.post(url, json=self.post_data)
                 else:

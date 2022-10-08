@@ -15,7 +15,7 @@ BASE_URL = None
 
 
 @dataclass
-class BaseAASEndPointPreparation:
+class BaseAASPreparation:
     """
     This class is the base class which has all the common attributes and methods in it.
     We can extend this class based on our requirements with more functionality
