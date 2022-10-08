@@ -4,9 +4,15 @@ from typing import Union, Type
 import jsonschema
 import requests
 
-from asset_administration_shells.base_classes.endpoint_preparation import BaseAASEndPointPreparation
-from asset_administration_shells.parsers.schema_parser import AasSchemaParser
-from asset_administration_shells.parsers.elements_parser import AssetAdministrationShell, ConceptDescription
+from asset_administration_shells.base_classes.preparation import (
+    BaseAASPreparation
+)
+from asset_administration_shells.parsers.schema_parser import (
+    AasSchemaParser
+)
+from asset_administration_shells.parsers.elements_parser import (
+    AssetAdministrationShell, ConceptDescription
+)
 
 
 @dataclass
@@ -25,7 +31,7 @@ class DeleteEndpoint:
 
 @dataclass
 class BaseTest:
-    preparation_class: Type[BaseAASEndPointPreparation]
+    preparation_class: Type[BaseAASPreparation]
     aas_schema: AasSchemaParser
     _id: Union[str, None]
     password: Union[str, None]
@@ -47,14 +53,7 @@ class BaseTest:
         return False
 
     def check_get_response_conforms(self, response, positive=True):
-        @dataclass
-        class ResponseCode:
-            positive: int = 200
-            negative: int = 404
-
-        response_status_code = ResponseCode.negative
-        if positive:
-            response_status_code = ResponseCode.positive
+        response_status_code = 200 if positive else 404
         if response.status_code != response_status_code:
             if any(error_m in response.json().get('messages')[0]['text'] for error_m in self.error_message):
                 return BaseTest.error_message[0]
@@ -70,15 +69,7 @@ class BaseTest:
 
     @staticmethod
     def check_post_response_conforms(response, positive=True):
-        @dataclass
-        class ResponseCode:
-            positive: int = 201
-            negative: int = 404
-
-        response_status_code = ResponseCode.negative
-        if positive:
-            response_status_code = ResponseCode.positive
-
+        response_status_code = 201 if positive else 404
         if response.status_code != response_status_code:
             try:
                 if any(error_m in response.json().get('messages')[0]['text'] for error_m in BaseTest.error_message):
@@ -91,14 +82,7 @@ class BaseTest:
 
     @staticmethod
     def check_put_response_conforms(response, positive=True):
-        @dataclass
-        class ResponseCode:
-            positive: tuple = (200, 204)
-            negative: tuple = (404,)
-
-        response_status_code = ResponseCode.negative
-        if positive:
-            response_status_code = ResponseCode.positive
+        response_status_code = (200, 204) if positive else (404,)
         if response.status_code not in response_status_code:
             if any(error_m in response.json().get('messages')[0]['text'] for error_m in BaseTest.error_message):
                 return BaseTest.error_message[0]
@@ -107,22 +91,14 @@ class BaseTest:
 
     @staticmethod
     def check_delete_response_conforms(response, positive=True):
-        @dataclass
-        class ResponseCode:
-            positive: tuple = (204,)
-            negative: tuple = (404,)
-
-        response_status_code = ResponseCode.negative
-        if positive:
-            response_status_code = ResponseCode.positive
-
-        if response.status_code != response_status_code:
+        response_status_code = (204,) if positive else (404,)
+        if response.status_code not in response_status_code:
             if any(error_m in response.json().get('messages')[0]['text'] for error_m in BaseTest.error_message):
                 return BaseTest.error_message[0]
             return TestResult()
         return TestResult(passed=True)
 
-    def get_asset_administration_shells(self):
+    def get_asset_administration_shells(self) -> list[AssetAdministrationShell]:
         if self.session:
             response = self.session.get(url=self.aas_path).json()
         else:
