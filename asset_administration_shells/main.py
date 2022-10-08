@@ -1,14 +1,14 @@
 from asset_administration_shells.negative_tests.first_test.endpoints_preparation.negative_test_one import (
-    PreparePOSTPUTDataForFirstNegativeTest
+    PreparePPDNegative
 )
 from asset_administration_shells.negative_tests.first_test.negative_test_runner import (
     NegativeTestRunner
 )
 from asset_administration_shells.negative_tests.second_test.endpoints_preparation.negative_test_two import (
-    PrepareAASGETPOSTPUTEndPointForSecondNegativeTest
+    PreparePPDNegativeTwo
 )
 from asset_administration_shells.positive_tests.endpoints_preparation.positive_test import (
-    PreparePOSTPUTDataPositiveTest
+    PreparePPDPositive
 )
 from asset_administration_shells.positive_tests.positive_test_runner import PositiveTestRunner
 from asset_administration_shells.parsers.schema_parser import AasSchemaParser
@@ -27,7 +27,7 @@ if __name__ == '__main__':
                        concept_description_path=f'{base_url}/concept-descriptions/',
                        sub_model_path=f'{base_url}/submodels/{{submodelIdentifier}}',
                        _id=None, password=None,
-                       preparation_class=PreparePOSTPUTDataPositiveTest).start_test()
+                       preparation_class=PreparePPDPositive).start_test()
     # NegativeTestRunner(aas_schema=Aas,
     #                    output_file_name=output_file_name_negative_first,
     #                    base_url=base_url,
