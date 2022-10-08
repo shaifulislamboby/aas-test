@@ -2,11 +2,11 @@ from copy import copy
 
 from asset_administration_shells.helpers import convert_to_base64_form
 from asset_administration_shells.positive_tests.endpoints_preparation.positive_test import (
-    PreparePOSTPUTDataPositiveTest
+    PreparePPDPositive
 )
 
 
-class PreparePOSTPUTDataForFirstNegativeTest(PreparePOSTPUTDataPositiveTest):
+class PreparePPDNegative(PreparePPDPositive):
     negative_get_response = None
 
     def create_post_or_put_request_data_from_response(self, put: bool = False, negative: bool = False):

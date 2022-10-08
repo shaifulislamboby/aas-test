@@ -5,7 +5,7 @@ from asset_administration_shells.base_classes.preparation import (
 )
 
 
-class PreparePOSTPUTDataPositiveTest(BaseAASPreparation):
+class PreparePPDPositive(BaseAASPreparation):
 
     def set_all_required_attributes(self):
         if self.is_implemented and 'get' in self.operations:

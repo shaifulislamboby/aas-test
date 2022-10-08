@@ -2,12 +2,12 @@ from dataclasses import dataclass
 
 
 from asset_administration_shells.positive_tests.endpoints_preparation.positive_test import (
-    PreparePOSTPUTDataPositiveTest
+    PreparePPDPositive
 )
 
 
 @dataclass
-class PrepareAASGETPOSTPUTEndPointForSecondNegativeTest(PreparePOSTPUTDataPositiveTest):
+class PreparePPDNegativeTwo(PreparePPDPositive):
     """
     This is second negative test suit for, which will pass an invalid data
     to check if the server response with a valid status code and can handle
