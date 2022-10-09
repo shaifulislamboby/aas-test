@@ -7,7 +7,7 @@ from asset_administration_shells_test_suits.negative_tests.second_test.endpoints
 from asset_administration_shells_test_suits.positive_tests.endpoints_preparation.positive_test import (
     PreparePPDPositive
 )
-from asset_administration_shells_test_suits.positive_tests.positive_test_runner import TestRunner
+from asset_administration_shells_test_suits.runner.test_runner import TestRunner
 from asset_administration_shells_test_suits.parsers.schema_parser import AasSchemaParser
 
 if __name__ == '__main__':
