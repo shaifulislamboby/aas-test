@@ -18,6 +18,6 @@ class AasSchemaParser:
     def paths(self) -> dict:
         return self.raw_schema.get('paths')
 
-dataclass
+
 class Path:
-    raw_url
+    pass
