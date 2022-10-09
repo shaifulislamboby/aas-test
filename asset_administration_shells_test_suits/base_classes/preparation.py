@@ -10,9 +10,6 @@ from asset_administration_shells_test_suits.parsers import (
 )
 from asset_administration_shells_test_suits.helpers import convert_to_base64_form
 
-SCHEMA_PATH = None
-BASE_URL = None
-
 
 @dataclass
 class BaseAASPreparation:

@@ -1,5 +1,5 @@
 from dataclasses import dataclass, field
-from typing import Union, Type
+from typing import Union, Type, Optional
 
 import jsonschema
 import requests
@@ -111,11 +111,11 @@ class BaseTest:
                                                          password=self.password))
         return initial_list
 
-    def get_concept_description(self):
+    def get_concept_description(self) -> Optional[ConceptDescription]:
         try:
             return ConceptDescription(raw_concept_description=requests.get(url=self.concept_description_path).json()[0],
                                       _id=self._id,
                                       password=self.password)
         except Exception as error:
             print(error)
-            return 0
+            return None
