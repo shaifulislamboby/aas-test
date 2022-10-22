@@ -12,25 +12,45 @@ class TestRunner(BaseTest):
     def start_test(self, positive=True):
         for uri in self.aas_schema.paths:
             prepared_instance = self.preparation_class(
-                raw_endpoint=self.aas_schema.paths.get(uri),
-                base_url=self.base_url,
-                full_url_path=uri,
+                raw_endpoint=self.aas_schema.paths.get(uri), base_url=self.base_url, full_url_path=uri,
                 asset_administration_shells=self.get_asset_administration_shells(),
-                concept_description=self.get_concept_description(),
-                packages=None,
-                _id=self._id,
-                password=self.password
+                concept_description=self.get_concept_description(), packages=None, _id=self._id, password=self.password
             )
             prepared_instance.set_all_required_attributes()
             with open(self.output_file_name, 'a') as file:
                 for operation in prepared_instance.operations:
                     if operation != 'delete':
+                        # this will get the function from the base class (BaseTest class)
+                        # here it is using getattr for dynamically getting the functions based on http verb
+                        function = getattr(
+                            self, f'check_{operation}_response_conforms'
+                        )
+                        if hasattr(prepared_instance, f'{operation}_query_params'):
+                            _attr = getattr(prepared_instance, f'{operation}_query_params')
+                            if _attr:
+                                for param in _attr:
+                                    url = uri + param
+                                    param = param.replace('?', 'question')
+                                    param = param.replace('=', 'equal')
+                                    param = param.replace('&', 'and')
+                                    response = getattr(
+                                        prepared_instance, f'{operation}_{param}_response'
+                                    )
+
+                                    try:
+                                        test_result = function(response, positive=positive)
+                                        length_of_dash_sign = write_test_results_to_file(
+                                            test_result, url, operation, prepared_instance, file
+                                        )
+                                    except Exception as error:
+                                        print(error)
+                                        length_of_dash_sign = write_non_implemented_test_results_to_file(
+                                            uri, operation, prepared_instance, error, file
+                                        )
+                                    file.write(
+                                        '-' * length_of_dash_sign + '\n'
+                                    )
                         try:
-                            # this will get the function from the base class (BaseTest class)
-                            # here it is using getattr for dynamically getting the functions based on http verb
-                            function = getattr(
-                                self, f'check_{operation}_response_conforms'
-                            )
                             # in this line will get response from AasGETPOSTPUTEndPoint class
                             # getattr has been used for dynamically getting the attributes based on http verb
                             response = getattr(
@@ -48,7 +68,8 @@ class TestRunner(BaseTest):
                         file.write(
                             '-' * length_of_dash_sign + '\n'
                         )
-                    elif operation == 'delete' and len(prepared_instance.operations) > 1:
+
+                    if operation == 'delete' and len(prepared_instance.operations) > 1:
                         self.delete_urls.append(
                             DeleteEndpoint(
                                 substituted_url=prepared_instance.substituted_url, path=uri

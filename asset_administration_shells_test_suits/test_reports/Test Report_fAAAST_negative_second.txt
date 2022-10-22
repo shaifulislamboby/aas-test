@@ -112,3 +112,51 @@
 ----------------------------------------------------------------------------------------------------------------
 || Test fails ---> || ('/lookup/shells/{aasIdentifier}', 'delete'), substituted-url = /lookup/shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzI= ||
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test returned non parsable response or this endpoint is not implemented ---> ('/shells', 'get'), substituted-url = /shells, error is 'list' object has no attribute 'get' ||
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test returned non parsable response or this endpoint is not implemented ---> ('/shells', 'post'), substituted-url = /shells, error is 'NoneType' object has no attribute 'status_code' ||
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test fails ---> || ('/shells/{aasIdentifier}', 'get'), substituted-url = /shells/{aasIdentifier}, error is TestResult(passed=False, status_code=False, schema_conformation=False) ||
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test fails ---> || ('/shells/{aasIdentifier}', 'put'), substituted-url = /shells/{aasIdentifier}, error is TestResult(passed=False, status_code=False, schema_conformation=False) ||
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test fails ---> || ('/shells/{aasIdentifier}/aas', 'get'), substituted-url = /shells/{aasIdentifier}/aas, error is TestResult(passed=False, status_code=False, schema_conformation=False) ||
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test fails ---> || ('/shells/{aasIdentifier}/aas', 'put'), substituted-url = /shells/{aasIdentifier}/aas, error is TestResult(passed=False, status_code=False, schema_conformation=False) ||
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test fails ---> || ('/shells/{aasIdentifier}/aas/asset-information', 'get'), substituted-url = /shells/{aasIdentifier}/aas/asset-information, error is TestResult(passed=False, status_code=False, schema_conformation=False) ||
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test fails ---> || ('/shells/{aasIdentifier}/aas/asset-information', 'put'), substituted-url = /shells/{aasIdentifier}/aas/asset-information, error is TestResult(passed=False, status_code=False, schema_conformation=False) ||
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test fails ---> || ('/shells/{aasIdentifier}/aas/submodels', 'get'), substituted-url = /shells/{aasIdentifier}/aas/submodels, error is TestResult(passed=False, status_code=False, schema_conformation=False) ||
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test fails ---> || ('/shells/{aasIdentifier}/aas/submodels', 'post'), substituted-url = /shells/{aasIdentifier}/aas/submodels, error is TestResult(passed=False, status_code=False, schema_conformation=False) ||
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test returned non parsable response or this endpoint is not implemented ---> ('/submodels', 'get'), substituted-url = /submodels, error is 'list' object has no attribute 'get' ||
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test returned non parsable response or this endpoint is not implemented ---> ('/submodels', 'post'), substituted-url = /submodels, error is 'NoneType' object has no attribute 'status_code' ||
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test returned non parsable response or this endpoint is not implemented ---> ('/shells', 'get'), substituted-url = /shells, error is 'list' object has no attribute 'get' ||
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| This endpoint is not implemented  ---> || ('/shells', 'post'), substituted-url = /shells, error is not implemented  ||
+-------------------------------------------------------------------------------------------------------------------------
+|| This endpoint is not implemented  ---> || ('/shells/{aasIdentifier}', 'get'), substituted-url = /shells/{aasIdentifier}, error is not implemented  ||
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+|| This endpoint is not implemented  ---> || ('/shells/{aasIdentifier}', 'put'), substituted-url = /shells/{aasIdentifier}, error is not implemented  ||
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+|| This endpoint is not implemented  ---> || ('/shells/{aasIdentifier}/aas', 'get'), substituted-url = /shells/{aasIdentifier}/aas, error is not implemented  ||
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| This endpoint is not implemented  ---> || ('/shells/{aasIdentifier}/aas', 'put'), substituted-url = /shells/{aasIdentifier}/aas, error is not implemented  ||
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| This endpoint is not implemented  ---> || ('/shells/{aasIdentifier}/aas/asset-information', 'get'), substituted-url = /shells/{aasIdentifier}/aas/asset-information, error is not implemented  ||
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| This endpoint is not implemented  ---> || ('/shells/{aasIdentifier}/aas/asset-information', 'put'), substituted-url = /shells/{aasIdentifier}/aas/asset-information, error is not implemented  ||
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| This endpoint is not implemented  ---> || ('/shells/{aasIdentifier}/aas/submodels', 'get'), substituted-url = /shells/{aasIdentifier}/aas/submodels, error is not implemented  ||
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| This endpoint is not implemented  ---> || ('/shells/{aasIdentifier}/aas/submodels', 'post'), substituted-url = /shells/{aasIdentifier}/aas/submodels, error is not implemented  ||
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| Test returned non parsable response or this endpoint is not implemented ---> ('/submodels', 'get'), substituted-url = /submodels, error is 'list' object has no attribute 'get' ||
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|| This endpoint is not implemented  ---> || ('/submodels', 'post'), substituted-url = /submodels, error is not implemented  ||
+-------------------------------------------------------------------------------------------------------------------------------

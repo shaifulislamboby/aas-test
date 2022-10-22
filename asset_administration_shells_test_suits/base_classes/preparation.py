@@ -1,6 +1,6 @@
 from copy import copy
 from dataclasses import dataclass
-from typing import Optional, Any, Union
+from typing import Union
 
 import requests
 from requests import Response
@@ -14,7 +14,8 @@ from asset_administration_shells_test_suits.helpers import convert_to_base64_for
 @dataclass
 class BaseAASPreparation:
     """
-    This class is the base class which has all the common attributes and methods in it.
+    This class is the base class which has all the common attributes and methods in it for the preparation of test
+    suit.
     We can extend this class based on our requirements with more functionality
     """
     asset_administration_shells: [AssetAdministrationShell]
@@ -56,10 +57,27 @@ class BaseAASPreparation:
             return session
         return False
 
-    def parse_endpoint_operations(self) -> None:
-        operations = self.raw_endpoint.get(self.full_url_path)
-        for operation in operations:
-            self.operations.append(operation)
+    @property
+    def query_params(self) -> dict[str: dict[str: list]]:
+        """
+        This method will parse all the query params that any verbs have in any endpoint,
+        and make a dict of verbs which contains dict where the key is the param and
+        the list is the possible, values for the query param.
+        Example of a verb get with
+        {
+        'get': {'content': ['normal', 'trimmed', 'value', 'reference', 'path']}
+        }
+        """
+        operations = self.raw_endpoint
+        query_params = {}
+        for operation, value in operations.items():
+            if 'parameters' in value:
+                query_params[operation] = {
+                    parameter.get('name'): parameter.get('schema').get('enum')
+                    for parameter in value.get('parameters')
+                    if parameter.get('in') == 'query' and parameter.get('schema').get('enum')
+                }
+        return query_params
 
     def substitute_path_parameters(self) -> None:
         self.substituted_url = copy(self.full_url_path)
@@ -107,20 +125,15 @@ class BaseAASPreparation:
     def replace_(self, param, replacement):
         self.substituted_url = self.substituted_url.replace(param, replacement)
 
-    def parse_response(self, response: Optional[dict], asset_identifier: bool = False) -> Any:
-        if isinstance(response, list):
-            response: dict = response[0]
-        self.is_implemented = self.has_implementation(response=response)
-        if self.is_implemented and not asset_identifier:
-            return response.get('identification').get('id')
-        return response
-
-    def has_implementation(self, response) -> bool:
-        if (
-                response.get('success') == 'false' and response.get('messages').get('text') ==
-                self.not_implemented_error_msg
-        ):
-            return False
+    def has_implementation(self, response: dict) -> bool:
+        try:
+            if (
+                    response.get('success') == 'false' and response.get('messages').get('text') ==
+                    self.not_implemented_error_msg
+            ):
+                return False
+        except Exception as error:
+            print(error)
         return True
 
     @staticmethod
@@ -140,12 +153,6 @@ class BaseAASPreparation:
     def has_path_parameters(self):
         return '{' in self.full_url_path
 
-    def get_aas_identifier_response(self):
-        pass
-
-    def get_submodel_identifier_response(self):
-        pass
-
     @staticmethod
     def get_updated_identification_data_for_post(identification: dict) -> dict:
         _id = identification.get('id')
@@ -154,7 +161,7 @@ class BaseAASPreparation:
             _id_list[-1] = str(int(_id_list[-1]) + 1)
             identification.update({'id': ''.join(_id_list)})
         else:
-            _id = _id+'something'
+            _id = _id + 'something'
             identification.update({'id': _id})
         return identification
 

@@ -7,6 +7,7 @@ import requests
 from asset_administration_shells_test_suits.base_classes.preparation import (
     BaseAASPreparation
 )
+from asset_administration_shells_test_suits.helpers import aas_logger
 from asset_administration_shells_test_suits.parsers.schema_parser import (
     AasSchemaParser
 )
@@ -40,8 +41,10 @@ class BaseTest:
     aas_path: str
     sub_model_path: str
     concept_description_path: str
-    error_message = ('no matching request mapper found for URL', 'not allowed for', 'currently not supported',
-                     'no handler defined', 'error parsing')
+    error_message = (
+        'no matching request mapper found for URL', 'not allowed for', 'currently not supported',
+        'no handler defined', 'error parsing'
+    )
     delete_urls: [DeleteEndpoint] = field(default_factory=lambda: [])
 
     @property
@@ -52,10 +55,15 @@ class BaseTest:
             return session
         return False
 
+    @aas_logger
     def check_get_response_conforms(self, response, positive=True):
+        if not response:
+            return 'not implemented'
         response_status_code = 200 if positive else 404
         if response.status_code != response_status_code:
-            if any(error_m in response.json().get('messages')[0]['text'] for error_m in self.error_message):
+            if any(
+                    error_m in response.json().get('messages')[0]['text'] for error_m in self.error_message
+            ):
                 return BaseTest.error_message[0]
             return TestResult()
         try:
@@ -68,11 +76,16 @@ class BaseTest:
             return TestResult(passed=True, schema_conformation=False, status_code=True)
 
     @staticmethod
+    @aas_logger
     def check_post_response_conforms(response, positive=True):
+        if not response:
+            return 'not implemented'
         response_status_code = 201 if positive else 404
         if response.status_code != response_status_code:
             try:
-                if any(error_m in response.json().get('messages')[0]['text'] for error_m in BaseTest.error_message):
+                if any(
+                        error_m in response.json().get('messages')[0]['text'] for error_m in BaseTest.error_message
+                ):
                     return BaseTest.error_message[0]
                 return TestResult()
             except Exception as error:
@@ -81,19 +94,29 @@ class BaseTest:
         return TestResult(passed=True)
 
     @staticmethod
+    @aas_logger
     def check_put_response_conforms(response, positive=True):
+        if not response:
+            return 'not implemented'
         response_status_code = (204,) if positive else (404,)
         if response.status_code not in response_status_code:
-            if any(error_m in response.json().get('messages')[0]['text'] for error_m in BaseTest.error_message):
+            if any(
+                    error_m in response.json().get('messages')[0]['text'] for error_m in BaseTest.error_message
+            ):
                 return BaseTest.error_message[0]
             return TestResult()
         return TestResult(passed=True)
 
     @staticmethod
+    @aas_logger
     def check_delete_response_conforms(response, positive=True):
+        if not response:
+            return 'not implemented'
         response_status_code = (204,) if positive else (404,)
         if response.status_code not in response_status_code:
-            if any(error_m in response.json().get('messages')[0]['text'] for error_m in BaseTest.error_message):
+            if any(
+                    error_m in response.json().get('messages')[0]['text'] for error_m in BaseTest.error_message
+            ):
                 return BaseTest.error_message[0]
             return TestResult()
         return TestResult(passed=True)
@@ -105,17 +128,20 @@ class BaseTest:
             response = requests.get(url=self.aas_path).json()
         initial_list = []
         for res in response:
-            initial_list.append(AssetAdministrationShell(raw_asset_administration_shell=res,
-                                                         sub_model_collection_uri=self.sub_model_path,
-                                                         _id=self._id,
-                                                         password=self.password))
+            initial_list.append(
+                AssetAdministrationShell(
+                    raw_asset_administration_shell=res, sub_model_collection_uri=self.sub_model_path, _id=self._id,
+                    password=self.password
+                )
+            )
         return initial_list
 
     def get_concept_description(self) -> Optional[ConceptDescription]:
         try:
-            return ConceptDescription(raw_concept_description=requests.get(url=self.concept_description_path).json()[0],
-                                      _id=self._id,
-                                      password=self.password)
+            return ConceptDescription(
+                raw_concept_description=requests.get(url=self.concept_description_path).json()[0], _id=self._id,
+                password=self.password
+            )
         except Exception as error:
             print(error)
             return None

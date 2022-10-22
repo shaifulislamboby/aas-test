@@ -4,6 +4,11 @@ import json
 
 @dataclass
 class AasSchemaParser:
+    """
+    This class is the main schema parser, which will parse the openapi
+    specification from the provided path, and load the necessary information
+    for the testing.
+    """
     file_location: str
 
     @property
