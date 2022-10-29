@@ -4,6 +4,7 @@ from typing import Union, Type, Optional
 
 import jsonschema
 import requests
+from requests import Session, Response
 
 from asset_administration_shells_test_suits.base_classes.preparation import (
     BaseAASPreparation
@@ -47,9 +48,10 @@ class BaseTest:
         'no handler defined', 'error parsing'
     )
     delete_urls: [DeleteEndpoint] = field(default_factory=lambda: [])
+    not_implemented_return_value: str = 'not implemented'
 
     @property
-    def session(self):
+    def session(self) -> Union[Session, bool]:
         if self.password and self._id:
             session = requests.Session()
             session.auth = (self._id, self.password)
@@ -57,9 +59,11 @@ class BaseTest:
         return False
 
     @aas_logger
-    def check_get_response_conforms(self, response, positive=True):
+    def check_get_response_conforms(
+            self, response: Optional[Response], positive: bool = True
+    ) -> Union[TestResult, str]:
         if response is None:
-            return 'not implemented'
+            return self.not_implemented_return_value
         response_status_code = 200 if positive else 404
         if response.status_code != response_status_code:
             return self.parse_error_message(response)
@@ -73,9 +77,11 @@ class BaseTest:
             return TestResult(passed=True, schema_conformation=False, status_code=True)
 
     @aas_logger
-    def check_post_response_conforms(self, response, positive=True):
+    def check_post_response_conforms(
+            self, response: Optional[Response], positive: bool = True
+    ) -> Union[TestResult, str]:
         if response is None:
-            return 'not implemented'
+            return self.not_implemented_return_value
         response_status_code = 201 if positive else 404
         if response.status_code != response_status_code:
             return self.parse_error_message(response)
@@ -89,9 +95,11 @@ class BaseTest:
             return TestResult(passed=True, schema_conformation=False, status_code=True)
 
     @aas_logger
-    def check_put_response_conforms(self, response, positive=True):
+    def check_put_response_conforms(
+            self, response: Optional[Response], positive: bool = True
+    ) -> Union[TestResult, str]:
         if response is None:
-            return 'not implemented'
+            return self.not_implemented_return_value
         response_status_code = (200, 204,) if positive else (404,)
         if response.status_code not in response_status_code:
             return self.parse_error_message(response)
@@ -105,9 +113,13 @@ class BaseTest:
             return TestResult(passed=True, schema_conformation=False, status_code=True)
 
     @aas_logger
-    def check_delete_response_conforms(self, response, get_response_for_deleted_object, positive=True):
+    def check_delete_response_conforms(
+            self, response: Optional[Response],
+            get_response_for_deleted_object: Optional[Response],
+            positive: bool = True
+    ) -> Union[TestResult, str]:
         if response is None:
-            return 'not implemented'
+            return self.not_implemented_return_value
         response_status_code = (204,) if positive else (404,)
         if response.status_code not in response_status_code:
             return self.parse_error_message(response)
@@ -117,7 +129,7 @@ class BaseTest:
         return TestResult(passed=True)
 
     @staticmethod
-    def parse_error_message(response) -> Optional[TestResult]:
+    def parse_error_message(response: Optional[Response]) -> Optional[TestResult]:
         try:
             if any(
                     error_m in response.json().get('messages')[0]['text'] for error_m in BaseTest.error_message
@@ -127,7 +139,9 @@ class BaseTest:
             logging.log(msg=f'error occurred during parsing error message : {error}', level=logging.ERROR)
             return TestResult()
 
-    def get_asset_administration_shells(self) -> list[AssetAdministrationShell]:
+    def get_asset_administration_shells(self, positive: bool = True) -> list[AssetAdministrationShell]:
+        if not positive:
+            return []
         if self.session:
             response = self.session.get(url=self.aas_path).json()
         else:
@@ -136,16 +150,23 @@ class BaseTest:
         for res in response:
             initial_list.append(
                 AssetAdministrationShell(
-                    raw_asset_administration_shell=res, sub_model_collection_uri=self.sub_model_path, _id=self._id,
+                    raw_asset_administration_shell=res,
+                    sub_model_collection_uri=self.sub_model_path,
+                    _id=self._id,
                     password=self.password
                 )
             )
         return initial_list
 
-    def get_concept_description(self) -> Optional[ConceptDescription]:
+    def get_concept_description(self, positive: bool = True) -> Optional[ConceptDescription]:
+        if not positive:
+            return ''
         try:
             return ConceptDescription(
-                raw_concept_description=requests.get(url=self.concept_description_path).json()[0], _id=self._id,
+                raw_concept_description=requests.get(
+                    url=self.concept_description_path
+                ).json()[0],
+                _id=self._id,
                 password=self.password
             )
         except Exception as error:

@@ -4,47 +4,47 @@
 -------------------------------------------------------------------------
 Test run finished for this endpoint: 
 Number of total test done till now: 2
-|| Test passed ---> || ('/shells/{aasIdentifier}', 'get'), substituted-url = /shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzQ= ||
+|| Test passed ---> || ('/shells/{aasIdentifier}', 'get'), substituted-url = /shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzM= ||
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
-|| Test passed ---> || ('/shells/{aasIdentifier}', 'put'), substituted-url = /shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzQ= ||
+|| Test passed ---> || ('/shells/{aasIdentifier}', 'put'), substituted-url = /shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzM= ||
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
 Test run finished for this endpoint: 
 Number of total test done till now: 4
-|| Test passed ---> || ('/shells/{aasIdentifier}/aas', 'get'), substituted-url = /shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzQ=/aas ||
-|| Test passed ---> || ('/shells/{aasIdentifier}/aas?content=normal', 'get'), substituted-url = /shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzQ=/aas?content=normal ||
+|| Test passed ---> || ('/shells/{aasIdentifier}/aas', 'get'), substituted-url = /shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzM=/aas ||
+|| Test passed ---> || ('/shells/{aasIdentifier}/aas?content=normal', 'get'), substituted-url = /shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzM=/aas?content=normal ||
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-|| Test passed ---> || ('/shells/{aasIdentifier}/aas?content=trimmed', 'get'), substituted-url = /shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzQ=/aas?content=trimmed ||
+|| Test passed ---> || ('/shells/{aasIdentifier}/aas?content=trimmed', 'get'), substituted-url = /shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzM=/aas?content=trimmed ||
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-|| Test passed ---> || ('/shells/{aasIdentifier}/aas?content=value', 'get'), substituted-url = /shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzQ=/aas?content=value ||
+|| Test passed ---> || ('/shells/{aasIdentifier}/aas?content=value', 'get'), substituted-url = /shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzM=/aas?content=value ||
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-|| Test passed ---> || ('/shells/{aasIdentifier}/aas?content=reference', 'get'), substituted-url = /shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzQ=/aas?content=reference ||
+|| Test passed ---> || ('/shells/{aasIdentifier}/aas?content=reference', 'get'), substituted-url = /shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzM=/aas?content=reference ||
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-|| Test passed ---> || ('/shells/{aasIdentifier}/aas?content=path', 'get'), substituted-url = /shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzQ=/aas?content=path ||
+|| Test passed ---> || ('/shells/{aasIdentifier}/aas?content=path', 'get'), substituted-url = /shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzM=/aas?content=path ||
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-|| Test passed ---> || ('/shells/{aasIdentifier}/aas', 'put'), substituted-url = /shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzQ=/aas?content=path ||
-|| This endpoint is not implemented  ---> || ('/shells/{aasIdentifier}/aas?content=normal', 'put'), substituted-url = /shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzQ=/aas?content=normal, error is no matching request mapper found for URL  ||
+|| Test passed ---> || ('/shells/{aasIdentifier}/aas', 'put'), substituted-url = /shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzM=/aas?content=path ||
+|| This endpoint is not implemented  ---> || ('/shells/{aasIdentifier}/aas?content=normal', 'put'), substituted-url = /shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzM=/aas?content=normal, error is no matching request mapper found for URL  ||
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-|| This endpoint is not implemented  ---> || ('/shells/{aasIdentifier}/aas?content=trimmed', 'put'), substituted-url = /shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzQ=/aas?content=trimmed, error is no matching request mapper found for URL  ||
+|| This endpoint is not implemented  ---> || ('/shells/{aasIdentifier}/aas?content=trimmed', 'put'), substituted-url = /shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzM=/aas?content=trimmed, error is no matching request mapper found for URL  ||
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-|| This endpoint is not implemented  ---> || ('/shells/{aasIdentifier}/aas?content=value', 'put'), substituted-url = /shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzQ=/aas?content=value, error is no matching request mapper found for URL  ||
+|| This endpoint is not implemented  ---> || ('/shells/{aasIdentifier}/aas?content=value', 'put'), substituted-url = /shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzM=/aas?content=value, error is no matching request mapper found for URL  ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-|| This endpoint is not implemented  ---> || ('/shells/{aasIdentifier}/aas?content=reference', 'put'), substituted-url = /shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzQ=/aas?content=reference, error is no matching request mapper found for URL  ||
+|| This endpoint is not implemented  ---> || ('/shells/{aasIdentifier}/aas?content=reference', 'put'), substituted-url = /shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzM=/aas?content=reference, error is no matching request mapper found for URL  ||
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-|| This endpoint is not implemented  ---> || ('/shells/{aasIdentifier}/aas?content=path', 'put'), substituted-url = /shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzQ=/aas?content=path, error is no matching request mapper found for URL  ||
+|| This endpoint is not implemented  ---> || ('/shells/{aasIdentifier}/aas?content=path', 'put'), substituted-url = /shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzM=/aas?content=path, error is no matching request mapper found for URL  ||
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Test run finished for this endpoint: 
 Number of total test done till now: 16
-|| Test passed ---> || ('/shells/{aasIdentifier}/aas/asset-information', 'get'), substituted-url = /shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzQ=/aas/asset-information ||
+|| Test passed ---> || ('/shells/{aasIdentifier}/aas/asset-information', 'get'), substituted-url = /shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzM=/aas/asset-information ||
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-|| Test passed ---> || ('/shells/{aasIdentifier}/aas/asset-information', 'put'), substituted-url = /shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzQ=/aas/asset-information ||
+|| Test passed ---> || ('/shells/{aasIdentifier}/aas/asset-information', 'put'), substituted-url = /shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzM=/aas/asset-information ||
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Test run finished for this endpoint: 
 Number of total test done till now: 18
-|| Test passed ---> || ('/shells/{aasIdentifier}/aas/submodels', 'get'), substituted-url = /shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzQ=/aas/submodels ||
+|| Test passed ---> || ('/shells/{aasIdentifier}/aas/submodels', 'get'), substituted-url = /shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzM=/aas/submodels ||
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-|| Test passed ---> || ('/shells/{aasIdentifier}/aas/submodels', 'post'), substituted-url = /shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzQ=/aas/submodels ||
+|| Test passed ---> || ('/shells/{aasIdentifier}/aas/submodels', 'post'), substituted-url = /shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzM=/aas/submodels ||
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Test run finished for this endpoint: 
 Number of total test done till now: 20
@@ -842,21 +842,21 @@ Number of total test done till now: 406
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Test run finished for this endpoint: 
 Number of total test done till now: 408
-|| This endpoint is not implemented  ---> || ('/registry/shell-descriptors/{aasIdentifier}', 'get'), substituted-url = /registry/shell-descriptors/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzQ=, error is no matching request mapper found for URL  ||
+|| This endpoint is not implemented  ---> || ('/registry/shell-descriptors/{aasIdentifier}', 'get'), substituted-url = /registry/shell-descriptors/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzM=, error is no matching request mapper found for URL  ||
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-|| This endpoint is not implemented  ---> || ('/registry/shell-descriptors/{aasIdentifier}', 'put'), substituted-url = /registry/shell-descriptors/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzQ=, error is no matching request mapper found for URL  ||
+|| This endpoint is not implemented  ---> || ('/registry/shell-descriptors/{aasIdentifier}', 'put'), substituted-url = /registry/shell-descriptors/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzM=, error is no matching request mapper found for URL  ||
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Test run finished for this endpoint: 
 Number of total test done till now: 410
-|| This endpoint is not implemented  ---> || ('/registry/shell-descriptors/{aasIdentifier}/submodel-descriptors', 'get'), substituted-url = /registry/shell-descriptors/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzQ=/submodel-descriptors, error is no matching request mapper found for URL  ||
+|| This endpoint is not implemented  ---> || ('/registry/shell-descriptors/{aasIdentifier}/submodel-descriptors', 'get'), substituted-url = /registry/shell-descriptors/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzM=/submodel-descriptors, error is no matching request mapper found for URL  ||
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-|| This endpoint is not implemented  ---> || ('/registry/shell-descriptors/{aasIdentifier}/submodel-descriptors', 'post'), substituted-url = /registry/shell-descriptors/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzQ=/submodel-descriptors, error is no matching request mapper found for URL  ||
+|| This endpoint is not implemented  ---> || ('/registry/shell-descriptors/{aasIdentifier}/submodel-descriptors', 'post'), substituted-url = /registry/shell-descriptors/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzM=/submodel-descriptors, error is no matching request mapper found for URL  ||
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Test run finished for this endpoint: 
 Number of total test done till now: 412
-|| This endpoint is not implemented  ---> || ('/registry/shell-descriptors/{aasIdentifier}/submodel-descriptors/{submodelIdentifier}', 'get'), substituted-url = /registry/shell-descriptors/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzQ=/submodel-descriptors/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvc20vNDQ0NV84MDkwXzYwMTJfNzQwOQ==, error is no matching request mapper found for URL  ||
+|| This endpoint is not implemented  ---> || ('/registry/shell-descriptors/{aasIdentifier}/submodel-descriptors/{submodelIdentifier}', 'get'), substituted-url = /registry/shell-descriptors/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzM=/submodel-descriptors/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvc20vNDQ0NV84MDkwXzYwMTJfNzQwOQ==, error is no matching request mapper found for URL  ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-|| This endpoint is not implemented  ---> || ('/registry/shell-descriptors/{aasIdentifier}/submodel-descriptors/{submodelIdentifier}', 'put'), substituted-url = /registry/shell-descriptors/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzQ=/submodel-descriptors/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvc20vNDQ0NV84MDkwXzYwMTJfNzQwOQ==, error is no matching request mapper found for URL  ||
+|| This endpoint is not implemented  ---> || ('/registry/shell-descriptors/{aasIdentifier}/submodel-descriptors/{submodelIdentifier}', 'put'), substituted-url = /registry/shell-descriptors/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzM=/submodel-descriptors/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvc20vNDQ0NV84MDkwXzYwMTJfNzQwOQ==, error is no matching request mapper found for URL  ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Test run finished for this endpoint: 
 Number of total test done till now: 414
@@ -904,9 +904,9 @@ Number of total test done till now: 427
 --------------------------------------------------------------------------------------
 Test run finished for this endpoint: 
 Number of total test done till now: 428
-|| Test passed ---> || ('/lookup/shells/{aasIdentifier}', 'get'), substituted-url = /lookup/shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzQ= ||
+|| Test passed ---> || ('/lookup/shells/{aasIdentifier}', 'get'), substituted-url = /lookup/shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzM= ||
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-|| Test fails ---> || ('/lookup/shells/{aasIdentifier}', 'post'), substituted-url = /lookup/shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzQ=, error is TestResult(passed=False, status_code=False, schema_conformation=False) ||
+|| Test fails ---> || ('/lookup/shells/{aasIdentifier}', 'post'), substituted-url = /lookup/shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzM=, error is TestResult(passed=False, status_code=False, schema_conformation=False) ||
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Test run finished for this endpoint: 
 Number of total test done till now: 430
@@ -914,15 +914,15 @@ Number of total test done till now: 430
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
 Test run finished for this endpoint: 
 Number of total test done till now: 431
-|| Test passed ---> || ('/shells/{aasIdentifier}', 'delete'), substituted-url = /shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzQ= ||
+|| Test passed ---> || ('/shells/{aasIdentifier}', 'delete'), substituted-url = /shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzM= ||
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 || Test passed ---> || ('/submodels/{submodelIdentifier}', 'delete'), substituted-url = /submodels/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvc20vNDQ0NV84MDkwXzYwMTJfNzQwOQ== ||
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 || Test passed ---> || ('/submodels/{submodelIdentifier}/submodel/submodel-elements/{idShortPath}', 'delete'), substituted-url = /submodels/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvc20vNDQ0NV84MDkwXzYwMTJfNzQwOQ==/submodel/submodel-elements/GripperUp?level=core&content=path&extent=withoutBlobValue ||
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-|| This endpoint is not implemented  ---> || ('/registry/shell-descriptors/{aasIdentifier}', 'delete'), substituted-url = /registry/shell-descriptors/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzQ=, error is no matching request mapper found for URL  ||
+|| This endpoint is not implemented  ---> || ('/registry/shell-descriptors/{aasIdentifier}', 'delete'), substituted-url = /registry/shell-descriptors/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzM=, error is no matching request mapper found for URL  ||
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-|| This endpoint is not implemented  ---> || ('/registry/shell-descriptors/{aasIdentifier}/submodel-descriptors/{submodelIdentifier}', 'delete'), substituted-url = /registry/shell-descriptors/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzQ=/submodel-descriptors/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvc20vNDQ0NV84MDkwXzYwMTJfNzQwOQ==, error is no matching request mapper found for URL  ||
+|| This endpoint is not implemented  ---> || ('/registry/shell-descriptors/{aasIdentifier}/submodel-descriptors/{submodelIdentifier}', 'delete'), substituted-url = /registry/shell-descriptors/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzM=/submodel-descriptors/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvc20vNDQ0NV84MDkwXzYwMTJfNzQwOQ==, error is no matching request mapper found for URL  ||
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 || This endpoint is not implemented  ---> || ('/registry/submodel-descriptors/{submodelIdentifier}', 'delete'), substituted-url = /registry/submodel-descriptors/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvc20vNDQ0NV84MDkwXzYwMTJfNzQwOQ==, error is no matching request mapper found for URL  ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -930,5 +930,5 @@ Number of total test done till now: 431
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 || This endpoint is not implemented  ---> || ('/packages/{packageId}', 'delete'), substituted-url = /packages/bm90X2F2YWlsYWJsZQ==, error is no matching request mapper found for URL  ||
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-|| Test passed ---> || ('/lookup/shells/{aasIdentifier}', 'delete'), substituted-url = /lookup/shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzQ= ||
+|| Test passed ---> || ('/lookup/shells/{aasIdentifier}', 'delete'), substituted-url = /lookup/shells/aHR0cHM6Ly9leGFtcGxlLmNvbS9pZHMvYWFzLzMyMzVfODA5MF82MDEyXzg5MzM= ||
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------

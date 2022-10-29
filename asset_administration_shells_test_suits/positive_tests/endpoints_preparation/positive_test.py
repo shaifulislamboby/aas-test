@@ -87,7 +87,7 @@ class PreparePPDPositive(BaseAASPreparation):
                 )
 
     @aas_logger
-    def create_query_params(self, operation):
+    def create_query_params(self, operation, positive: bool = True):
         """
         This method will create all the possible combinations of query params for each endpoint.
         """
@@ -99,7 +99,10 @@ class PreparePPDPositive(BaseAASPreparation):
                 for query, value in query_params.items():
                     for val in value:
                         # this will add all the query params for single query.
-                        list_of_query_params.append(f'?{query}={val}')
+                        if not positive:
+                            list_of_query_params.append(f'?{query}={val}invalid')
+                        else:
+                            list_of_query_params.append(f'?{query}={val}')
                 # combination starts here, if there is multiple query params, then we will make
                 # all possible combinations of them and make request.
                 if len(list_of_query_keys) > 1:
@@ -113,7 +116,10 @@ class PreparePPDPositive(BaseAASPreparation):
                         for tup in _combinations:
                             _str = '?'
                             for index, _value in enumerate(tup):
-                                _str += f'{combination[index]}={_value}&'
+                                if not positive:
+                                    _str += f'{combination[index]}={_value}fake&'
+                                else:
+                                    _str += f'{combination[index]}={_value}&'
                             list_of_query_params.append(_str[:-1])
         setattr(self, f'{operation}_query_params', list_of_query_params)
 

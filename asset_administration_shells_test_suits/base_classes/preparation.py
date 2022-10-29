@@ -81,9 +81,12 @@ class BaseAASPreparation:
 
     def substitute_path_parameters(self) -> None:
         self.substituted_url = copy(self.full_url_path)
+        fake_value = convert_to_base64_form('https://www.ovgu.de')
         for param in self.general_path_params_in_schema:
             if param in self.full_url_path:
                 replacement = None
+                if not self.asset_administration_shells:
+                    replacement = fake_value
                 if param.startswith('{aas'):
                     for aas in self.asset_administration_shells:
                         for sub_models in aas.sub_models:
@@ -100,20 +103,27 @@ class BaseAASPreparation:
                             if sub_models.has_sub_model_elements:
                                 self.current_aas = aas
                     try:
-                        for sub_model in self.current_aas.sub_models:
-                            if sub_model.has_sub_model_elements:
-                                replacement = sub_model.identifier
-                                self.current_sub_model = sub_model
-                                break
-                            else:
-                                continue
+                        if hasattr(self.current_aas, 'sub_models'):
+                            for sub_model in self.current_aas.sub_models:
+                                if sub_model.has_sub_model_elements:
+                                    replacement = sub_model.identifier
+                                    self.current_sub_model = sub_model
+                                    break
+                                else:
+                                    continue
                     except IndexError as error:
                         print(self.asset_administration_shells)
                         replacement = self.asset_administration_shells[-1].sub_models[-1].identifier
                 if param.startswith('{idShort'):
-                    replacement = self.current_sub_model.id_short_path_sub_model_elements
+                    if self.current_sub_model:
+                        replacement = self.current_sub_model.id_short_path_sub_model_elements
+                    else:
+                        replacement = fake_value
                 if param.startswith('{cdIdentifier'):
-                    replacement = self.concept_description.identifier
+                    if self.concept_description:
+                        replacement = self.concept_description.identifier
+                    else:
+                        replacement = fake_value
                 if param.startswith('{package'):
                     if self.packages:
                         replacement = self.packages.identifier
@@ -126,7 +136,7 @@ class BaseAASPreparation:
         self.substituted_url = self.substituted_url.replace(param, replacement)
 
     def has_implementation(self, response: Union[list, dict]) -> bool:
-        if isinstance(response, list):
+        if isinstance(response, list) and response:
             response = response[0]
         if isinstance(response, dict):
             try:
@@ -169,7 +179,7 @@ class BaseAASPreparation:
             identification.update({'id': _id})
         return identification
 
-    def create_post_or_put_request_data_from_response(self, put: bool = False, negative: bool = False) -> dict:
+    def create_post_or_put_request_data_from_response(self, put: bool = False, positive: bool = True) -> dict:
         data = deepcopy(self.single_get_response)
         if 'identification' not in data:
             if isinstance(data, list) and len(data) > 0:
@@ -179,7 +189,7 @@ class BaseAASPreparation:
         # in case of post which is creating another object, we need to provide a new identification, otherwise
         # the AAS server will complain that several objects can not contain same identification.
         if not put:
-            if negative:
+            if not positive:
                 # for negative test case we are passing an invalid id which is an int value, while
                 # the server is expecting a string url in place of id, so that should fail to save and raise
                 # an 404.
@@ -192,7 +202,7 @@ class BaseAASPreparation:
         # already have those AAS and Submodels saved in memory, that we will use for other test cases, so it is
         # important that we do not alter the identification, which might cause the other tests to fail.
         else:
-            if negative:
+            if not positive:
                 # in case of negative test case we will try to put or update the object by providing a false
                 # or unavailable object, to check if it is still raising a proper error or not.
                 updated_identification = self.get_new_identification(identification)

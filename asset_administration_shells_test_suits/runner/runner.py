@@ -15,9 +15,14 @@ class TestRunner(BaseTest):
         test_count = 0
         for uri in self.aas_schema.paths:
             prepared_instance = self.preparation_class(
-                raw_endpoint=self.aas_schema.paths.get(uri), base_url=self.base_url, full_url_path=uri,
-                asset_administration_shells=self.get_asset_administration_shells(),
-                concept_description=self.get_concept_description(), packages=None, _id=self._id, password=self.password
+                raw_endpoint=self.aas_schema.paths.get(uri),
+                base_url=self.base_url,
+                full_url_path=uri,
+                asset_administration_shells=self.get_asset_administration_shells(positive=positive),
+                concept_description=self.get_concept_description(positive=positive),
+                packages=None,
+                _id=self._id,
+                password=self.password
             )
             prepared_instance.set_all_required_attributes()
             sub = prepared_instance.substituted_url
