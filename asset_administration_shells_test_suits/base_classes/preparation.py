@@ -1,14 +1,14 @@
-from copy import copy
+from copy import copy, deepcopy
 from dataclasses import dataclass
 from typing import Union
 
 import requests
-from requests import Response
+from requests import Response, Session
 
 from asset_administration_shells_test_suits.parsers import (
     AssetAdministrationShell, ConceptDescription, Packages
 )
-from asset_administration_shells_test_suits.helpers import convert_to_base64_form
+from asset_administration_shells_test_suits.helpers.helpers import convert_to_base64_form
 
 
 @dataclass
@@ -50,7 +50,7 @@ class BaseAASPreparation:
     is_implemented: bool = True
 
     @property
-    def session(self):
+    def session(self) -> Union[Session, bool]:
         if self.password and self._id:
             session = requests.Session()
             session.auth = (self._id, self.password)
@@ -122,18 +122,22 @@ class BaseAASPreparation:
                 if replacement:
                     self.replace_(param, replacement=replacement)
 
-    def replace_(self, param, replacement):
+    def replace_(self, param: str, replacement: str) -> None:
         self.substituted_url = self.substituted_url.replace(param, replacement)
 
-    def has_implementation(self, response: dict) -> bool:
-        try:
-            if (
-                    response.get('success') == 'false' and response.get('messages').get('text') ==
-                    self.not_implemented_error_msg
-            ):
-                return False
-        except Exception as error:
-            print(error)
+    def has_implementation(self, response: Union[list, dict]) -> bool:
+        if isinstance(response, list):
+            response = response[0]
+        if isinstance(response, dict):
+            try:
+                if (
+                        response.get('success') == 'false'
+                        and
+                        response.get('messages').get('text') == self.not_implemented_error_msg
+                ):
+                    return False
+            except Exception as error:
+                print(error)
         return True
 
     @staticmethod
@@ -143,20 +147,20 @@ class BaseAASPreparation:
         return response
 
     @property
-    def operations(self):
+    def operations(self) -> list:
         operations: list = []
         for value in self.raw_endpoint:
             operations.append(value)
         return operations
 
     @property
-    def has_path_parameters(self):
+    def has_path_parameters(self) -> bool:
         return '{' in self.full_url_path
 
     @staticmethod
-    def get_updated_identification_data_for_post(identification: dict) -> dict:
+    def get_new_identification(identification: dict) -> dict:
         _id = identification.get('id')
-        if isinstance(_id[-1], int):
+        if _id and _id[-1].isdigit():
             _id_list = list(_id)
             _id_list[-1] = str(int(_id_list[-1]) + 1)
             identification.update({'id': ''.join(_id_list)})
@@ -166,7 +170,7 @@ class BaseAASPreparation:
         return identification
 
     def create_post_or_put_request_data_from_response(self, put: bool = False, negative: bool = False) -> dict:
-        data = copy(self.single_get_response)
+        data = deepcopy(self.single_get_response)
         if 'identification' not in data:
             if isinstance(data, list) and len(data) > 0:
                 return data[0]
@@ -181,7 +185,7 @@ class BaseAASPreparation:
                 # an 404.
                 updated_identification = {'id': 999_22}
             else:
-                updated_identification = self.get_updated_identification_data_for_post(identification)
+                updated_identification = self.get_new_identification(identification)
             data.update(updated_identification)
         # in case of put which is updating the object, we are just trying to replace the object with
         # exactly same values, that also should work in case of replacement, this is also necessary as we
@@ -191,6 +195,6 @@ class BaseAASPreparation:
             if negative:
                 # in case of negative test case we will try to put or update the object by providing a false
                 # or unavailable object, to check if it is still raising a proper error or not.
-                updated_identification = self.get_updated_identification_data_for_post(identification)
+                updated_identification = self.get_new_identification(identification)
                 data.update(updated_identification)
-            return data
+        return data

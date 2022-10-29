@@ -6,7 +6,7 @@ import requests
 from asset_administration_shells_test_suits.base_classes.preparation import (
     BaseAASPreparation
 )
-from asset_administration_shells_test_suits.helpers import aas_logger
+from asset_administration_shells_test_suits.helpers.helpers import aas_logger
 
 
 class PreparePPDPositive(BaseAASPreparation):
@@ -57,6 +57,8 @@ class PreparePPDPositive(BaseAASPreparation):
                 if self.put_query_params:
                     self.create_response_with_query_params(operation='put', url=url)
                 try:
+                    # this try is for checking if the put response is a json response or
+                    # text type response, which is not json parsable.
                     self.put_response_json = self.put_response.json()
                 except Exception as error:
                     # todo remove this print statement once finalizing the code.
@@ -89,7 +91,7 @@ class PreparePPDPositive(BaseAASPreparation):
         """
         This method will create all the possible combinations of query params for each endpoint.
         """
-        query_params = self.query_params.get(operation)
+        query_params = self.query_params.get(operation, None)
         list_of_query_params = []
         if query_params:
             list_of_query_keys = [key for key in query_params]

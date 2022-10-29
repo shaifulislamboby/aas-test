@@ -1,6 +1,6 @@
 from copy import copy
 
-from asset_administration_shells_test_suits.helpers import convert_to_base64_form
+from asset_administration_shells_test_suits.helpers.helpers import convert_to_base64_form
 from asset_administration_shells_test_suits.positive_tests.endpoints_preparation.positive_test import (
     PreparePPDPositive
 )

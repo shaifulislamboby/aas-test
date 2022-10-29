@@ -1,0 +1,8 @@
+|| Test returned non parsable response or this endpoint is not implemented ---> (TestResult(passed=False, status_code=False, schema_conformation=False), 'get'), substituted-url = test, error is error ||
+|| Test returned non parsable response or this endpoint is not implemented ---> ('not implemented', 'get'), substituted-url = test, error is error ||
+|| Test returned non parsable response or this endpoint is not implemented ---> (111, 'get'), substituted-url = test, error is error ||
+|| Test returned non parsable response or this endpoint is not implemented ---> (TestResult(passed=True, status_code=False, schema_conformation=False), 'get'), substituted-url = test, error is error ||
+|| Test returned non parsable response or this endpoint is not implemented ---> (TestResult(passed=False, status_code=False, schema_conformation=False), 'post'), substituted-url = test, error is error ||
+|| Test returned non parsable response or this endpoint is not implemented ---> ('not implemented', 'post'), substituted-url = test, error is error ||
+|| Test returned non parsable response or this endpoint is not implemented ---> (111, 'post'), substituted-url = test, error is error ||
+|| Test returned non parsable response or this endpoint is not implemented ---> (TestResult(passed=True, status_code=False, schema_conformation=False), 'post'), substituted-url = test, error is error ||
