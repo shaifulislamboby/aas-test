@@ -12,7 +12,7 @@ from asset_administration_shells_test_suits.helpers.helpers import convert_to_ba
 
 
 @dataclass
-class BaseAASPreparation:
+class Preparation:
     """
     This class is the base class which has all the common attributes and methods in it for the preparation of test
     suit.
@@ -39,11 +39,8 @@ class BaseAASPreparation:
     patch_data: dict = None
     put_data: dict = None
     post_response: Response = None
-    post_response_json: dict = None
-    put_response_json: dict = None
     put_response: Response = None
     delete_response: Response = None
-    delete_response_json: dict = None
     patch_response: dict = None
     not_implemented_error_msg: str = 'no matching request mapper found'
     number_of_objects_available: int = 0

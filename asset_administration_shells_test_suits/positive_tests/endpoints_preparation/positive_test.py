@@ -1,24 +1,27 @@
 import itertools
 from itertools import combinations
+from typing import Union
 
 import requests
 
 from asset_administration_shells_test_suits.base_classes.preparation import (
-    BaseAASPreparation
+    Preparation
 )
 from asset_administration_shells_test_suits.helpers.helpers import aas_logger
 
 
-class PreparePPDPositive(BaseAASPreparation):
+class PreparePPDPositive(Preparation):
 
-    def set_all_required_attributes(self):
+    def set_all_required_attributes(self, positive=True):
         if self.is_implemented and 'get' in self.operations:
             self.substitute_path_parameters()
             url = f'{self.base_url}{self.substituted_url}'
             res = self.session.get(url=url) if self.session else requests.get(url=url)
             # here the is_implemented value will be re-assigned which will
-            # be used later on for others responses.
-            self.is_implemented = self.has_implementation(res.json())
+            # be used later on for others responses.\
+            if positive:
+                self.is_implemented = self.has_implementation(res.json())
+
             if self.is_implemented:
                 self.create_query_params(operation='get')
                 if self.get_query_params:
@@ -43,48 +46,48 @@ class PreparePPDPositive(BaseAASPreparation):
                 self.post_response = self.session.post(
                     url, json=self.post_data
                 ) if self.session else requests.post(url, json=self.post_data)
-                self.post_response_json = self.post_response.json()
                 self.create_query_params(operation='post')
                 if self.post_query_params:
-                    self.create_response_with_query_params(operation='post', url=url)
+                    self.create_response_with_query_params(operation='post', url=url, json_data=self.post_data)
             if self.put_data:
-                # todo remove this print statement once finalizing the code.
-                print(url), print(self.put_data)
                 self.put_response = self.session.put(
                     url, json=self.put_data
                 ) if self.session else requests.put(url, json=self.put_data)
                 self.create_query_params(operation='put')
                 if self.put_query_params:
-                    self.create_response_with_query_params(operation='put', url=url)
-                try:
-                    # this try is for checking if the put response is a json response or
-                    # text type response, which is not json parsable.
-                    self.put_response_json = self.put_response.json()
-                except Exception as error:
-                    # todo remove this print statement once finalizing the code.
-                    print(error)
-                    self.put_response_json = self.put_response.ok
+                    self.create_response_with_query_params(operation='put', url=url, json_data=self.put_data)
 
     @aas_logger
-    def create_response_with_query_params(self, operation, url) -> None:
+    def create_response_with_query_params(self, operation, url, json_data: Union[None, dict] = None) -> None:
         self.create_query_params(operation=operation)
+        if self.session:
+            session_ = getattr(self.session, operation)
+        if operation == 'get':
+            method = requests.get
+        elif operation == 'post':
+            method = requests.post
+        elif operation == 'put':
+            method = requests.put
+        else:
+            method = requests.get
+
         _attr = getattr(self, f'{operation}_query_params')
         if _attr:
             for param in _attr:
-                url += param
+                url_ = url + param
                 param = param.replace('?', 'question')
                 param = param.replace('=', 'equal')
                 param = param.replace('&', 'and')
-                if self.session:
-                    session_ = getattr(self.session, operation)
-                request_ = getattr(requests, operation)
-                setattr(
-                    self, f'{operation}_{param}_response', session_(
-                        url=url
-                    ) if self.session else request_(
-                        url=url
+                if operation in ('post', 'put'):
+                    res = method(url=url_, json=json_data) if not self.session else session_(url=url_, json=json_data)
+                    setattr(
+                        self, f'{operation}_{param}_response', res
                     )
-                )
+                else:
+                    res = method(url=url_) if not self.session else session_(url=url_)
+                    setattr(
+                        self, f'{operation}_{param}_response', res
+                    )
 
     @aas_logger
     def create_query_params(self, operation, positive: bool = True):

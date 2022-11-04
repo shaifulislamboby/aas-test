@@ -38,7 +38,7 @@ class BaseParser:
         return getattr(self, f'raw_{helpers.convert_camel_case_to_snake_case(self.__class__.__name__)}')
 
     @property
-    def mode_type(self):
+    def model_type(self):
         """
         :return: name of the model type
         """

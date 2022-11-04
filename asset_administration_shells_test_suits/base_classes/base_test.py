@@ -7,7 +7,7 @@ import requests
 from requests import Session, Response
 
 from asset_administration_shells_test_suits.base_classes.preparation import (
-    BaseAASPreparation
+    Preparation
 )
 from asset_administration_shells_test_suits.helpers.helpers import aas_logger
 from asset_administration_shells_test_suits.parsers.schema_parser import (
@@ -21,7 +21,8 @@ from asset_administration_shells_test_suits.parsers.elements_parser import (
 @dataclass
 class TestResult:
     passed: bool = False
-    status_code: bool = False
+    message: str = ''
+    status_code: int = 1
     schema_conformation: bool = False
 
 
@@ -34,7 +35,7 @@ class DeleteEndpoint:
 
 @dataclass
 class BaseTest:
-    preparation_class: Type[BaseAASPreparation]
+    preparation_class: Type[Preparation]
     aas_schema: AasSchemaParser
     _id: Union[str, None]
     password: Union[str, None]
@@ -45,10 +46,11 @@ class BaseTest:
     concept_description_path: str
     error_message = (
         'no matching request mapper found for URL', 'not allowed for', 'currently not supported',
-        'no handler defined', 'error parsing'
+        'no handler defined', 'error parsing', 'invalid output modifier'
     )
     delete_urls: [DeleteEndpoint] = field(default_factory=lambda: [])
     not_implemented_return_value: str = 'not implemented'
+    positive_result_count: list = field(default_factory=lambda: [])
 
     @property
     def session(self) -> Union[Session, bool]:
@@ -71,10 +73,12 @@ class BaseTest:
             # we will validate the json schema in case of get verb's response, non-conforming
             # json response will raise an exception
             jsonschema.validate(response.json(), schema=self.aas_schema.raw_schema)
-            return TestResult(passed=True, schema_conformation=True, status_code=True)
+            return TestResult(passed=True, schema_conformation=True, status_code=response.status_code)
         except Exception as error:
             print(error)
-            return TestResult(passed=True, schema_conformation=False, status_code=True)
+            return TestResult(
+                passed=True, schema_conformation=False, status_code=response.status_code, message=f'{error}'
+            )
 
     @aas_logger
     def check_post_response_conforms(
@@ -91,8 +95,7 @@ class BaseTest:
             jsonschema.validate(response.json(), schema=self.aas_schema.raw_schema)
             return TestResult(passed=True, schema_conformation=True, status_code=True)
         except Exception as error:
-            print(error)
-            return TestResult(passed=True, schema_conformation=False, status_code=True)
+            return TestResult(passed=True, schema_conformation=False, status_code=True, message=f'{error}')
 
     @aas_logger
     def check_put_response_conforms(
@@ -109,8 +112,7 @@ class BaseTest:
             jsonschema.validate(response.json(), schema=self.aas_schema.raw_schema)
             return TestResult(passed=True, schema_conformation=True, status_code=True)
         except Exception as error:
-            print(error)
-            return TestResult(passed=True, schema_conformation=False, status_code=True)
+            return TestResult(passed=True, schema_conformation=False, status_code=True, message=f'{error}')
 
     @aas_logger
     def check_delete_response_conforms(
@@ -125,19 +127,21 @@ class BaseTest:
             return self.parse_error_message(response)
         # this line is added for checking if the object has been deleted for real or not.
         if get_response_for_deleted_object.status_code != 404:
-            return TestResult()
-        return TestResult(passed=True)
+            return TestResult(status_code=response.status_code)
+        return TestResult(passed=True, status_code=response.status_code)
 
     @staticmethod
     def parse_error_message(response: Optional[Response]) -> Optional[TestResult]:
         try:
+            message = response.json().get('messages')[0]['text']
             if any(
-                    error_m in response.json().get('messages')[0]['text'] for error_m in BaseTest.error_message
+                    error_m in message for error_m in BaseTest.error_message
             ):
-                return BaseTest.error_message[0]
+                return TestResult(status_code=response.status_code, message=message)
+            return TestResult(status_code=response.status_code)
         except Exception as error:
             logging.log(msg=f'error occurred during parsing error message : {error}', level=logging.ERROR)
-            return TestResult()
+            return TestResult(status_code=response.status_code, message=f'{error}')
 
     def get_asset_administration_shells(self, positive: bool = True) -> list[AssetAdministrationShell]:
         if not positive:

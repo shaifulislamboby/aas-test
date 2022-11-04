@@ -11,8 +11,16 @@ from asset_administration_shells_test_suits.report_writing.report import (
 
 
 class TestRunner(BaseTest):
+
     def start_test(self, positive=True):
         test_count = 0
+        positive_result_count = []
+        non_implemented_result_count = []
+        failed_result_count = []
+        count = {'passed': positive_result_count,
+                 'failed': failed_result_count,
+                 'non_implemented': non_implemented_result_count
+                 }
         for uri in self.aas_schema.paths:
             prepared_instance = self.preparation_class(
                 raw_endpoint=self.aas_schema.paths.get(uri),
@@ -24,7 +32,7 @@ class TestRunner(BaseTest):
                 _id=self._id,
                 password=self.password
             )
-            prepared_instance.set_all_required_attributes()
+            prepared_instance.set_all_required_attributes(positive=positive)
             sub = prepared_instance.substituted_url
             with open(self.output_file_name, 'a') as file:
                 for operation in prepared_instance.operations:
@@ -42,7 +50,7 @@ class TestRunner(BaseTest):
                             )
                             test_result = function(response, positive=positive)
                             length_of_dash_sign = write_test_results_to_file(
-                                test_result, uri, operation, prepared_instance, file
+                                test_result, uri, operation, prepared_instance, file, count
                             )
                             test_count += 1
                         except Exception as error:
@@ -64,14 +72,14 @@ class TestRunner(BaseTest):
                                     param = param.replace('?', 'question')
                                     param = param.replace('=', 'equal')
                                     param = param.replace('&', 'and')
-                                    response = getattr(
+                                    res = getattr(
                                         prepared_instance, f'{operation}_{param}_response'
                                     )
 
                                     try:
-                                        test_result = function(response, positive=positive)
+                                        test_result = function(res, positive=positive)
                                         length_of_dash_sign = write_test_results_to_file(
-                                            test_result, url, operation, prepared_instance, file
+                                            test_result, url, operation, prepared_instance, file, count
                                         )
                                         test_count += 1
                                     except Exception as error:
@@ -96,6 +104,9 @@ class TestRunner(BaseTest):
                         )
                 file.write(
                     'Test run finished for this endpoint: ' + '\n'
+                    f'Test passed till now : {len(count["passed"])} \n'
+                    f'Test failed till now : {len(count["failed"])} \n'
+                    f'Non implemented endpoints till now : {len(count["non_implemented"])} \n'
                     'Number of total test done till now: ' + str(test_count) + '\n'
                 )
         with open(self.output_file_name, 'a') as file:
@@ -122,7 +133,7 @@ class TestRunner(BaseTest):
                     delete_response, get_response_for_deleted_object, positive=positive
                 )
                 length_of_equal_sign = write_test_results_to_file(
-                    test_result, url.path, url.operation, url, file
+                    test_result, url.path, url.operation, url, file, self.positive_result_count
                 )
             except Exception as error:
                 print(error)
