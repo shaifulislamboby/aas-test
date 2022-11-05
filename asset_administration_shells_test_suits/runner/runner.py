@@ -1,4 +1,5 @@
 import logging
+import traceback
 from dataclasses import dataclass, field
 from json import JSONDecodeError
 from typing import Type, Union, Optional
@@ -14,7 +15,7 @@ from asset_administration_shells_test_suits.parsers import (
     AasSchemaParser, ConceptDescription, AssetAdministrationShell
 )
 from asset_administration_shells_test_suits.report_writing.report import (
-    write_test_results_to_file, write_non_implemented_test_results_to_file
+    write_test_results_to_file, write_test_metrics
 )
 
 NOT_IMPLEMENTATION_MSG: str = 'not implemented'
@@ -144,7 +145,7 @@ class TestRunner:
             return TestResult(status_code=response.status_code)
         except Exception as error:
             logging.log(msg=f'error occurred during parsing error message : {error}', level=logging.ERROR)
-            return TestResult(status_code=response.status_code, message=f'{error}')
+            return TestResult(status_code=response.status_code, message=f'{traceback.TracebackException}')
 
     def get_asset_administration_shells(self, positive: bool = True) -> list[AssetAdministrationShell]:
         if not positive:
@@ -185,7 +186,7 @@ class TestRunner:
         positive_result_count: list = []
         non_implemented_result_count: list = []
         failed_result_count: list = []
-        count = {
+        counts_dict = {
             'passed': positive_result_count,
             'failed': failed_result_count,
             'non_implemented': non_implemented_result_count
@@ -205,66 +206,51 @@ class TestRunner:
             )
             prepared_instance.set_all_required_attributes(positive=positive)
             sub = prepared_instance.substituted_url
-            with open(self.output_file_name, 'a') as file:
-                for operation in prepared_instance.operations:
-                    if operation != 'delete':
-                        response_conformation_function = {
-                            'get': self.check_get_response_conforms,
-                            'post': self.check_post_response_conforms,
-                            'put': self.check_put_response_conforms
-                        }.get(operation)
-                        response = {
-                            'get': prepared_instance.get_response,
-                            'post': prepared_instance.post_response,
-                            'put': prepared_instance.put_response
-                        }.get(operation)
-                        test_result = response_conformation_function(response, positive=positive)
-                        length_of_dash_sign = write_test_results_to_file(
-                            test_result, uri, operation, prepared_instance, file, count
+            for operation in prepared_instance.operations:
+                if operation == 'delete' and len(prepared_instance.operations) > 1:
+                    self.delete_urls.append(
+                        DeleteEndpoint(
+                            substituted_url=prepared_instance.substituted_url, path=uri
                         )
-                        test_count += 1
-                        if hasattr(prepared_instance, f'{operation}_query_params'):
-                            _attr = getattr(prepared_instance, f'{operation}_query_params')
-                            if _attr:
-                                for param in _attr:
-                                    url = uri + param
-                                    prepared_instance.substituted_url = sub + param
-                                    param = param.replace('?', 'question')
-                                    param = param.replace('=', 'equal')
-                                    param = param.replace('&', 'and')
-                                    res = getattr(
-                                        prepared_instance, f'{operation}_{param}_response'
-                                    )
-                                    test_result = response_conformation_function(res, positive=positive)
-                                    length_of_dash_sign = write_test_results_to_file(
-                                        test_result, url, operation, prepared_instance, file, count
-                                    )
-                                    test_count += 1
-                                    file.write(
-                                        '-' * length_of_dash_sign + '\n'
-                                    )
+                    )
+                if operation != 'delete':
+                    response_conformation_function = {
+                        'get': self.check_get_response_conforms,
+                        'post': self.check_post_response_conforms,
+                        'put': self.check_put_response_conforms
+                    }.get(operation)
+                    response = {
+                        'get': prepared_instance.get_response,
+                        'post': prepared_instance.post_response,
+                        'put': prepared_instance.put_response
+                    }.get(operation)
+                    test_result = response_conformation_function(response, positive=positive)
+                    write_test_results_to_file(
+                        test_result, uri, operation, prepared_instance, self.output_file_name, counts_dict
+                    )
+                    test_count += 1
+                    if hasattr(prepared_instance, f'{operation}_query_params'):
+                        _attr = getattr(prepared_instance, f'{operation}_query_params')
+                        if _attr:
+                            for param in _attr:
+                                url = uri + param
+                                prepared_instance.substituted_url = sub + param
+                                param = param.replace('?', 'question')
+                                param = param.replace('=', 'equal')
+                                param = param.replace('&', 'and')
+                                res = getattr(
+                                    prepared_instance, f'{operation}_{param}_response'
+                                )
+                                test_result = response_conformation_function(res, positive=positive)
+                                write_test_results_to_file(
+                                    test_result, url, operation, prepared_instance, self.output_file_name, counts_dict
+                                )
+                                test_count += 1
+        write_test_metrics(test_count=test_count, counts_dict=counts_dict, file=self.output_file_name)
 
-                        file.write(
-                            '-' * length_of_dash_sign + '\n'
-                        )
+        self.delete_endpoint_testing(positive=positive)
 
-                    if operation == 'delete' and len(prepared_instance.operations) > 1:
-                        self.delete_urls.append(
-                            DeleteEndpoint(
-                                substituted_url=prepared_instance.substituted_url, path=uri
-                            )
-                        )
-                file.write(
-                    'Test run finished for this endpoint: ' + '\n'
-                    f'Test passed till now : {len(count["passed"])} \n'
-                    f'Test failed till now : {len(count["failed"])} \n'
-                    f'Non implemented endpoints till now : {len(count["non_implemented"])} \n'
-                    'Number of total test done till now: ' + str(test_count) + '\n'
-                )
-        with open(self.output_file_name, 'a') as file:
-            self.delete_endpoint_testing(file, positive=positive)
-
-    def delete_endpoint_testing(self, file, positive: bool):
+    def delete_endpoint_testing(self, positive: bool):
         for url in self.delete_urls:
             if not self.session:
                 delete_response = requests.delete(
@@ -280,18 +266,9 @@ class TestRunner:
                 get_response_for_deleted_object = self.session.get(
                     url=f'{self.base_url}{url.substituted_url}'
                 )
-            try:
-                test_result = self.check_delete_response_conforms(
-                    delete_response, get_response_for_deleted_object, positive=positive
-                )
-                length_of_equal_sign = write_test_results_to_file(
-                    test_result, url.path, url.operation, url, file, self.positive_result_count
-                )
-            except Exception as error:
-                print(error)
-                length_of_equal_sign = write_non_implemented_test_results_to_file(
-                    url.path, url.operation, url, error, file
-                )
-            file.write(
-                '-' * length_of_equal_sign + '\n'
+            test_result = self.check_delete_response_conforms(
+                delete_response, get_response_for_deleted_object, positive=positive
+            )
+            write_test_results_to_file(
+                test_result, url.path, url.operation, url, self.output_file_name, self.positive_result_count
             )
