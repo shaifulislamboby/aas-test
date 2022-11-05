@@ -93,7 +93,6 @@ class Preparation:
                                 break
                             else:
                                 continue
-                            break
                 if param.startswith('{submodel'):
                     for aas in self.asset_administration_shells:
                         for sub_models in aas.sub_models:
@@ -126,6 +125,7 @@ class Preparation:
                         replacement = self.packages.identifier
                     else:
                         replacement = convert_to_base64_form('not_available')
+
                 if replacement:
                     self.replace_(param, replacement=replacement)
 
