@@ -1,8 +1,3 @@
-from typing import Optional
-
-from asset_administration_shells_test_suits.base_classes.base_test import (
-    TestResult, BaseTest
-)
 from asset_administration_shells_test_suits.base_classes.preparation import (
     Preparation
 )
@@ -11,12 +6,11 @@ from asset_administration_shells_test_suits.helpers.helpers import aas_logger
 
 @aas_logger
 def write_test_results_to_file(
-        test_result: Optional[TestResult], uri: str, operation: str, prepared_instance: Preparation, file,
+        test_result, uri: str, operation: str, prepared_instance: Preparation, file,
         count
 ) -> int:
-    if test_result == 'not implemented' or test_result == BaseTest.error_message or (
-             isinstance(test_result, str) and 'no matching' in test_result
-    ) or (isinstance(test_result, TestResult) and test_result.message in BaseTest.error_message):
+    from asset_administration_shells_test_suits.runner.runner import TestRunner, NOT_IMPLEMENTATION_MSG
+    if test_result.message in TestRunner.error_message or NOT_IMPLEMENTATION_MSG in test_result.message:
         length_of_dash_sign = len(
             f'|| This endpoint is not implemented  ---> || {uri, operation}, substituted-url ='
             f' {prepared_instance.substituted_url}, error is {test_result} ||\n'
@@ -27,7 +21,7 @@ def write_test_results_to_file(
         )
         if isinstance(count, dict):
             count['non_implemented'].append(1)
-    elif not isinstance(test_result, str) and isinstance(test_result, TestResult) and not test_result.passed:
+    elif not test_result.passed:
         length_of_dash_sign = len(
             f'|| Test fails ---> || {uri, operation}, substituted-url ='
             f' {prepared_instance.substituted_url}, error is {test_result} ||\n'

@@ -23,20 +23,20 @@ if __name__ == '__main__':
     output_file_name_negative_third = 'test_reports/Test Report_fAAAST_negative_third.txt'
     base_url = 'http://localhost:8080'
     # base_url = 'http://192.168.0.2:60008'
-    Aas = AasSchemaParser(file_location=file_location)
+    aas = AasSchemaParser(file_location=file_location)
+    TestRunner(
+        aas_schema=aas,
+        output_file_name=output_file_name,
+        base_url=base_url,
+        aas_path=f'{base_url}/shells/',
+        concept_description_path=f'{base_url}/concept-descriptions/',
+        sub_model_path=f'{base_url}/submodels/{{submodelIdentifier}}',
+        _id=None,
+        password=None,
+        preparation_class=PreparePPDPositive
+    ).start_test(positive=True)
     # TestRunner(
-    #     aas_schema=Aas,
-    #     output_file_name=output_file_name,
-    #     base_url=base_url,
-    #     aas_path=f'{base_url}/shells/',
-    #     concept_description_path=f'{base_url}/concept-descriptions/',
-    #     sub_model_path=f'{base_url}/submodels/{{submodelIdentifier}}',
-    #     _id=None,
-    #     password=None,
-    #     preparation_class=PreparePPDPositive
-    # ).start_test()
-    # TestRunner(
-    #     aas_schema=Aas,
+    #     aas_schema=aas,
     #     output_file_name=output_file_name_negative_first,
     #     base_url=base_url,
     #     aas_path=f'{base_url}/shells/',
@@ -47,7 +47,7 @@ if __name__ == '__main__':
     #     preparation_class=PreparePPDNegative
     # ).start_test(positive=False)
     # TestRunner(
-    #     aas_schema=Aas,
+    #     aas_schema=aas,
     #     output_file_name=output_file_name_negative_second,
     #     base_url=base_url,
     #     aas_path=f'{base_url}/shells/',
@@ -57,14 +57,14 @@ if __name__ == '__main__':
     #     password=None,
     #     preparation_class=PreparePPDNegativeTwo
     # ).start_test(positive=False)
-    TestRunner(
-        aas_schema=Aas,
-        output_file_name=output_file_name_negative_third,
-        base_url=base_url,
-        aas_path=f'{base_url}/shells/',
-        concept_description_path=f'{base_url}/concept-descriptions/',
-        sub_model_path=f'{base_url}/submodels/{{submodelIdentifier}}',
-        _id=None,
-        password=None,
-        preparation_class=PreparePPDNegativeThree
-    ).start_test(positive=False)
+    # TestRunner(
+    #     aas_schema=aas,
+    #     output_file_name=output_file_name_negative_third,
+    #     base_url=base_url,
+    #     aas_path=f'{base_url}/shells/',
+    #     concept_description_path=f'{base_url}/concept-descriptions/',
+    #     sub_model_path=f'{base_url}/submodels/{{submodelIdentifier}}',
+    #     _id=None,
+    #     password=None,
+    #     preparation_class=PreparePPDNegativeThree
+    # ).start_test(positive=False)
