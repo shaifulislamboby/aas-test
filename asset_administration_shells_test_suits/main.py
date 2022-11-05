@@ -34,7 +34,7 @@ if __name__ == '__main__':
         _id=None,
         password=None,
         preparation_class=PreparePPDPositive
-    ).start_test(positive=True)
+    ).start_test()
     # TestRunner(
     #     aas_schema=aas,
     #     output_file_name=output_file_name_negative_first,
@@ -56,7 +56,7 @@ if __name__ == '__main__':
     #     _id=None,
     #     password=None,
     #     preparation_class=PreparePPDNegativeTwo
-    # ).start_test(positive=False)
+    # ).start_test()
     # TestRunner(
     #     aas_schema=aas,
     #     output_file_name=output_file_name_negative_third,
@@ -67,4 +67,4 @@ if __name__ == '__main__':
     #     _id=None,
     #     password=None,
     #     preparation_class=PreparePPDNegativeThree
-    # ).start_test(positive=False)
+    # ).start_test()

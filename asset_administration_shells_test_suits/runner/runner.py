@@ -181,7 +181,7 @@ class TestRunner:
             print(error)
             return None
 
-    def start_test(self, positive=True):
+    def start_test(self):
         test_count: int = 0
         positive_result_count: list = []
         non_implemented_result_count: list = []
@@ -191,8 +191,8 @@ class TestRunner:
             'failed': failed_result_count,
             'non_implemented': non_implemented_result_count
         }
-        asset_administration_shells = self.get_asset_administration_shells(positive=positive)
-        concept_description = self.get_concept_description(positive=positive)
+        asset_administration_shells = self.get_asset_administration_shells(positive=self.preparation_class.positive)
+        concept_description = self.get_concept_description(positive=self.preparation_class.positive)
         for uri in self.aas_schema.paths:
             prepared_instance = self.preparation_class(
                 raw_endpoint=self.aas_schema.paths.get(uri),
@@ -204,7 +204,7 @@ class TestRunner:
                 _id=self._id,
                 password=self.password
             )
-            prepared_instance.set_all_required_attributes(positive=positive)
+            prepared_instance.set_all_required_attributes(positive=self.preparation_class.positive)
             sub = prepared_instance.substituted_url
             for operation in prepared_instance.operations:
                 if operation == 'delete' and len(prepared_instance.operations) > 1:
@@ -224,7 +224,7 @@ class TestRunner:
                         'post': prepared_instance.post_response,
                         'put': prepared_instance.put_response
                     }.get(operation)
-                    test_result = response_conformation_function(response, positive=positive)
+                    test_result = response_conformation_function(response, positive=self.preparation_class.positive)
                     write_test_results_to_file(
                         test_result, uri, operation, prepared_instance, self.output_file_name, counts_dict
                     )
@@ -241,14 +241,16 @@ class TestRunner:
                                 res = getattr(
                                     prepared_instance, f'{operation}_{param}_response'
                                 )
-                                test_result = response_conformation_function(res, positive=positive)
+                                test_result = response_conformation_function(
+                                    res, positive=self.preparation_class.positive
+                                )
                                 write_test_results_to_file(
                                     test_result, url, operation, prepared_instance, self.output_file_name, counts_dict
                                 )
                                 test_count += 1
         write_test_metrics(test_count=test_count, counts_dict=counts_dict, file=self.output_file_name)
 
-        self.delete_endpoint_testing(positive=positive)
+        self.delete_endpoint_testing(positive=self.preparation_class.positive)
 
     def delete_endpoint_testing(self, positive: bool):
         for url in self.delete_urls:
