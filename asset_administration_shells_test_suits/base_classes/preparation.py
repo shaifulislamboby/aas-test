@@ -45,6 +45,7 @@ class Preparation:
     not_implemented_error_msg: str = 'no matching request mapper found'
     number_of_objects_available: int = 0
     is_implemented: bool = True
+    positive: bool = True
 
     @property
     def session(self) -> Union[Session, bool]:

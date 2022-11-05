@@ -7,7 +7,7 @@ from asset_administration_shells_test_suits.positive_tests.endpoints_preparation
 
 
 class PreparePPDNegative(PreparePPDPositive):
-    negative_get_response = None
+    positive = False
 
     def create_post_or_put_request_data_from_response(self, put: bool = False, negative: bool = False):
         return {'test': 'negative'}

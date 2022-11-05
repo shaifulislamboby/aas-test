@@ -8,6 +8,7 @@ from asset_administration_shells_test_suits.positive_tests.endpoints_preparation
 
 @dataclass
 class PreparePPDNegativeTwo(PreparePPDPositive):
+    positive = False
     """
     This is second negative test suit for, which will pass an invalid data
     to check if the server response with a valid status code and can handle
@@ -16,6 +17,6 @@ class PreparePPDNegativeTwo(PreparePPDPositive):
     def create_post_and_put_data(self) -> None:
         if 'get' in self.operations:
             if 'post' in self.operations:
-                self.post_data = self.create_post_or_put_request_data_from_response(positive=False)
+                self.post_data = self.create_post_or_put_request_data_from_response(positive=self.positive)
             if 'put' in self.operations:
-                self.put_data = self.create_post_or_put_request_data_from_response(put=True, positive=False)
+                self.put_data = self.create_post_or_put_request_data_from_response(put=True, positive=self.positive)

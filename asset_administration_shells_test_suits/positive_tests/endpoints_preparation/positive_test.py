@@ -11,6 +11,7 @@ from asset_administration_shells_test_suits.helpers.helpers import aas_logger
 
 
 class PreparePPDPositive(Preparation):
+    positive = True
 
     def set_all_required_attributes(self, positive=True):
         if self.is_implemented and 'get' in self.operations:
