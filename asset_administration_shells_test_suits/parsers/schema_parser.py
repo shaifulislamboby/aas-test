@@ -9,11 +9,12 @@ class AasSchemaParser:
     specification from the provided path, and load the necessary information
     for the testing.
     """
+
     file_location: str
 
     @property
     def number_of_endpoints(self) -> int:
-        return len(self.raw_schema.get('paths'))
+        return len(self.raw_schema.get("paths"))
 
     @property
     def raw_schema(self) -> dict:
@@ -21,7 +22,7 @@ class AasSchemaParser:
 
     @property
     def paths(self) -> dict:
-        return self.raw_schema.get('paths')
+        return self.raw_schema.get("paths")
 
 
 class Path:

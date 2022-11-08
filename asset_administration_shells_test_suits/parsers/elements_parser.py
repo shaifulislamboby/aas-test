@@ -14,6 +14,7 @@ class BaseParser:
     This will be extended and this only has the base functionality, but almost all
     the required functionality in this class.
     """
+
     password: Union[str, None]
     _id: Union[str, None]
 
@@ -35,21 +36,24 @@ class BaseParser:
         """
         :return: it will collect the raw_value of specific class and save it as raw_value as general use case.
         """
-        return getattr(self, f'raw_{helpers.convert_camel_case_to_snake_case(self.__class__.__name__)}')
+        return getattr(
+            self,
+            f"raw_{helpers.convert_camel_case_to_snake_case(self.__class__.__name__)}",
+        )
 
     @property
     def model_type(self):
         """
         :return: name of the model type
         """
-        return self.raw_value.get('modelType').get('name')
+        return self.raw_value.get("modelType").get("name")
 
     @property
     def id_type(self):
         """
         :return: This method will collect the id_type
         """
-        return self.raw_value.get('identification').get('idType')
+        return self.raw_value.get("identification").get("idType")
 
     @property
     def identification(self) -> dict:
@@ -57,7 +61,7 @@ class BaseParser:
         This will collect the identification of the AAS or submodels or concept-description
         :return:
         """
-        return self.raw_value.get('identification')
+        return self.raw_value.get("identification")
 
     @property
     def id_short_path(self):
@@ -65,7 +69,7 @@ class BaseParser:
         This will collect the idShort of the AAS or submodels or concept-description
         :return:
         """
-        return helpers.create_url_encoded_from_id(self.raw_value.get('idShort'))
+        return helpers.create_url_encoded_from_id(self.raw_value.get("idShort"))
 
     @property
     def identifier(self):
@@ -75,7 +79,9 @@ class BaseParser:
         the base64 format of the id of that particular object
         :return:
         """
-        return helpers.convert_to_base64_form(self.raw_value.get('identification').get('id'))
+        return helpers.convert_to_base64_form(
+            self.raw_value.get("identification").get("id")
+        )
 
 
 @dataclass
@@ -84,23 +90,25 @@ class SubModel(BaseParser):
 
     @property
     def kind(self):
-        return self.raw_sub_model.get('kind')
+        return self.raw_sub_model.get("kind")
 
     @property
     def semantic_id(self):
-        return self.raw_sub_model.get('semanticId')
+        return self.raw_sub_model.get("semanticId")
 
     @property
     def has_sub_model_elements(self):
-        if 'submodelElements' in self.raw_sub_model:
+        if "submodelElements" in self.raw_sub_model:
             return True
         return False
 
     @property
     def id_short_path_sub_model_elements(self):
-        if 'submodelElements' in self.raw_sub_model:
-            return helpers.create_url_encoded_from_id(self.raw_sub_model.get('submodelElements')[0].get('idShort'))
-        return 'not available'
+        if "submodelElements" in self.raw_sub_model:
+            return helpers.create_url_encoded_from_id(
+                self.raw_sub_model.get("submodelElements")[0].get("idShort")
+            )
+        return "not available"
 
 
 @dataclass
@@ -111,21 +119,23 @@ class AssetAdministrationShell(BaseParser):
 
     @property
     def asset_information(self) -> dict:
-        return self.raw_asset_administration_shell.get('assetInformation')
+        return self.raw_asset_administration_shell.get("assetInformation")
 
     @property
     def sub_models_raw_list(self) -> list:
-        return self.raw_asset_administration_shell.get('submodels')
+        return self.raw_asset_administration_shell.get("submodels")
 
     @property
     def number_of_sub_models(self):
-        return len(self.raw_asset_administration_shell.get('submodels'))
+        return len(self.raw_asset_administration_shell.get("submodels"))
 
     @property
     def sub_model_ids(self) -> list:
         sub_model_ids = []
         for sub_model in self.sub_models_raw_list:
-            sub_model_ids.append(helpers.convert_to_base64_form(sub_model.get('keys')[0].get('value')))
+            sub_model_ids.append(
+                helpers.convert_to_base64_form(sub_model.get("keys")[0].get("value"))
+            )
         return sub_model_ids
 
     @property
@@ -137,13 +147,15 @@ class AssetAdministrationShell(BaseParser):
         :return:
         """
         sub_models = []
-        if '{' not in self.sub_model_collection_uri:
-            raise ValueError('Provided submodel collection path does not contains the path parameter for sub model id'
-                             'without id the test won`t be able to fetch particular sub model, so please provide a url'
-                             'where the test can get all the information for a particular submodel')
+        if "{" not in self.sub_model_collection_uri:
+            raise ValueError(
+                "Provided submodel collection path does not contains the path parameter for sub model id"
+                "without id the test won`t be able to fetch particular sub model, so please provide a url"
+                "where the test can get all the information for a particular submodel"
+            )
 
         for _ids in self.sub_model_ids:
-            url = re.sub('{.*?}', _ids, self.sub_model_collection_uri)
+            url = re.sub("{.*?}", _ids, self.sub_model_collection_uri)
             """"This method will use try and except here in case submodels endpoint is not implemented, then the
             test shall run with the AAS only, it should not stop running for the endpoint not being available."""
             try:
@@ -153,7 +165,7 @@ class AssetAdministrationShell(BaseParser):
                     response = requests.get(url=url).json()
                 sub_model = SubModel(raw_sub_model=response, _id=None, password=None)
             except Exception as error:
-                sub_model = {'error': error}
+                sub_model = {"error": error}
             sub_models.append(sub_model)
 
         return sub_models
@@ -165,7 +177,7 @@ class ConceptDescription(BaseParser):
 
     @property
     def description(self):
-        return self.raw_concept_description.get('description')
+        return self.raw_concept_description.get("description")
 
 
 @dataclass
