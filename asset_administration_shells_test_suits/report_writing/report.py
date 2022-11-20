@@ -1,4 +1,4 @@
-from asset_administration_shells_test_suits.base_classes.preparation import Preparation
+from asset_administration_shells_test_suits.base_classes.executor import Executor
 from asset_administration_shells_test_suits.helpers.helpers import aas_logger
 
 
@@ -7,7 +7,7 @@ def write_test_results_to_file(
     test_result,
     uri: str,
     operation: str,
-    prepared_instance: Preparation,
+    prepared_instance: Executor,
     file_name,
     count,
 ):

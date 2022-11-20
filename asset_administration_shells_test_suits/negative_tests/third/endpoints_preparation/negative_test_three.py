@@ -1,9 +1,9 @@
 from asset_administration_shells_test_suits.positive_tests.endpoints_preparation.positive_test import (
-    PreparePPDPositive,
+    PositiveExecutor,
 )
 
 
-class PreparePPDNegativeThree(PreparePPDPositive):
+class NegativeExecutorThree(PositiveExecutor):
     positive = False
     """
     This is third negative test suit for, which will pass an invalid data

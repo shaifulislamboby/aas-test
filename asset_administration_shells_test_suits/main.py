@@ -1,15 +1,15 @@
 import logging
 
 from asset_administration_shells_test_suits.negative_tests.third.endpoints_preparation.negative_test_three import (
-    PreparePPDNegativeThree,
+    NegativeExecutorThree,
 )
 from negative_tests.first_test.endpoints_preparation.negative_test_one import (
-    PreparePPDNegative,
+    NegativeExecutor,
 )
 from negative_tests.second_test.endpoints_preparation.negative_test_two import (
-    PreparePPDNegativeTwo,
+    NegativeExecutorTwo,
 )
-from positive_tests.endpoints_preparation.positive_test import PreparePPDPositive
+from positive_tests.endpoints_preparation.positive_test import PositiveExecutor
 from runner.runner import TestRunner
 from parsers.schema_parser import AasSchemaParser
 
@@ -40,38 +40,40 @@ if __name__ == "__main__":
         sub_model_path=f"{base_url}/submodels/{{submodelIdentifier}}",
         _id=None,
         password=None,
-        preparation_class=PreparePPDPositive,
+        executor_class=PositiveExecutor,
     ).start_test()
-    # TestRunner(
-    #     aas_schema=aas,
-    #     output_file_name=output_file_name_negative_first,
-    #     base_url=base_url,
-    #     aas_path=f'{base_url}/shells/',
-    #     concept_description_path=f'{base_url}/concept-descriptions/',
-    #     sub_model_path=f'{base_url}/submodels/{{submodelIdentifier}}',
-    #     _id='OVGUAdmin',
-    #     password='liaadmin',
-    #     preparation_class=PreparePPDNegative
-    # ).start_test(positive=False)
-    # TestRunner(
-    #     aas_schema=aas,
-    #     output_file_name=output_file_name_negative_second,
-    #     base_url=base_url,
-    #     aas_path=f'{base_url}/shells/',
-    #     concept_description_path=f'{base_url}/concept-descriptions/',
-    #     sub_model_path=f'{base_url}/submodels/{{submodelIdentifier}}',
-    #     _id=None,
-    #     password=None,
-    #     preparation_class=PreparePPDNegativeTwo
-    # ).start_test()
-    # TestRunner(
-    #     aas_schema=aas,
-    #     output_file_name=output_file_name_negative_third,
-    #     base_url=base_url,
-    #     aas_path=f'{base_url}/shells/',
-    #     concept_description_path=f'{base_url}/concept-descriptions/',
-    #     sub_model_path=f'{base_url}/submodels/{{submodelIdentifier}}',
-    #     _id=None,
-    #     password=None,
-    #     preparation_class=PreparePPDNegativeThree
-    # ).start_test()
+    TestRunner(
+        aas_schema=aas,
+        output_file_name=output_file_name_negative_first,
+        base_url=base_url,
+        aas_path=f'{base_url}/shells/',
+        concept_description_path=f'{base_url}/concept-descriptions/',
+        sub_model_path=f'{base_url}/submodels/{{submodelIdentifier}}',
+        _id='OVGUAdmin',
+        password='liaadmin',
+        executor_class=NegativeExecutor
+    ).start_test()
+    TestRunner(
+        aas_schema=aas,
+        output_file_name=output_file_name_negative_second,
+        base_url=base_url,
+        aas_path=f'{base_url}/shells/',
+        concept_description_path=f'{base_url}/concept-descriptions/',
+        sub_model_path=f'{base_url}/submodels/{{submodelIdentifier}}',
+        _id=None,
+        password=None,
+        executor_class=NegativeExecutorTwo
+    ).start_test()
+    TestRunner(
+        aas_schema=aas,
+        output_file_name=output_file_name_negative_third,
+        base_url=base_url,
+        aas_path=f'{base_url}/shells/',
+        concept_description_path=f'{base_url}/concept-descriptions/',
+        sub_model_path=f'{base_url}/submodels/{{submodelIdentifier}}',
+        _id=None,
+        password=None,
+        executor_class=NegativeExecutorThree
+    ).start_test()
+
+
