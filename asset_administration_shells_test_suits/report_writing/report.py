@@ -1,4 +1,4 @@
-from asset_administration_shells_test_suits.base_classes.preparation import Preparation
+from asset_administration_shells_test_suits.base_classes.executor import Executor
 from asset_administration_shells_test_suits.helpers.helpers import aas_logger
 
 
@@ -7,7 +7,7 @@ def write_test_results_to_file(
     test_result,
     uri: str,
     operation: str,
-    prepared_instance: Preparation,
+    executed_instance: Executor,
     file_name,
     count,
 ):
@@ -23,31 +23,31 @@ def write_test_results_to_file(
         ):
             length_of_dash_sign = len(
                 f"|| This endpoint is not implemented  ---> || {uri, operation}, substituted-url ="
-                f" {prepared_instance.substituted_url}, error is {test_result} ||\n"
+                f" {executed_instance.substituted_url}, error is {test_result} ||\n"
             )
             file.write(
                 f"|| This endpoint is not implemented  ---> || {uri, operation}, substituted-url ="
-                f" {prepared_instance.substituted_url}, error is {test_result}  ||\n"
+                f" {executed_instance.substituted_url}, error is {test_result}  ||\n"
             )
             if isinstance(count, dict):
                 count["non_implemented"].append(1)
         elif not test_result.passed:
             length_of_dash_sign = len(
                 f"|| Test fails ---> || {uri, operation}, substituted-url ="
-                f" {prepared_instance.substituted_url}, error is {test_result} ||\n"
+                f" {executed_instance.substituted_url}, error is {test_result} ||\n"
             )
             file.write(
                 f"|| Test fails ---> || {uri, operation}, substituted-url ="
-                f" {prepared_instance.substituted_url}, error is {test_result} ||\n"
+                f" {executed_instance.substituted_url}, error is {test_result} ||\n"
             )
             if isinstance(count, dict):
                 count["failed"].append(1)
         else:
             length_of_dash_sign = len(
-                f"|| Test passed ---> || {uri, operation}, substituted-url = {prepared_instance.substituted_url} ||\n"
+                f"|| Test passed ---> || {uri, operation}, substituted-url = {executed_instance.substituted_url} ||\n"
             )
             file.write(
-                f"|| Test passed ---> || {uri, operation}, substituted-url = {prepared_instance.substituted_url} ||\n"
+                f"|| Test passed ---> || {uri, operation}, substituted-url = {executed_instance.substituted_url} ||\n"
             )
             if isinstance(count, dict):
                 count["passed"].append(1)

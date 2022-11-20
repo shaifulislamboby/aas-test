@@ -4,11 +4,11 @@ from typing import Union
 
 import requests
 
-from asset_administration_shells_test_suits.base_classes.preparation import Preparation
+from asset_administration_shells_test_suits.base_classes.executor import Executor
 from asset_administration_shells_test_suits.helpers.helpers import aas_logger
 
 
-class PreparePPDPositive(Preparation):
+class PositiveExecutor(Executor):
     positive = True
 
     def set_all_required_attributes(self, positive=True):

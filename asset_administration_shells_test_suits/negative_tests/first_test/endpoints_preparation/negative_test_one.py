@@ -4,11 +4,11 @@ from asset_administration_shells_test_suits.helpers.helpers import (
     convert_to_base64_form,
 )
 from asset_administration_shells_test_suits.positive_tests.endpoints_preparation.positive_test import (
-    PreparePPDPositive,
+    PositiveExecutor,
 )
 
 
-class PreparePPDNegative(PreparePPDPositive):
+class NegativeExecutor(PositiveExecutor):
     positive = False
 
     def create_post_or_put_request_data_from_response(

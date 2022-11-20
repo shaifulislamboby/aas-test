@@ -16,7 +16,7 @@ from asset_administration_shells_test_suits.helpers.helpers import (
 
 
 @dataclass
-class Preparation:
+class Executor:
     """
     This class is the base class which has all the common attributes and methods in it for the preparation of test
     suit.
@@ -119,7 +119,7 @@ class Preparation:
                                     break
                                 else:
                                     continue
-                    except IndexError as error:
+                    except IndexError:
                         print(self.asset_administration_shells)
                         replacement = (
                             self.asset_administration_shells[-1]

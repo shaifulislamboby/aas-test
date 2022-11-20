@@ -1,12 +1,12 @@
 from dataclasses import dataclass
 
 from asset_administration_shells_test_suits.positive_tests.endpoints_preparation.positive_test import (
-    PreparePPDPositive,
+    PositiveExecutor,
 )
 
 
 @dataclass
-class PreparePPDNegativeTwo(PreparePPDPositive):
+class NegativeExecutorTwo(PositiveExecutor):
     positive = False
     """
     This is second negative test suit for, which will pass an invalid data
