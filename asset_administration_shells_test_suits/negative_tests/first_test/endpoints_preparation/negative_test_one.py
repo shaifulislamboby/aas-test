@@ -14,7 +14,7 @@ class NegativeTestExecutor(PositiveTestExecutor):
     positive = False
 
     def create_post_or_put_request_data_from_response(
-            self, put: bool = False, negative: bool = False
+            self, put: bool = False, positive: bool = False
     ):
         return {"test": "negative"}
 

@@ -8,7 +8,7 @@ from requests import Response, Session
 from asset_administration_shells_test_suits.parsers import (
     AssetAdministrationShell,
     ConceptDescription,
-    Packages,
+    Package,
 )
 from asset_administration_shells_test_suits.helpers.helpers import (
     convert_to_base64_form,
@@ -33,7 +33,7 @@ class TestExecutor:
     password: Union[str, None]
     _id: Union[str, None]
     concept_description: ConceptDescription
-    packages: Union[Packages, None]
+    packages: Union[Package, None]
     full_url_path: str
     substituted_url: str = None
     general_path_params_in_schema = [
@@ -44,19 +44,15 @@ class TestExecutor:
         "{packageId}",
         "{handleId}",
     ]
-    path_params: list = None
     get_response_json: list = None
     get_response: Response = None
     single_get_response: dict = None
     post_data: dict = None
-    patch_data: dict = None
     put_data: dict = None
     post_response: Response = None
     put_response: Response = None
     delete_response: Response = None
-    patch_response: dict = None
     not_implemented_error_msg: str = "no matching request mapper found"
-    number_of_objects_available: int = 0
     is_implemented: bool = True
     positive: bool = True
 

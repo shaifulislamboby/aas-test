@@ -181,5 +181,5 @@ class ConceptDescription(BaseParser):
 
 
 @dataclass
-class Packages(BaseParser):
-    raw_packages: dict
+class Package(BaseParser):
+    raw_package: dict

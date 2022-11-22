@@ -6,7 +6,7 @@ from asset_administration_shells_test_suits.positive_tests.endpoints_preparation
 
 
 @dataclass
-class NegativeExecutorWithInvalidRequestBodyAndQueryParamValue(PositiveTestExecutor):
+class NegativeTestExecutorWithInvalidRequestBodyAndQueryParamValue(PositiveTestExecutor):
     positive = False
     """
     This is third negative test suit for, which will pass an invalid data
