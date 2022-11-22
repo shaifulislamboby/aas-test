@@ -1,4 +1,6 @@
-from asset_administration_shells_test_suits.base_classes.executor import Executor
+from asset_administration_shells_test_suits.base_classes.testexecutor import (
+    TestExecutor,
+)
 from asset_administration_shells_test_suits.helpers.helpers import aas_logger
 
 
@@ -7,7 +9,7 @@ def write_test_results_to_file(
     test_result,
     uri: str,
     operation: str,
-    executed_instance: Executor,
+    executed_instance: TestExecutor,
     file_name,
     count,
 ):
@@ -18,7 +20,7 @@ def write_test_results_to_file(
 
     with open(file_name, "a") as file:
         if (
-            test_result.message in TestRunner.error_message
+            any(error_m in test_result.message for error_m in TestRunner.error_message)
             or NOT_IMPLEMENTATION_MSG in test_result.message
         ):
             length_of_dash_sign = len(

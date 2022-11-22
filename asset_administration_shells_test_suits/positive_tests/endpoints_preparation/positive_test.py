@@ -4,16 +4,22 @@ from typing import Union
 
 import requests
 
-from asset_administration_shells_test_suits.base_classes.executor import Executor
+from asset_administration_shells_test_suits.base_classes.testexecutor import (
+    TestExecutor,
+)
 from asset_administration_shells_test_suits.helpers.helpers import aas_logger
 
 
-class PositiveExecutor(Executor):
+class PositiveTestExecutor(TestExecutor):
     positive = True
 
-    def set_all_required_attributes(self, positive=True):
-        if self.is_implemented and "get" in self.operations:
+    def set_all_required_attributes(self, positive=True, use_links=True) -> None:
+        if use_links:
+            self.substitute_path_params_using_resolved_links()
+        else:
             self.substitute_path_parameters()
+        if self.is_implemented and "get" in self.operations:
+            # self.substitute_path_parameters()
             url = f"{self.base_url}{self.substituted_url}"
             res = self.session.get(url=url) if self.session else requests.get(url=url)
             # here the is_implemented value will be re-assigned which will

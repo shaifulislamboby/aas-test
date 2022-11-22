@@ -124,6 +124,12 @@
                   "aasIdentifier": "$response.body#[0].identification.id"
                 }
               },
+              "DeleteSubmodelReferenceById_": {
+                "operationId": "DeleteSubmodelReferenceById",
+                "parameters": {
+                  "submodelIdentifier": "$response.body#[0].submodels#[0].keys#[0].value"
+                }
+              },
               "GetAssetAdministrationShellDescriptorById": {
                 "operationId": "GetAssetAdministrationShellDescriptorById",
                 "parameters": {
@@ -160,16 +166,34 @@
                   "aasIdentifier": "$response.body#[0].identification.id"
                 }
               },
+              "GetSubmodelDescriptorById_AASRegistry_": {
+                "operationId": "GetSubmodelDescriptorById_AASRegistry",
+                "parameters": {
+                  "submodelIdentifier": "$response.body#[0].submodels#[0].keys#[0].value"
+                }
+              },
               "PutSubmodelDescriptorById_AASRegistry": {
                 "operationId": "PutSubmodelDescriptorById_AASRegistry",
                 "parameters": {
                   "aasIdentifier": "$response.body#[0].identification.id"
                 }
               },
+              "PutSubmodelDescriptorById_AASRegistry_": {
+                "operationId": "PutSubmodelDescriptorById_AASRegistry",
+                "parameters": {
+                  "submodelIdentifier": "$response.body#[0].submodels#[0].keys#[0].value"
+                }
+              },
               "DeleteSubmodelDescriptorById_AASRegistry": {
                 "operationId": "DeleteSubmodelDescriptorById_AASRegistry",
                 "parameters": {
                   "aasIdentifier": "$response.body#[0].identification.id"
+                }
+              },
+              "DeleteSubmodelDescriptorById_AASRegistry_": {
+                "operationId": "DeleteSubmodelDescriptorById_AASRegistry",
+                "parameters": {
+                  "submodelIdentifier": "$response.body#[0].submodels#[0].keys#[0].value"
                 }
               },
               "GetAllAssetLinksById": {
@@ -364,6 +388,17 @@
                 "path"
               ]
             }
+          },
+          {
+            "name": "aasIdentifier",
+            "in": "path",
+            "description": "The Asset Administration Shell’s unique id (BASE64-URL-encoded)",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -435,6 +470,19 @@
         ],
         "summary": "Returns the Asset Information",
         "operationId": "GetAssetInformation",
+        "parameters": [
+          {
+            "name": "aasIdentifier",
+            "in": "path",
+            "description": "The Asset Administration Shell’s unique id (BASE64-URL-encoded)",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "Requested Asset Information",
@@ -485,6 +533,19 @@
         ],
         "summary": "Returns all submodel references",
         "operationId": "GetAllSubmodelReferences",
+        "parameters": [
+          {
+            "name": "aasIdentifier",
+            "in": "path",
+            "description": "The Asset Administration Shell’s unique id (BASE64-URL-encoded)",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "Requested submodel references",
@@ -546,6 +607,17 @@
         "summary": "Deletes the submodel reference from the Asset Administration Shell",
         "operationId": "DeleteSubmodelReferenceById",
         "parameters": [
+          {
+            "name": "aasIdentifier",
+            "in": "path",
+            "description": "The Asset Administration Shell’s unique id (BASE64-URL-encoded)",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
           {
             "name": "submodelIdentifier",
             "in": "path",
@@ -610,34 +682,70 @@
               }
             },
             "links": {
+               "GetSubmodel": {
+                "operationId": "GetSubmodel",
+                "parameters": {
+                  "submodelIdentifier": "$response.body#[0].identification.id"
+                }
+              },
+               "PutSubmodel": {
+                "operationId": "PutSubmodel",
+                "parameters": {
+                  "submodelIdentifier": "$response.body#[0].identification.id"
+                }
+              },
+              "GetAllSubmodelElements": {
+                "operationId": "GetAllSubmodelElements",
+                "parameters": {
+                  "submodelIdentifier": "$response.body#[0].identification.id"
+                }
+              },
+              "PostSubmodelElement": {
+                "operationId": "PostSubmodelElement",
+                "parameters": {
+                  "submodelIdentifier": "$response.body#[0].identification.id"
+                }
+              },
               "GetSubmodelById": {
                 "operationId": "GetSubmodelById",
                 "parameters": {
-                  "submodelIdentifier": "$response.body#[0].id.identification"
+                  "submodelIdentifier": "$response.body#[0].identification.id"
                 }
               },
               "PutSubmodelById": {
                 "operationId": "PutSubmodelById",
                 "parameters": {
-                  "submodelIdentifier": "$response.body#[0].id.identification"
+                  "submodelIdentifier": "$response.body#[0].identification.id"
                 }
               },
               "DeleteSubmodelById": {
                 "operationId": "DeleteSubmodelById",
                 "parameters": {
-                  "submodelIdentifier": "$response.body#[0].idShort"
+                  "submodelIdentifier": "$response.body#[0].identification.id"
                 }
               },
               "GetSubmodelElementByPath": {
                 "operationId": "GetSubmodelElementByPath",
                 "parameters": {
-                  "submodelIdentifier": "$response.body#[0].idShort"
+                  "idShortPath": "$response.body#[0].idShort"
+                }
+              },
+              "GetSubmodelElementByPath_": {
+                "operationId": "GetSubmodelElementByPath",
+                "parameters": {
+                  "submodelIdentifier": "$response.body#[0].identification.id"
                 }
               },
               "PutSubmodelElementByPath": {
                 "operationId": "PutSubmodelElementByPath",
                 "parameters": {
-                  "submodelIdentifier": "$response.body#[0].idShort"
+                  "submodelIdentifier": "$response.body#[0].identification.id"
+                }
+              },
+              "PutSubmodelElementByPath_": {
+                "operationId": "PutSubmodelElementByPath",
+                "parameters": {
+                  "idShortPath": "$response.body#[0].idShort"
                 }
               },
               "PostSubmodelElementByPath": {
@@ -655,49 +763,43 @@
               "InvokeOperation": {
                 "operationId": "InvokeOperation",
                 "parameters": {
-                  "submodelIdentifier": "$response.body#[0].idShort"
+                  "submodelIdentifier": "$response.body#[0].identification.id"
+                }
+              },
+              "InvokeOperation_": {
+                "operationId": "InvokeOperation",
+                "parameters": {
+                  "idShortPath": "$response.body#[0].idShort"
                 }
               },
               "GetOperationAsyncResult": {
                 "operationId": "GetOperationAsyncResult",
                 "parameters": {
-                  "submodelIdentifier": "$response.body#[0].idShort"
+                  "submodelIdentifier": "$response.body#[0].identification.id"
                 }
               },
-              "GetSubmodelDescriptorById_AASRegistry": {
-                "operationId": "GetSubmodelDescriptorById_AASRegistry",
+              "GetOperationAsyncResult_": {
+                "operationId": "GetOperationAsyncResult",
                 "parameters": {
-                  "submodelIdentifier": "$response.body#[0].id.identification"
-                }
-              },
-              "PutSubmodelDescriptorById_AASRegistry": {
-                "operationId": "PutSubmodelDescriptorById_AASRegistry",
-                "parameters": {
-                  "submodelIdentifier": "$response.body#[0].id.identification"
-                }
-              },
-              "DeleteSubmodelDescriptorById_AASRegistry": {
-                "operationId": "DeleteSubmodelDescriptorById_AASRegistry",
-                "parameters": {
-                  "submodelIdentifier": "$response.body#[0].id.identification"
+                  "idShortPath": "$response.body#[0].idShort"
                 }
               },
               "GetSubmodelDescriptorById": {
                 "operationId": "GetSubmodelDescriptorById",
                 "parameters": {
-                  "submodelIdentifier": "$response.body#[0].id.identification"
+                  "submodelIdentifier": "$response.body#[0].identification.id"
                 }
               },
               "PutSubmodelDescriptorById": {
                 "operationId": "PutSubmodelDescriptorById",
                 "parameters": {
-                  "submodelIdentifier": "$response.body#[0].id.identification"
+                  "submodelIdentifier": "$response.body#[0].identification.id"
                 }
               },
               "DeleteSubmodelDescriptorById": {
                 "operationId": "DeleteSubmodelDescriptorById",
                 "parameters": {
-                  "submodelIdentifier": "$response.body#[0].id.identification"
+                  "submodelIdentifier": "$response.body#[0].identification.id"
                 }
               }
             }
@@ -867,6 +969,17 @@
         "operationId": "GetSubmodel",
         "parameters": [
           {
+            "name": "submodelIdentifier",
+            "in": "path",
+            "description": "The Asset Administration Shell’s unique id (BASE64-URL-encoded)",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "level",
             "in": "query",
             "description": "Determines the structural depth of the respective resource content",
@@ -1008,6 +1121,18 @@
         "summary": "Returns all submodel elements including their hierarchy",
         "operationId": "GetAllSubmodelElements",
         "parameters": [
+          {
+            "name": "submodelIdentifier",
+            "in": "path",
+            "description": "The Asset Administration Shell’s unique id (BASE64-URL-encoded)",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+
           {
             "name": "level",
             "in": "query",
@@ -1162,6 +1287,17 @@
         "summary": "Returns a specific submodel element from the Submodel at a specified path",
         "operationId": "GetSubmodelElementByPath",
         "parameters": [
+          {
+            "name": "submodelIdentifier",
+            "in": "path",
+            "description": "The Asset Administration Shell’s unique id (BASE64-URL-encoded)",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
           {
             "name": "level",
             "in": "query",
@@ -1446,6 +1582,17 @@
         "operationId": "InvokeOperation",
         "parameters": [
           {
+            "name": "submodelIdentifier",
+            "in": "path",
+            "description": "The Asset Administration Shell’s unique id (BASE64-URL-encoded)",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "async",
             "in": "query",
             "description": "Determines whether an operation invocation is performed asynchronously or synchronously",
@@ -1523,6 +1670,17 @@
         "summary": "Returns the Operation result of an asynchronous invoked Operation",
         "operationId": "GetOperationAsyncResult",
         "parameters": [
+          {
+            "name": "submodelIdentifier",
+            "in": "path",
+            "description": "The Asset Administration Shell’s unique id (BASE64-URL-encoded)",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
           {
             "name": "content",
             "in": "query",
@@ -2199,19 +2357,19 @@
               "GetConceptDescriptionById": {
                 "operationId": "GetConceptDescriptionById",
                 "parameters": {
-                  "cdIdentifier": "$response.body#[0].id.identification"
+                  "cdIdentifier": "$response.body#[0].identification.id"
                 }
               },
               "PutConceptDescriptionById": {
                 "operationId": "PutConceptDescriptionById",
                 "parameters": {
-                  "cdIdentifier": "$response.body#[0].id.identification"
+                  "cdIdentifier": "$response.body#[0].identification.id"
                 }
               },
               "DeleteConceptDescriptionById": {
                 "operationId": "DeleteConceptDescriptionById",
                 "parameters": {
-                  "cdIdentifier": "$response.body#[0].id.identification"
+                  "cdIdentifier": "$response.body#[0].identification.id"
                 }
               }
             }
@@ -2399,19 +2557,19 @@
               "GetAASXByPackageId": {
                 "operationId": "GetAASXByPackageId",
                 "parameters": {
-                  "packageId": "$response.body#[0].id.identification"
+                  "packageId": "$response.body#[0].identification.id"
                 }
               },
               "PutAASXByPackageId": {
                 "operationId": "PutAASXByPackageId",
                 "parameters": {
-                  "packageId": "$response.body#[0].id.identification"
+                  "packageId": "$response.body#[0].identification.id"
                 }
               },
               "DeleteAASXByPackageId": {
                 "operationId": "DeleteAASXByPackageId",
                 "parameters": {
-                  "packageId": "$response.body#[0].id.identification"
+                  "packageId": "$response.body#[0].identification.id"
                 }
               }
             }

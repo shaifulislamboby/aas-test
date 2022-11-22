@@ -1,18 +1,20 @@
 from copy import deepcopy
+from dataclasses import dataclass
 
 from asset_administration_shells_test_suits.helpers.helpers import (
     convert_to_base64_form,
 )
 from asset_administration_shells_test_suits.positive_tests.endpoints_preparation.positive_test import (
-    PositiveExecutor,
+    PositiveTestExecutor,
 )
 
 
-class NegativeExecutor(PositiveExecutor):
+@dataclass
+class NegativeTestExecutor(PositiveTestExecutor):
     positive = False
 
     def create_post_or_put_request_data_from_response(
-        self, put: bool = False, negative: bool = False
+            self, put: bool = False, negative: bool = False
     ):
         return {"test": "negative"}
 
@@ -22,3 +24,6 @@ class NegativeExecutor(PositiveExecutor):
             if param in self.full_url_path:
                 replacement = convert_to_base64_form("not_available")
                 self.replace_(param, replacement=replacement)
+                
+    def set_all_required_attributes(self, positive=False, use_links=False):
+        super().set_all_required_attributes(positive, use_links)

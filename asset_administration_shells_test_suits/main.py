@@ -1,15 +1,15 @@
 import logging
 
 from asset_administration_shells_test_suits.negative_tests.third.endpoints_preparation.negative_test_three import (
-    NegativeExecutorThree,
+    NegativeExecutorWithInvalidRequestBodyAndQueryParamValue,
 )
 from negative_tests.first_test.endpoints_preparation.negative_test_one import (
-    NegativeExecutor,
+    NegativeTestExecutor,
 )
 from negative_tests.second_test.endpoints_preparation.negative_test_two import (
-    NegativeExecutorTwo,
+    NegativeExecutorWithInvalidRequestBody,
 )
-from positive_tests.endpoints_preparation.positive_test import PositiveExecutor
+from positive_tests.endpoints_preparation.positive_test import PositiveTestExecutor
 from runner.runner import TestRunner
 from parsers.schema_parser import AasSchemaParser
 
@@ -31,28 +31,28 @@ if __name__ == "__main__":
     base_url = "http://localhost:8080"
     # base_url = 'http://192.168.0.2:60008'
     aas = AasSchemaParser(file_location=file_location)
-    TestRunner(
-        aas_schema=aas,
-        output_file_name=output_file_name,
-        base_url=base_url,
-        aas_path=f"{base_url}/shells/",
-        concept_description_path=f"{base_url}/concept-descriptions/",
-        sub_model_path=f"{base_url}/submodels/{{submodelIdentifier}}",
-        _id=None,
-        password=None,
-        executor_class=PositiveExecutor,
-    ).start_test()
-    TestRunner(
-        aas_schema=aas,
-        output_file_name=output_file_name_negative_first,
-        base_url=base_url,
-        aas_path=f'{base_url}/shells/',
-        concept_description_path=f'{base_url}/concept-descriptions/',
-        sub_model_path=f'{base_url}/submodels/{{submodelIdentifier}}',
-        _id='OVGUAdmin',
-        password='liaadmin',
-        executor_class=NegativeExecutor
-    ).start_test()
+    # TestRunner(
+    #     aas_schema=aas,
+    #     output_file_name=output_file_name,
+    #     base_url=base_url,
+    #     aas_path=f"{base_url}/shells/",
+    #     concept_description_path=f"{base_url}/concept-descriptions/",
+    #     sub_model_path=f"{base_url}/submodels/{{submodelIdentifier}}",
+    #     _id=None,
+    #     password=None,
+    #     executor_class=PositiveTestExecutor,
+    # ).start_test()
+    # TestRunner(
+    #     aas_schema=aas,
+    #     output_file_name=output_file_name_negative_first,
+    #     base_url=base_url,
+    #     aas_path=f'{base_url}/shells/',
+    #     concept_description_path=f'{base_url}/concept-descriptions/',
+    #     sub_model_path=f'{base_url}/submodels/{{submodelIdentifier}}',
+    #     _id=None,
+    #     password=None,
+    #     executor_class=NegativeTestExecutor
+    # ).start_test()
     TestRunner(
         aas_schema=aas,
         output_file_name=output_file_name_negative_second,
@@ -62,18 +62,18 @@ if __name__ == "__main__":
         sub_model_path=f'{base_url}/submodels/{{submodelIdentifier}}',
         _id=None,
         password=None,
-        executor_class=NegativeExecutorTwo
+        executor_class=NegativeExecutorWithInvalidRequestBody
     ).start_test()
-    TestRunner(
-        aas_schema=aas,
-        output_file_name=output_file_name_negative_third,
-        base_url=base_url,
-        aas_path=f'{base_url}/shells/',
-        concept_description_path=f'{base_url}/concept-descriptions/',
-        sub_model_path=f'{base_url}/submodels/{{submodelIdentifier}}',
-        _id=None,
-        password=None,
-        executor_class=NegativeExecutorThree
-    ).start_test()
+    # TestRunner(
+    #     aas_schema=aas,
+    #     output_file_name=output_file_name_negative_third,
+    #     base_url=base_url,
+    #     aas_path=f'{base_url}/shells/',
+    #     concept_description_path=f'{base_url}/concept-descriptions/',
+    #     sub_model_path=f'{base_url}/submodels/{{submodelIdentifier}}',
+    #     _id=None,
+    #     password=None,
+    #     executor_class=NegativeExecutorWithInvalidRequestBodyAndQueryParamValue
+    # ).start_test()
 
 

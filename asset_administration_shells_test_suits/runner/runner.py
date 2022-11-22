@@ -9,13 +9,14 @@ import requests
 from jsonschema.exceptions import ValidationError
 from requests import Session, Response
 
-from asset_administration_shells_test_suits.base_classes.executor import Executor
+from asset_administration_shells_test_suits.base_classes.testexecutor import TestExecutor
 from asset_administration_shells_test_suits.helpers.helpers import aas_logger
 from asset_administration_shells_test_suits.parsers import (
     AasSchemaParser,
     ConceptDescription,
     AssetAdministrationShell,
 )
+from asset_administration_shells_test_suits.parsers.schema_parser import AASLinkResolver
 from asset_administration_shells_test_suits.report_writing.report import (
     write_test_results_to_file,
     write_test_metrics,
@@ -45,7 +46,7 @@ class DeleteEndpoint:
 
 @dataclass
 class TestRunner:
-    executor_class: Type[Executor]
+    executor_class: Type[TestExecutor]
     aas_schema: AasSchemaParser
     _id: Union[str, None]
     password: Union[str, None]
@@ -145,7 +146,7 @@ class TestRunner:
     ) -> TestResult:
         if response is None:
             return TestResult(message=NOT_IMPLEMENTATION_MSG)
-        response_status_code = (204,) if positive else (404,)
+        response_status_code = (204,) if positive else (404, 400)
         if response.status_code not in response_status_code:
             return self.parse_error_message(response)
         # this line is added for checking if the object has been deleted for real or not.
@@ -224,9 +225,12 @@ class TestRunner:
         concept_description = self.get_concept_description(
             positive=self.executor_class.positive
         )
+        aas_link_resolver = AASLinkResolver(aas_schema=self.aas_schema, base_url=self.base_url)
+        aas_link_resolver.resolve_links()
         for uri in self.aas_schema.paths:
             executed_instance = self.executor_class(
                 raw_endpoint=self.aas_schema.paths.get(uri),
+                resolved_path_parameters=aas_link_resolver.path_params,
                 base_url=self.base_url,
                 full_url_path=uri,
                 asset_administration_shells=asset_administration_shells,
@@ -240,7 +244,7 @@ class TestRunner:
             )
             sub = executed_instance.substituted_url
             for operation in executed_instance.operations:
-                if operation == "delete" and len(executed_instance.operations) > 1:
+                if operation == "delete":
                     self.delete_urls.append(
                         DeleteEndpoint(
                             substituted_url=executed_instance.substituted_url, path=uri

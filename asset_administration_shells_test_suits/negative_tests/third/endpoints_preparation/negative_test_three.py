@@ -1,9 +1,12 @@
+from dataclasses import dataclass
+
 from asset_administration_shells_test_suits.positive_tests.endpoints_preparation.positive_test import (
-    PositiveExecutor,
+    PositiveTestExecutor,
 )
 
 
-class NegativeExecutorThree(PositiveExecutor):
+@dataclass
+class NegativeExecutorWithInvalidRequestBodyAndQueryParamValue(PositiveTestExecutor):
     positive = False
     """
     This is third negative test suit for, which will pass an invalid data
@@ -16,11 +19,11 @@ class NegativeExecutorThree(PositiveExecutor):
         if "get" in self.operations:
             if "post" in self.operations:
                 self.post_data = self.create_post_or_put_request_data_from_response(
-                    positive=self.positive
+                    positive=False
                 )
             if "put" in self.operations:
                 self.put_data = self.create_post_or_put_request_data_from_response(
-                    put=True, positive=self.positive
+                    put=True, positive=False
                 )
 
     def create_query_params(self, operation, positive: bool = False):
