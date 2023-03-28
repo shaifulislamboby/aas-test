@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
-from asset_administration_shells_test_suits.positive_tests.endpoints_preparation.positive_test import (
+from positive_tests.endpoints_preparation.positive_test import (
     PositiveTestExecutor,
 )
 

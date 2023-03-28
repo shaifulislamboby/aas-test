@@ -1,8 +1,8 @@
 import unittest
 from unittest.mock import patch
 
-from asset_administration_shells_test_suits.base_classes.base_test import TestResult
-from asset_administration_shells_test_suits.report_writing.report import (
+from base_classes.base_test import TestResult
+from report_writing.report import (
     write_test_results_to_file,
     write_non_implemented_test_results_to_file,
 )

@@ -1,10 +1,8 @@
 from copy import deepcopy
 from dataclasses import dataclass
 
-from asset_administration_shells_test_suits.helpers.helpers import (
-    convert_to_base64_form,
-)
-from asset_administration_shells_test_suits.positive_tests.endpoints_preparation.positive_test import (
+from helpers.helpers import convert_to_base64_form
+from positive_tests.endpoints_preparation.positive_test import (
     PositiveTestExecutor,
 )
 

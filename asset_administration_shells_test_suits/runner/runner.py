@@ -9,15 +9,15 @@ import requests
 from jsonschema.exceptions import ValidationError
 from requests import Session, Response
 
-from asset_administration_shells_test_suits.base_classes.testexecutor import TestExecutor
-from asset_administration_shells_test_suits.helpers.helpers import aas_logger
-from asset_administration_shells_test_suits.parsers import (
+from base_classes.testexecutor import TestExecutor
+from helpers.helpers import aas_logger
+from parsers import (
     AasSchemaParser,
     ConceptDescription,
     AssetAdministrationShell,
 )
-from asset_administration_shells_test_suits.parsers.schema_parser import AASLinkResolver
-from asset_administration_shells_test_suits.report_writing.report import (
+from parsers.schema_parser import AASLinkResolver
+from report_writing.report import (
     write_test_results_to_file,
     write_test_metrics,
 )

@@ -1,7 +1,7 @@
-from asset_administration_shells_test_suits.base_classes.testexecutor import (
+from base_classes.testexecutor import (
     TestExecutor,
 )
-from asset_administration_shells_test_suits.helpers.helpers import aas_logger
+from helpers.helpers import aas_logger
 
 
 @aas_logger

@@ -5,12 +5,12 @@ from typing import Union
 import requests
 from requests import Response, Session
 
-from asset_administration_shells_test_suits.parsers import (
+from parsers import (
     AssetAdministrationShell,
     ConceptDescription,
     Package,
 )
-from asset_administration_shells_test_suits.helpers.helpers import (
+from helpers.helpers import (
     convert_to_base64_form,
     create_url_encoded_from_id,
 )

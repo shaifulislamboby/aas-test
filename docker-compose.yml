@@ -1,0 +1,18 @@
+version: '3.4'
+
+services:
+  python-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./asset_administration_shells_test_suits:/app/asset_administration_shells_test_suits
+    command: python asset_administration_shells_test_suits/main.py
+
+    networks:
+      - backend # Replace with the command to run your main Python file
+
+
+networks:
+  backend:
+    external: true

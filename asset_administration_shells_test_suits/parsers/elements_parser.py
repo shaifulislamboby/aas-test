@@ -4,7 +4,7 @@ from typing import Union
 
 import requests
 
-from asset_administration_shells_test_suits.helpers import helpers
+from helpers import helpers
 
 
 @dataclass

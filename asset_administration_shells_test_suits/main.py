@@ -9,7 +9,7 @@ if __name__ == "__main__":
     )
     file_location = "aas_openapi_specifications/open_api_specification_aas_v2.json"
     output_file_name = "test_reports/test_report_FAAAST_RESTA_API_server.txt"
-    base_url = "http://localhost:8080"
+    base_url = "http://fast-service:8080"
     aas = AasSchemaParser(file_location=file_location)
     TestRunner(
         aas_schema=aas,
